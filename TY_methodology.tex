@@ -5,7 +5,10 @@
 \usepackage{changepage}
 \usepackage{textgreek}
 \usepackage{amsmath}
-
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
 
 \begin{document}
 
@@ -115,4 +118,434 @@ For any two factors \textit{i,j $\in$ V}, we draw a direct edge from \textit{i} 
 \end{equation}
 
 Thus, multilayer information spillover networks are simplified to a 3 dimensional $N\times N$ adjacency matrix by mathematical notation. Considering the unpredictability of the financial system and the dynamic changes of interconnectedness amon the yield curve nodes, we build time-varying multilayer causality based networks using rolling window analysis. TBC...
+
+%-----------------------------------------------------------------------------------teststat table1
+
+\begin{table}[ht]
+\caption{This is the eaxemple table}% title of Table
+\fontsize{10}{10}\selectfont
+\centering % used for centering table
+\begin{tabular}{l c c c c c c}% centered columns (4 columns)
+\hline\hline   \\ [-1.5ex]               %inserts double horizontal lines
+%Case & Method\#1 & Method\#2 & Method\#3 & test \\  [0.5ex]
+Maturity & Mean & Std. Dev & Minimum & Maximum & \textrho(1)  & \textrho(10) \\ [0.5ex] % inserts table %heading
+
+\hline       \\ [-1.5ex]           % inserts single horizontal line
+\textit{Germany} 	&		&		&		&		&		&	\\
+1 year	&	0.0256	&	1.6275	&	-0.9690	&	4.6900	&	1.0000	&	0.9960	\\
+5 years	&	0.0257	&	1.6324	&	-0.9410	&	4.7670	&	0.9990	&	0.9930	\\
+10 years	&	0.0243	&	1.5451	&	-0.7220	&	4.6860	&	0.9930	&	0.9640	\\
+\medskip													
+30 years	&	0.0228	&	1.4482	&	-0.2440	&	5.1950	&	0.9990	&	0.9880	\\
+\textit{Italy}	&		&		&		&		&		&		\\
+1 year	&	0.0241	&	1.5327	&	-0.4840	&	8.3940	&	0.9980	&	0.9860	\\
+5 years	&	0.0239	&	1.5199	&	0.2370	&	7.8950	&	0.9980	&	0.9850	\\
+10 years	&	0.0218	&	1.3876	&	0.8750	&	7.4920	&	0.9980	&	0.9860	\\
+\medskip													
+30 years	&	0.0188	&	1.1971	&	2.0430	&	7.5840	&	0.9980	&	0.9850	\\
+\textit{France}	&		&		&		&		&		&		\\
+1 year	&	0.0250	&	1.5891	&	-0.8010	&	4.6570	&	1.0000	&	0.9960	\\
+5 years	&	0.0247	&	1.5730	&	-0.7730	&	4.9100	&	0.9990	&	0.9930	\\
+10 years	&	0.0231	&	1.4670	&	-0.4150	&	4.8510	&	0.9990	&	0.9910	\\
+\medskip													
+30 years	&	0.0194	&	1.2351	&	0.4190	&	5.1160	&	0.9990	&	0.9860	\\
+\textit{USA}	&		&		&		&		&		&		\\
+1 year	&	0.0254	&	1.6128	&	0.0540	&	5.3230	&	1.0000	&	0.9980	\\
+5 years	&	0.0194	&	1.2315	&	0.5590	&	5.3010	&	0.9990	&	0.9890	\\
+10 years	&	0.0163	&	1.0394	&	1.3890	&	5.3880	&	0.9980	&	0.9830	\\
+30 years	&	0.0151	&	0.9618	&	1.9920	&	5.8390	&	0.9970	&	0.9760	\\
+\textit{Canada}	&		&		&		&		&		&		\\
+1 year	&	0.0193	&	1.2301	&	0.3000	&	4.8090	&	1.0000	&	0.9950	\\
+5 years	&	0.0180	&	1.1463	&	0.4840	&	4.8010	&	0.9990	&	0.9890	\\
+10 years	&	0.0173	&	1.0976	&	0.9830	&	5.0760	&	0.9990	&	0.9870	\\
+\medskip													
+30 years	&	0.0159	&	1.0118	&	1.3060	&	5.6120	&	0.9980	&	0.9850	\\
+\textit{Mexico}	&		&		&		&		&		&		\\
+1 year	&	0.0318	&	2.0250	&	1.5120	&	10.5700	&	0.9790	&	0.9880	\\
+5 years	&	0.0238	&	1.5108	&	3.7860	&	10.8970	&	0.9860	&	0.9810	\\
+10 years	&	0.0213	&	1.3524	&	4.6190	&	12.4130	&	0.9920	&	0.9700	\\
+30 years	&	0.0195	&	1.2384	&	5.8730	&	12.7260	&	0.9930	&	0.9470	\\
+\textit{Japan}	&		&		&		&		&		&		\\
+1 year	&	0.0043	&	0.2715	&	-0.3710	&	0.8500	&	0.9990	&	0.9920	\\
+5 years	&	0.0076	&	0.4852	&	-0.3960	&	1.6310	&	0.9990	&	0.9900	\\
+10 years	&	0.0103	&	0.6563	&	-0.2850	&	2.0500	&	0.9990	&	0.9900	\\
+\medskip													
+30 years	&	0.0120	&	0.7606	&	0.0530	&	3.2950	&	0.9980	&	0.9850	\\
+\textit{China}	&		&		&		&		&		&		\\
+1 year	&	0.0115	&	0.7296	&	0.9570	&	4.3820	&	0.9920	&	0.9660	\\
+5 years	&	0.0093	&	0.5939	&	1.7820	&	4.8740	&	0.9970	&	0.9730	\\
+10 years	&	0.0090	&	0.5702	&	2.4810	&	5.5030	&	0.9930	&	0.9640	\\
+\medskip													
+30 years	&	0.0097	&	0.6149	&	2.4700	&	6.0090	&		&		\\
+\textit{Australia}	&		&		&		&		&		&		\\
+1 year	&	0.0279	&	1.7749	&	0.6750	&	7.3760	&	0.9990	&	0.9920	\\
+5 years	&	0.0264	&	1.6769	&	0.6390	&	6.9600	&	0.9990	&	0.9900	\\
+10 years	&	0.0235	&	1.4971	&	0.8850	&	6.8730	&	0.9990	&	0.9880	\\
+\medskip													
+30 years	&	0.0190	&	1.2069	&	1.5580	&	6.8880	&	0.9980	&	0.9830	\\
+\textit{Norway}	&		&		&		&		&		&		\\
+1 year	&	0.0222	&	1.4100	&	0.1990	&	6.2430	&	0.9990	&	0.9940	\\
+5 years	&	0.0200	&	1.2734	&	0.5450	&	5.3350	&	0.9990	&	0.9910	\\
+10 years	&	0.0188	&	1.1935	&	0.8880	&	5.2760	&	0.9990	&	0.9890	\\
+\medskip													
+30 years	&	0.0175	&	1.1127	&	0.8820	&	5.2730	&	0.9990	&	0.9870	\\
+\textit{United Kingdom}	&		&		&		&		&		&		\\
+1 year	&	0.0308	&	1.9558	&	0.0240	&	5.8830	&	0.9990	&	0.9950	\\
+5 years	&	0.0259	&	1.6444	&	0.1610	&	5.8210	&	0.9990	&	0.9910	\\
+10 years	&	0.0223	&	1.4181	&	0.4000	&	5.5430	&	0.9990	&	0.9890	\\
+\medskip													
+30 years	&	0.0175	&	1.1099	&	0.9390	&	5.0700	&	0.9990	&	0.9870	\\
+\textit{Switzerland}	&		&		&		&		&		&		\\
+1 year	&	0.0195	&	1.2405	&	-1.1650	&	3.3750	&	1.0000	&	0.9960	\\
+5 years	&	0.0187	&	1.1921	&	-1.1960	&	3.2000	&	0.9990	&	0.9930	\\
+10 years	&	0.0188	&	1.1976	&	-1.1380	&	3.4550	&	0.9990	&	0.9910	\\
+30 years	&	0.0173	&	1.1006	&	-0.6440	&	3.7330	&	0.9980	&	0.9860	\\
+
+\hline%inserts single line
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------------teststat table2-------------------------------------------------
+\begin{table}[ht]
+\caption{This is the eaxemple table}% title of Table
+\fontsize{10}{10}\selectfont
+\centering % used for centering table
+\begin{tabular}{l c c c c c c}% centered columns (4 columns)
+\hline\hline   \\ [-1.5ex]               %inserts double horizontal lines
+%Case & Method\#1 & Method\#2 & Method\#3 & test \\  [0.5ex]
+Factor & Mean & Std. Dev & Minimum & Maximum & Jarque-Bera t-statistics  & P values \\ [0.5ex] % inserts table %heading
+
+\hline       \\ [-1.5ex]           % inserts single horizontal line
+
+\textit{Germany}	&		&		&		&		&		&		\\
+Level	&	2.915	&	1.535	&	-0.343	&	5.413	&	347.041	&	0	\\
+Slope	&	-1.856	&	1.062	&	-4.544	&	0.140	&	210.098	&	0	\\
+\medskip													
+Curvature	&	-3.723	&	1.720	&	-7.147	&	0.732	&	234.599	&	0	\\
+\textit{Italy}	&		&		&		&		&		&		\\
+Level	&	4.784	&	1.292	&	1.980	&	7.998	&	106.101	&	0	\\
+Slope	&	-3.427	&	1.570	&	-7.009	&	-0.435	&	183.385	&	0	\\
+\medskip													
+Curvature	&	-4.251	&	2.236	&	-8.604	&	4.752	&	194.464	&	0	\\
+\textit{France}	&		&		&		&		&		&		\\
+Level	&	3.391	&	1.367	&	0.263	&	5.484	&	417.881	&	0	\\
+Slope	&	-2.237	&	1.191	&	-4.731	&	0.016	&	162.987	&	0	\\
+\medskip													
+Curvature	&	-4.294	&	1.956	&	-7.820	&	1.073	&	210.076	&	0	\\
+\textit{USA}	&		&		&		&		&		&		\\
+Level	&	3.957	&	0.988	&	1.881	&	5.867	&	323.945	&	0	\\
+Slope	&	-2.408	&	1.550	&	-5.519	&	0.710	&	139.147	&	0	\\
+\medskip													
+Curvature	&	-3.633	&	2.498	&	-9.577	&	0.723	&	228.960	&	0	\\
+\textit{Canada}	&		&		&		&		&		&		\\
+Level	&	3.431	&	1.102	&	1.232	&	5.897	&	274.286	&	0	\\
+Slope	&	-1.726	&	1.228	&	-4.839	&	0.583	&	251.083	&	0	\\
+\medskip													
+Curvature	&	-2.493	&	1.627	&	-6.257	&	1.307	&	206.333	&	0	\\
+\textit{Mexico}	&		&		&		&		&		&		\\
+Level	&	8.579	&	1.282	&	5.550	&	13.413	&	834.740	&	0	\\
+Slope	&	-2.356	&	1.825	&	-6.135	&	0.674	&	340.695	&	0	\\
+\medskip													
+Curvature	&	-4.157	&	2.852	&	-14.835	&	0.489	&	321.622	&	0	\\
+\textit{Japan}	&		&		&		&		&		&		\\
+Level	&	1.703	&	0.828	&	-0.018	&	3.256	&	406.313	&	0	\\
+Slope	&	-1.280	&	0.625	&	-2.827	&	-0.019	&	155.924	&	0	\\
+\medskip													
+Curvature	&	-3.694	&	1.283	&	-6.033	&	-0.874	&	278.292	&	0	\\
+\textit{China}	&		&		&		&		&		&		\\
+Level	&	4.024	&	0.616	&	2.704	&	6.523	&	2047.454	&	0	\\
+Slope	&	-1.531	&	0.809	&	-3.869	&	1.648	&	275.315	&	0	\\
+\medskip													
+Curvature	&	-1.243	&	0.924	&	-5.198	&	1.259	&	1128.360	&	0	\\
+\textit{Australia}	&		&		&		&		&		&		\\
+Level	&	4.629	&	1.230	&	1.398	&	6.773	&	262.680	&	0	\\
+Slope	&	-0.898	&	0.980	&	-3.868	&	1.003	&	105.808	&	0	\\
+\medskip													
+Curvature	&	-2.081	&	1.839	&	-6.590	&	2.247	&	296.577	&	0	\\
+\textit{Norway}	&		&		&		&		&		&		\\
+Level	&	3.215	&	1.124	&	1.024	&	5.228	&	333.917	&	0	\\
+Slope	&	-1.223	&	1.072	&	-4.041	&	2.262	&	167.102	&	0	\\
+\medskip													
+Curvature	&	-1.586	&	1.223	&	-4.681	&	1.726	&	337.556	&	0	\\
+\textit{United Kingdom}	&		&		&		&		&		&		\\
+Level	&	3.663	&	1.232	&	0.867	&	5.798	&	329.213	&	0	\\
+Slope	&	-1.759	&	1.746	&	-5.418	&	1.346	&	211.589	&	0	\\
+\medskip													
+Curvature	&	-3.329	&	3.021	&	-8.767	&	3.647	&	159.960	&	0	\\
+\textit{Switzerland}	&		&		&		&		&		&		\\
+Level	&	1.773	&	1.176	&	-0.756	&	3.856	&	289.824	&	0	\\
+Slope	&	-1.181	&	0.699	&	-3.323	&	0.909	&	219.716	&	0	\\
+Curvature	&	-2.940	&	1.211	&	-7.766	&	0.616	&	543.782	&	0	\\
+
+\hline%inserts single line
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------------ADF Table-------------------------------------------------------
+\begin{table}[h]
+\caption{ADF} %title of the table
+\fontsize{10}{10}\selectfont
+\centering% centering table
+\begin{tabular}{l cc cc cc cc cc cc}% creating eight columns
+\hline\hline \\ [-1.5ex]                         %inserting double-line
+%Audio Name&\multicolumn{2}{c}{Sum of Extracted Bits}&\multicolumn{4}{c}{Sum of Extracted Bits} \\ [0.5ex] 
+
+Country	&	\multicolumn{2}{c}{GER}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{FRA}			&	\multicolumn{2}{c}{US}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{MXN}			\\[0.5ex] 
+
+ & value &P & value &P& value &P & value &P& value &P & value &P\\
+
+\hline       \\ [-1.5ex] 
+
+Level	&	-2.3040	&	0.4496	&	-1.4617	&	0.8063	&	-2.1607	&	0.5103	&	-3.6572	&	0.0271	&	-3.0599	&	0.1295	&	-3.9732	&	0.0103	\\
+Slope	&	-2.0878	&	0.5412	&	-2.2616	&	0.4676	&	-1.6409	&	0.7304	&	-1.5000	&	0.7900	&	-1.5719	&	0.7596	&	-1.8809	&	0.6288	\\
+\medskip
+Curvature	&	-2.2176	&	0.4862	&	-3.5924	&	0.0334	&	-2.3566	&	0.4273	&	-1.6211	&	0.7388	&	-2.3508	&	0.4298	&	-2.7054	&	0.2796	\\
+
+\hline\hline   \\ [-1.5ex]    
+
+Country	&	\multicolumn{2}{c}{JPY}			&	\multicolumn{2}{c}{CHN}			&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{NEK}			&	\multicolumn{2}{c}{UK}			&	\multicolumn{2}{c}{SWI}			\\
+
+ & value &P & value &P& value &P & value &P& value &P & value &P\\
+
+\hline       \\ [-1.5ex] 
+
+Level	&	-2.9719	&	0.1668	&	-3.6926	&	0.0243	&	-2.9007	&	0.1969	&	-2.6295	&	0.3118	&	-2.1593	&	0.5109	&	-2.4985	&	0.3672	\\
+Slope	&	-4.8506	&	0.0100	&	-3.6893	&	0.0245	&	-2.3030	&	0.4500	&	-2.7244	&	0.2716	&	-0.9488	&	0.9470	&	-3.1354	&	0.0990	\\
+Curvature	&	-2.0320	&	0.5648	&	-5.5214	&	0.0100	&	-2.6118	&	0.3193	&	-3.6953	&	0.0242	&	-1.6153	&	0.7412	&	-3.1377	&	0.0986	\\
+
+\hline            
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------------KPSS Table-------------------------------------------------------
+\begin{table}[h]
+\caption{KPSS} %title of the table
+\fontsize{10}{10}\selectfont
+\centering% centering table
+\begin{tabular}{l cc cc cc cc cc cc}% creating eight columns
+\hline\hline \\ [-1.5ex]                         %inserting double-line
+%Audio Name&\multicolumn{2}{c}{Sum of Extracted Bits}&\multicolumn{4}{c}{Sum of Extracted Bits} \\ [0.5ex] 
+
+Country	&	\multicolumn{2}{c}{GER}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{FRA}			&	\multicolumn{2}{c}{US}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{MXN}			\\[0.5ex] 
+
+ & value &P & value &P& value &P & value &P& value &P & value &P\\
+
+\hline       \\ [-1.5ex] 
+
+Level	&	32.897	&	0.010	&	14.577	&	0.010	&	29.872	&	0.010	&	26.849	&	0.010	&	32.182	&	0.010	&	15.235	&	0.010	\\
+Slope	&	4.255	&	0.010	&	7.608	&	0.010	&	4.501	&	0.010	&	5.301	&	0.010	&	5.403	&	0.010	&	4.780	&	0.010	\\
+\medskip
+Curvature	&	8.958	&	0.010	&	10.208	&	0.010	&	15.213	&	0.010	&	7.339	&	0.010	&	4.590	&	0.010	&	4.926	&	0.010	\\
+
+
+\hline\hline   \\ [-1.5ex]    
+
+Country	&	\multicolumn{2}{c}{JPY}			&	\multicolumn{2}{c}{CHN}			&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{NEK}			&	\multicolumn{2}{c}{UK}			&	\multicolumn{2}{c}{SWI}			\\
+
+ & value &P & value &P& value &P & value &P& value &P & value &P\\
+
+\hline       \\ [-1.5ex] 
+
+Level	&	33.938	&	0.010	&	3.546	&	0.010	&	29.172	&	0.010	&	30.064	&	0.010	&	28.697	&	0.010	&	31.964	&	0.010	\\
+Slope	&	33.208	&	0.010	&	14.992	&	0.010	&	7.317	&	0.010	&	1.251	&	0.010	&	7.531	&	0.010	&	5.485	&	0.010	\\
+\medskip
+Curvature	&	15.946	&	0.010	&	2.912	&	0.010	&	24.672	&	0.010	&	11.552	&	0.010	&	13.325	&	0.010	&	5.669	&	0.010	\\
+
+
+\hline   
+
+\end{tabular}
+\label{tab:hresult}
+\end{table}
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------------ADF(1) Table-------------------------------------------------------
+\begin{table}[h]
+\caption{ADF(1)} %title of the table
+\fontsize{10}{10}\selectfont
+\centering% centering table
+\begin{tabular}{l cc cc cc cc cc cc}% creating eight columns
+\hline\hline \\ [-1.5ex]                         %inserting double-line
+%Audio Name&\multicolumn{2}{c}{Sum of Extracted Bits}&\multicolumn{4}{c}{Sum of Extracted Bits} \\ [0.5ex] 
+
+Country	&	\multicolumn{2}{c}{GER}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{FRA}			&	\multicolumn{2}{c}{US}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{MXN}			\\[0.5ex] 
+
+ & value &P & value &P& value &P & value &P& value &P & value &P\\
+
+\hline       \\ [-1.5ex] 
+
+Level	&	-17.051	&	0.010	&	-16.015	&	0.010	&	-15.986	&	0.010	&	-15.788	&	0.010	&	-16.353	&	0.010	&	-16.557	&	0.010	\\
+Slope	&	-15.899	&	0.010	&	-14.628	&	0.010	&	-14.593	&	0.010	&	-16.547	&	0.010	&	-16.323	&	0.010	&	-15.194	&	0.010	\\
+\medskip
+Curvature	&	-18.514	&	0.010	&	-18.671	&	0.010	&	-17.646	&	0.010	&	-17.454	&	0.010	&	-16.016	&	0.010	&	-18.880	&	0.010	\\
+
+
+\hline\hline   \\ [-1.5ex]    
+
+Country	&	\multicolumn{2}{c}{JPY}			&	\multicolumn{2}{c}{CHN}			&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{NEK}			&	\multicolumn{2}{c}{UK}			&	\multicolumn{2}{c}{SWI}			\\
+
+ & value &P & value &P& value &P & value &P& value &P & value &P\\
+
+\hline       \\ [-1.5ex] 
+
+Level	&	-16.555	&	0.010	&	-16.990	&	0.010	&	-15.609	&	0.010	&	-16.432	&	0.010	&	-16.484	&	0.010	&	-15.573	&	0.010	\\
+Slope	&		&		&	-18.902	&	0.010	&	-17.872	&	0.010	&	-17.605	&	0.010	&	-16.116	&	0.010	&	-14.598	&	0.010	\\
+\medskip
+Curvature	&	-17.512	&	0.010	&		&		&	-18.061	&	0.010	&	-17.041	&	0.010	&	-16.451	&	0.010	&	-14.266	&	0.010	\\
+
+
+\hline            
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------------KPSS(1) Table-------------------------------------------------------
+\begin{table}[h]
+\caption{KPSS(1)} %title of the table
+\fontsize{10}{10}\selectfont
+\centering% centering table
+\begin{tabular}{l cc cc cc cc cc cc}% creating eight columns
+\hline\hline \\ [-1.5ex]                         %inserting double-line
+%Audio Name&\multicolumn{2}{c}{Sum of Extracted Bits}&\multicolumn{4}{c}{Sum of Extracted Bits} \\ [0.5ex] 
+
+Country	&	\multicolumn{2}{c}{GER}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{FRA}			&	\multicolumn{2}{c}{US}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{MXN}			\\[0.5ex] 
+
+ & value &P & value &P& value &P & value &P& value &P & value &P\\
+
+\hline       \\ [-1.5ex] 
+
+Level	&	0.039	&	0.100	&	0.127	&	0.100	&	0.058	&	0.100	&	0.026	&	0.100	&	0.060	&	0.100	&	0.083	&	0.100	\\
+Slope	&	0.083	&	0.100	&	0.073	&	0.100	&	0.118	&	0.100	&	0.158	&	0.100	&	0.171	&	0.100	&	0.091	&	0.100	\\
+Curvature	&	0.050	&	0.100	&	0.015	&	0.100	&	0.048	&	0.100	&	0.084	&	0.100	&	0.076	&	0.100	&	0.011	&	0.100	\\
+
+
+\hline\hline   \\ [-1.5ex]    
+
+Country	&	\multicolumn{2}{c}{JPY}			&	\multicolumn{2}{c}{CHN}			&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{NEK}			&	\multicolumn{2}{c}{UK}			&	\multicolumn{2}{c}{SWI}			\\
+
+ & value &P & value &P& value &P & value &P& value &P & value &P\\
+
+\hline       \\ [-1.5ex] 
+
+Level	&	0.026	&	0.100	&	0.156	&	0.100	&	0.049	&	0.100	&	0.036	&	0.100	&	0.073	&	0.100	&	0.042	&	0.100	\\
+Slope	&	0.027	&	0.100	&	0.029	&	0.100	&	0.042	&	0.100	&	0.084	&	0.100	&	0.242	&	0.100	&	0.137	&	0.100	\\
+Curvature	&	0.059	&	0.100	&	0.045	&	0.100	&	0.037	&	0.100	&	0.030	&	0.100	&	0.160	&	0.100	&	0.045	&	0.100	\\
+
+
+\hline            
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------------Blocked E-G test Table-------------------------------------------------------
+\begin{table}[h]
+\caption{Engle-Granger test} %title of the table
+\fontsize{10}{10}\selectfont
+\centering% centering table
+\begin{tabular}{l | ccc}% creating eight columns
+\hline\hline \\ [-1.5ex]                         %inserting double-line
+
+	&	Level	&	Slope	&	Curvature	\\
+\hline \\ [-1.5ex]  
+Level	&	75.694\%	&	44.444\%	&	64.583\%	\\
+Slope	&	29.167\%	&	74.306\%	&	71.528\%	\\
+Curvature	&	29.167\%	&	78.472\%	&	75.000\%	\\
+
+\hline            
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+
+
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{table}[h]
+\caption{Edge counts} %title of the table
+\fontsize{10}{10}\selectfont
+\centering% centering table
+\begin{tabular}{l | ccc  r}% creating eight columns
+\hline\hline \\ [-1.5ex]                         %inserting double-line
+
+	&	Level	&	Slope	&	Curvature	& All  \\ 
+\hline \\ [-1.5ex]  
+Level	&	29	&	38	&	52	&	119 	\\
+Slope	&	30	&	41	&	46	&	117	\\
+Curvature	&	25	&	34	&	23	&	82	\\
+\hline \\ [-1.5ex]  
+All	&	84	&	113	&	121	&	318	\\
+
+
+\hline            
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{table}[h]
+\caption{Edge ratio} %title of the table
+\fontsize{10}{10}\selectfont
+\centering% centering table
+\begin{tabular}{l | ccc  r}% creating eight columns
+\hline\hline \\ [-1.5ex]                         %inserting double-line
+
+
+	&	Level	&	Slope	&	Curvature	&	All	\\
+Level	&	21.970\%	&	26.389\%	&	36.111\%	&	84.470\%	\\
+Slope	&	20.833\%	&	31.061\%	&	31.944\%	&	83.838\%	\\
+Curvature	&	17.361\%	&	23.611\%	&	17.424\%	&	58.396\%	\\
+\hline \\ [-1.5ex]  
+All	&	60.164\%	&	81.061\%	&	85.480\%	&	25.238\%	\\
+
+
+\hline            
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{table}[h]
+\caption{top nodes} %title of the table
+\fontsize{10}{10}\selectfont
+\setlength{\tabcolsep}{12pt}
+\centering% centering table
+\begin{tabular}{l  lcc  lc lc  lc}% creating eight columns
+
+\hline\hline \\ [-1.5ex]                         %inserting double-line
+
+
+\multicolumn{4}{c}{Top 5 all}					&	\multicolumn{2}{c}{Top 5 in}			&	\multicolumn{2}{c}{Top 5 out}			&	\multicolumn{2}{c}{Top 5 net}	\\	
+\hline \\ [-1.5ex]    
+Node	&	All	&	In	&	Out	&	Node	&	In	&	Node	&	Out	&	Node	&	Net	\\
+\hline \\ [-1.5ex]    
+USA\_L&	30	&	7	&	23	&	FRA\_C	&	19	&	USA\_L	&	23	&	USA\_L	&	16	\\
+AUS\_S	&	28	&	11	&	17	&	NOR\_S	&	16	&	USA\_S	&	18	&	USA\_S	&	12	\\
+FRA\_S	&	28	&	14	&	14	&	NOR\_C	&	16	&	USA\_C	&	17	&	USA\_C	&	10	\\
+NOR\_S	&	27	&	16	&	11	&	MEX\_L	&	14	&	AUS\_S	&	17	&	DEU\_L	&	9	\\
+FRA\_C	&	27	&	19	&	8	&	FRA\_S	&	14	&	DEU\_L	&	16	&	CAN\_L	&	7	\\
+
+
+
+
+\hline            
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+
+
+
+
 \end{document}
+
