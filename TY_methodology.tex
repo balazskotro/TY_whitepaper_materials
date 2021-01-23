@@ -5,10 +5,12 @@
 \usepackage{changepage}
 \usepackage{textgreek}
 \usepackage{amsmath}
-\usepackage[margin=0.5in]{geometry}
+\usepackage[margin=0.7in]{geometry}
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{float}
+
 
 \begin{document}
 
@@ -119,9 +121,50 @@ For any two factors \textit{i,j $\in$ V}, we draw a direct edge from \textit{i} 
 
 Thus, multilayer information spillover networks are simplified to a 3 dimensional $N\times N$ adjacency matrix by mathematical notation. Considering the unpredictability of the financial system and the dynamic changes of interconnectedness amon the yield curve nodes, we build time-varying multilayer causality based networks using rolling window analysis. TBC...
 
-%-----------------------------------------------------------------------------------teststat table1
+
+
+
+\section{Data}
+We obtain daily sovereign yield data from Bloomberg for twelve advanced countries. Our scope is covering multiple reginos of the globe, therefore we picked countries from differenct continents. Eventually four regions were identified with three sovereign each: Pacific (Australia, China, Japan); Americas (Canada, Mexico, United States of America), Eurozone (France, Germany, Italy) and the Non-Eurozone (Great Britain, Norway, Switzerland). We are denoting them with the three letter country codes obtained from The World Bank. Therse are AUS, CHN, JPN, CAD, MEX, USA, FRA, DEU, ITA, GBR, NOR, CHE respectively. The empirical analysis focuses on whole tenor structure of government yields with fifteen maturities: 3, 6, 12, 24, 36, 48, 60, 72, 84, 96, 120, 180, 240 and 360 months.
+Below is the table consists of the corresponding Bloomberg iddentification codes for the sovereigns.
 
 \begin{table}[ht]
+\caption{This is the eaxemple table}% title of Table
+\fontsize{10}{10}\selectfont
+\centering % used for centering table
+\begin{tabular}{l l}% centered columns (4 columns)
+\hline\hline   \\ [-1.5ex]               %inserts double horizontal lines
+%Case & Method\#1 & Method\#2 & Method\#3 & test \\  [0.5ex]
+Series ID & Description\\ [0.5ex] % inserts table %heading
+
+\hline       \\ [-1.5ex]           % inserts single horizontal line
+
+AUS	 & Australia Sovereign (IYC 1)	\\
+CHN & China (IYC 299)  Zero Coupon Yields	\\
+JPN	 & Japan Sovereign (IYC 18) Zero Coupon Yields	\\
+CAN & Canada Sovereign (IYC 7) Zero Coupon Yields	\\
+MEX	 & Mexico (IYC 251)  Zero Coupon Yields	\\
+USA & Treasury Actives (IYC 25) Zero Coupon Yields	\\
+FRA	 & France Sovereign (IYC 14) Zero Coupon Yields	\\
+GER	 & German Sovereign (IYC 16) Zero Coupon Yields	\\
+ITA & Italy Sovereign (IYC 40) Zero Coupon Yields	\\
+GBR & United Kingdom (IYC 22) Zero Coupon Yields	\\
+NOR & Norway (IYC 78)  Zero Coupon Yields	\\
+CHE	 & Switzerland (IYC 82)  Zero Coupon Yields	\\
+\hline%inserts single line
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
+
+The data spawns from July 1 2004 to December 31 2019 which means 4045 data points alltogether. This unusual choose of starting date is the reason of this being the first observation date for the Chinese yield curve. Additionally we were not keen on examining the recent consequences of the Covid 19 outbreak thus we ended our analysis period at the end of 2019. 
+
+The sovereign bond yields of the mentioned sovereigns are denominated in local currency terms. Local currency debt indicates divergent interest rate cycles of the economy. The local currency bonds reflect the domestic monetary and economic policy stance. Thus the co-movement of local currency bond yields reveals the convergence of monetary policy and business cycles. Moreover the local currency denominated debt possesses greater liquidity and better credit quality compared to the USD dominated debt. The input data used in this study reflects extracted latent factors of each country using their zero coupon yield rates that mirror their domestic term structure. Table 1 presents the descriptive statistics of bond yields at representative maturities for countries considered in the study. The yield curves are upward sloping for all sample countries (CHECK CRYSIS).
+
+The Dynamic Nelson Siegel model was used to extract the latent factors, Level, Slope and Curvature, for each country separately, following Diebold et al. (2006) and Diebold et al. (2008). The level representing long-term interest rates indicates the expected inflation in the long run; the slope representing short-term interest rates reflects the reaction of monetary policy to the cyclical state of the economy; the curvature implies medium-term interest rates (Aguiar-Conraria et al., 2012). 
+
+%-----------------------------------------------------------------------------------teststat table1
+
+\begin{table}[H]
 \caption{This is the eaxemple table}% title of Table
 \fontsize{10}{10}\selectfont
 \centering % used for centering table
@@ -206,6 +249,19 @@ Maturity & Mean & Std. Dev & Minimum & Maximum & \textrho(1)  & \textrho(10) \\ 
 \label{table:nonlin}% is used to refer this table in the text
 \end{table}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
+
+\bigskip
+
+Table 2 presents the descriptive statistics of the estimated latent level, slope and curvature factors. The average level factor was positive for all of the countries and was highest for Mexico and lowest for Japan. The average slope showed the typical pattern of ascending yield curves (negative values) (Aguiar-Conraria et al., 2012). The slope is interpreted as the difference between short-term interest rates (3 months), and the long-term interest rates (120 months 360?). Slope was negative for all of the countries, indicating that long-term rates were higher than the short-term rates. The average slope was highest (in absoluter terms) in the US (-3.427) and lowest (in absoluter terms) in Australia (-0.898). The positive values for the slope indicate brief episodes associated with restrictive monetary policies.
+The curvature also takes negative values for all counties. It was highest in France and lowest in China. 
+
+The raw series of level, slope and curvature were tested for normality using Jarque-Bera test. All 36 values failed to meet the criterion, thus we can state that neither time series follow normal distribution. 
+Additionally the factor values were tested fot unit roots using the Augmented Dickey-Fuller (ADF) and Kwiatkowski-Phillips-Schmidt-Shin (KPSS) tests. China curvature and Japan slope found to be stationary (according to ADF) on standard 95\% confidence level. Differentiating the remaining time series became stationary according to both unit root tests.
+
+Undiferentiated time series were tested for cointegration with pairwise Engle Granger test. Table 4 consists of the ratio of the cointegrated and non-cointegrated time series grouuped by the factors. Taken with self results are more that 70\%, additionally Curvature - Slope and Slope-Curvature pairs exceeds this level too. These results indicate the need of the Toda-Yamamoto approach.
+
+
+
 
 %-----------------------------------------------------------------------------------teststat table2-------------------------------------------------
 \begin{table}[ht]
@@ -300,10 +356,10 @@ Country	&	\multicolumn{2}{c}{GER}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2
 
 \hline       \\ [-1.5ex] 
 
-Level	&	-2.3040	&	0.4496	&	-1.4617	&	0.8063	&	-2.1607	&	0.5103	&	-3.6572	&	0.0271	&	-3.0599	&	0.1295	&	-3.9732	&	0.0103	\\
-Slope	&	-2.0878	&	0.5412	&	-2.2616	&	0.4676	&	-1.6409	&	0.7304	&	-1.5000	&	0.7900	&	-1.5719	&	0.7596	&	-1.8809	&	0.6288	\\
+Level	&	-2.304	&	0.450	&	-1.461	&	0.806	&	-2.161	&	0.510	&	-3.657	&	0.027	&	-3.060	&	0.129	&	-3.9732	&	0.010	\\
+Slope	&	-2.088	&	0.541	&	-2.262	&	0.468	&	-1.641	&	0.730	&	-1.500	&	0.790	&	-1.572	&	0.760	&	-1.881	&	0.629	\\
 \medskip
-Curvature	&	-2.2176	&	0.4862	&	-3.5924	&	0.0334	&	-2.3566	&	0.4273	&	-1.6211	&	0.7388	&	-2.3508	&	0.4298	&	-2.7054	&	0.2796	\\
+Curvature	&	-2.218	&	0.486	&	-3.592	&	0.033	&	-2.357	&	0.427	&	-1.621	&	0.739	&	-2.351	&	0.430	&	-2.705	&	0.279	\\
 
 \hline\hline   \\ [-1.5ex]    
 
@@ -313,9 +369,9 @@ Country	&	\multicolumn{2}{c}{JPY}			&	\multicolumn{2}{c}{CHN}			&	\multicolumn{2
 
 \hline       \\ [-1.5ex] 
 
-Level	&	-2.9719	&	0.1668	&	-3.6926	&	0.0243	&	-2.9007	&	0.1969	&	-2.6295	&	0.3118	&	-2.1593	&	0.5109	&	-2.4985	&	0.3672	\\
-Slope	&	-4.8506	&	0.0100	&	-3.6893	&	0.0245	&	-2.3030	&	0.4500	&	-2.7244	&	0.2716	&	-0.9488	&	0.9470	&	-3.1354	&	0.0990	\\
-Curvature	&	-2.0320	&	0.5648	&	-5.5214	&	0.0100	&	-2.6118	&	0.3193	&	-3.6953	&	0.0242	&	-1.6153	&	0.7412	&	-3.1377	&	0.0986	\\
+Level	&	-2.972	&	0.167	&	-3.693	&	0.024	&	-2.901	&	0.197	&	-2.630	&	0.312	&	-2.159	&	0.511	&	-2.499	&	0.367	\\
+Slope	&	-4.851	&	0.010	&	-3.689	&	0.025	&	-2.303	&	0.450	&	-2.724	&	0.272	&	-0.949	&	0.947	&	-3.135	&	0.099	\\
+Curvature	&	-2.032	&	0.565	&	-5.521	&	0.010	&	-2.612	&	0.319	&	-3.695	&	0.024	&	-1.615	&	0.741	&	-3.138	&	0.099	\\
 
 \hline            
 \end{tabular}
