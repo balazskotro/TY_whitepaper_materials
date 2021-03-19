@@ -11,7 +11,10 @@
 \usepackage{array}
 \usepackage{float}
 \usepackage{natbib}
-
+\usepackage{placeins}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{ {./images/} }
 
 \begin{document}
 
@@ -169,92 +172,7 @@ The sovereign bond yields of the mentioned sovereigns are denominated in local c
 The Dynamic Nelson Siegel model was used to extract the latent factors, Level, Slope and Curvature, for each country separately, following Diebold et al. (2006) and Diebold et al. (2008). The level representing long-term interest rates indicates the expected inflation in the long run; the slope representing short-term interest rates reflects the reaction of monetary policy to the cyclical state of the economy; the curvature implies medium-term interest rates (Aguiar-Conraria et al., 2012). 
 
 %-----------------------------------------------------------------------------------teststat table1
-
-\begin{table}[H]
-\caption{This is the eaxemple table}% title of Table
-\fontsize{10}{10}\selectfont
-\centering % used for centering table
-\begin{tabular}{l c c c c c c}% centered columns (4 columns)
-\hline\hline   \\ [-1.5ex]               %inserts double horizontal lines
-%Case & Method\#1 & Method\#2 & Method\#3 & test \\  [0.5ex]
-Maturity & Mean & Std. Dev & Minimum & Maximum & \textrho(1)  & \textrho(10) \\ [0.5ex] % inserts table %heading
-
-\hline       \\ [-1.5ex]           % inserts single horizontal line
-\textit{Germany} 	&		&		&		&		&		&	\\
-1 year	&	0.0256	&	1.6275	&	-0.9690	&	4.6900	&	1.0000	&	0.9960	\\
-5 years	&	0.0257	&	1.6324	&	-0.9410	&	4.7670	&	0.9990	&	0.9930	\\
-10 years	&	0.0243	&	1.5451	&	-0.7220	&	4.6860	&	0.9930	&	0.9640	\\
-\medskip													
-30 years	&	0.0228	&	1.4482	&	-0.2440	&	5.1950	&	0.9990	&	0.9880	\\
-\textit{Italy}	&		&		&		&		&		&		\\
-1 year	&	0.0241	&	1.5327	&	-0.4840	&	8.3940	&	0.9980	&	0.9860	\\
-5 years	&	0.0239	&	1.5199	&	0.2370	&	7.8950	&	0.9980	&	0.9850	\\
-10 years	&	0.0218	&	1.3876	&	0.8750	&	7.4920	&	0.9980	&	0.9860	\\
-\medskip													
-30 years	&	0.0188	&	1.1971	&	2.0430	&	7.5840	&	0.9980	&	0.9850	\\
-\textit{France}	&		&		&		&		&		&		\\
-1 year	&	0.0250	&	1.5891	&	-0.8010	&	4.6570	&	1.0000	&	0.9960	\\
-5 years	&	0.0247	&	1.5730	&	-0.7730	&	4.9100	&	0.9990	&	0.9930	\\
-10 years	&	0.0231	&	1.4670	&	-0.4150	&	4.8510	&	0.9990	&	0.9910	\\
-\medskip													
-30 years	&	0.0194	&	1.2351	&	0.4190	&	5.1160	&	0.9990	&	0.9860	\\
-\textit{USA}	&		&		&		&		&		&		\\
-1 year	&	0.0254	&	1.6128	&	0.0540	&	5.3230	&	1.0000	&	0.9980	\\
-5 years	&	0.0194	&	1.2315	&	0.5590	&	5.3010	&	0.9990	&	0.9890	\\
-10 years	&	0.0163	&	1.0394	&	1.3890	&	5.3880	&	0.9980	&	0.9830	\\
-30 years	&	0.0151	&	0.9618	&	1.9920	&	5.8390	&	0.9970	&	0.9760	\\
-\textit{Canada}	&		&		&		&		&		&		\\
-1 year	&	0.0193	&	1.2301	&	0.3000	&	4.8090	&	1.0000	&	0.9950	\\
-5 years	&	0.0180	&	1.1463	&	0.4840	&	4.8010	&	0.9990	&	0.9890	\\
-10 years	&	0.0173	&	1.0976	&	0.9830	&	5.0760	&	0.9990	&	0.9870	\\
-\medskip													
-30 years	&	0.0159	&	1.0118	&	1.3060	&	5.6120	&	0.9980	&	0.9850	\\
-\textit{Mexico}	&		&		&		&		&		&		\\
-1 year	&	0.0318	&	2.0250	&	1.5120	&	10.5700	&	0.9790	&	0.9880	\\
-5 years	&	0.0238	&	1.5108	&	3.7860	&	10.8970	&	0.9860	&	0.9810	\\
-10 years	&	0.0213	&	1.3524	&	4.6190	&	12.4130	&	0.9920	&	0.9700	\\
-30 years	&	0.0195	&	1.2384	&	5.8730	&	12.7260	&	0.9930	&	0.9470	\\
-\textit{Japan}	&		&		&		&		&		&		\\
-1 year	&	0.0043	&	0.2715	&	-0.3710	&	0.8500	&	0.9990	&	0.9920	\\
-5 years	&	0.0076	&	0.4852	&	-0.3960	&	1.6310	&	0.9990	&	0.9900	\\
-10 years	&	0.0103	&	0.6563	&	-0.2850	&	2.0500	&	0.9990	&	0.9900	\\
-\medskip													
-30 years	&	0.0120	&	0.7606	&	0.0530	&	3.2950	&	0.9980	&	0.9850	\\
-\textit{China}	&		&		&		&		&		&		\\
-1 year	&	0.0115	&	0.7296	&	0.9570	&	4.3820	&	0.9920	&	0.9660	\\
-5 years	&	0.0093	&	0.5939	&	1.7820	&	4.8740	&	0.9970	&	0.9730	\\
-10 years	&	0.0090	&	0.5702	&	2.4810	&	5.5030	&	0.9930	&	0.9640	\\
-\medskip													
-30 years	&	0.0097	&	0.6149	&	2.4700	&	6.0090	&		&		\\
-\textit{Australia}	&		&		&		&		&		&		\\
-1 year	&	0.0279	&	1.7749	&	0.6750	&	7.3760	&	0.9990	&	0.9920	\\
-5 years	&	0.0264	&	1.6769	&	0.6390	&	6.9600	&	0.9990	&	0.9900	\\
-10 years	&	0.0235	&	1.4971	&	0.8850	&	6.8730	&	0.9990	&	0.9880	\\
-\medskip													
-30 years	&	0.0190	&	1.2069	&	1.5580	&	6.8880	&	0.9980	&	0.9830	\\
-\textit{Norway}	&		&		&		&		&		&		\\
-1 year	&	0.0222	&	1.4100	&	0.1990	&	6.2430	&	0.9990	&	0.9940	\\
-5 years	&	0.0200	&	1.2734	&	0.5450	&	5.3350	&	0.9990	&	0.9910	\\
-10 years	&	0.0188	&	1.1935	&	0.8880	&	5.2760	&	0.9990	&	0.9890	\\
-\medskip													
-30 years	&	0.0175	&	1.1127	&	0.8820	&	5.2730	&	0.9990	&	0.9870	\\
-\textit{United Kingdom}	&		&		&		&		&		&		\\
-1 year	&	0.0308	&	1.9558	&	0.0240	&	5.8830	&	0.9990	&	0.9950	\\
-5 years	&	0.0259	&	1.6444	&	0.1610	&	5.8210	&	0.9990	&	0.9910	\\
-10 years	&	0.0223	&	1.4181	&	0.4000	&	5.5430	&	0.9990	&	0.9890	\\
-\medskip													
-30 years	&	0.0175	&	1.1099	&	0.9390	&	5.0700	&	0.9990	&	0.9870	\\
-\textit{Switzerland}	&		&		&		&		&		&		\\
-1 year	&	0.0195	&	1.2405	&	-1.1650	&	3.3750	&	1.0000	&	0.9960	\\
-5 years	&	0.0187	&	1.1921	&	-1.1960	&	3.2000	&	0.9990	&	0.9930	\\
-10 years	&	0.0188	&	1.1976	&	-1.1380	&	3.4550	&	0.9990	&	0.9910	\\
-30 years	&	0.0173	&	1.1006	&	-0.6440	&	3.7330	&	0.9980	&	0.9860	\\
-
-\hline%inserts single line
-\end{tabular}
-\label{table:nonlin}% is used to refer this table in the text
-\end{table}
-%----------------------------------------------------------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------------------------------------------------------
 
 \bigskip
 
@@ -270,8 +188,8 @@ Undiferentiated time series were tested for cointegration with pairwise Engle Gr
 
 
 %-----------------------------------------------------------------------------------teststat table2-------------------------------------------------
-\begin{table}[ht]
-\caption{This is the eaxemple table}% title of Table
+\begin{table}[H]
+\caption{Descriptive statistics of the Diebold-Li factors}% title of Table
 \fontsize{10}{10}\selectfont
 \centering % used for centering table
 \begin{tabular}{l c c c c c c}% centered columns (4 columns)
@@ -346,6 +264,17 @@ Curvature	&	-2.940	&	1.211	&	-7.766	&	0.616	&	543.782	&	0	\\
 \label{table:nonlin}% is used to refer this table in the text
 \end{table}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{figure}[H]
+\caption{Normalized Diebold-Li factor time series}
+\includegraphics[width=11.5cm]{Normalizedlevel}
+\includegraphics[width=11.5cm]{Normalizedslope}
+\includegraphics[width=11.5cm]{Normalizedcurvature}
+\centering
+\end{figure}
+
+
+
 
 %---------------------------------------------------------------------------------ADF Table-------------------------------------------------------
 \begin{table}[h]
@@ -528,6 +457,38 @@ Curvature	&	29.167\%	&	78.472\%	&	75.000\%	\\
 \label{table:nonlin}% is used to refer this table in the text
 \end{table}
 
+\clearpage 
+
+\section{empirical results}
+
+\begin{figure}[H]
+  \begin{subfigure}[t]{.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{All_plot_onlylevel2004-07-01_2019-12-31_0.01-page-001}
+    \caption{\textbf{Levels only}}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{All_plot_onlyslope_2004-07-01_2019-12-31_0.01-page-001}
+    \caption{\textbf{Slopes only}: $A \cap B$: Element liegt in $A$ \textbf{und} in $B$.}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{All_plot_onlycurv_2004-07-01_2019-12-31_0.01-page-001}
+    \caption{\textbf{Curvatues only}: $A \setminus B$: Element liegt in $A$ \textbf{nicht} in $B$. (\textit{A ohne B})}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{All_plot_innerempty_2004-07-01_2019-12-31_0.01-page-001}
+    \caption{\textbf{Cross section only}: $A \Delta B$: Element liegt \textbf{entweder} in $A$ oder in $B$.}
+  \end{subfigure}
+\end{figure}
+
 
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -564,6 +525,7 @@ All	&	84	&	113	&	121	&	318	\\
 
 
 	&	Level	&	Slope	&	Curvature	&	All	\\
+\hline \\ [-1.5ex] 
 Level	&	21.970\%	&	26.389\%	&	36.111\%	&	84.470\%	\\
 Slope	&	20.833\%	&	31.061\%	&	31.944\%	&	83.838\%	\\
 Curvature	&	17.361\%	&	23.611\%	&	17.424\%	&	58.396\%	\\
@@ -598,7 +560,36 @@ FRA\_S	&	28	&	14	&	14	&	NOR\_C	&	16	&	USA\_C	&	17	&	USA\_C	&	10	\\
 NOR\_S	&	27	&	16	&	11	&	MEX\_L	&	14	&	AUS\_S	&	17	&	DEU\_L	&	9	\\
 FRA\_C	&	27	&	19	&	8	&	FRA\_S	&	14	&	DEU\_L	&	16	&	CAN\_L	&	7	\\
 
+\hline            
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
 
+
+
+
+\begin{figure}[H]
+\caption{Node with most edges}
+\includegraphics[width=11.5cm]{USA_B_1_plot_2004-07-01_2019-12-31_0.01-page-001}
+\centering
+\end{figure}
+
+
+
+\begin{table}[h]
+\caption{Daily TY} %title of the table
+\fontsize{10}{10}\selectfont
+\centering% centering table
+\begin{tabular}{l | cccccc}% creating eight columns
+\hline\hline \\ [-1.5ex]                         %inserting double-line
+
+
+		& 	Whole &	First	&	Crisis I.& 	Second& 	Crisis II.&	 Third \\
+\hline \\ [-1.5ex]  
+Level	&		29	&	7	&	16.2	&	13.4	&  	12.1	&	 12\\
+Slope	&		41	&	6	&	25.5	&	22.5	& 	16.2	& 	8.6\\
+Curvature	&	23	&	7.3	&	20.7	&	9.7	& 	9.2	&	 9.9\\
+Cross	&		225	&	61.8	&	142.2	&	109.1	& 	101.2	& 	76.1\\
 
 
 \hline            
@@ -606,11 +597,119 @@ FRA\_C	&	27	&	19	&	8	&	FRA\_S	&	14	&	DEU\_L	&	16	&	CAN\_L	&	7	\\
 \label{table:nonlin}% is used to refer this table in the text
 \end{table}
 
+\begin{figure}[H]
+\caption{750 window}
+\includegraphics[width=11.5cm]{Time_series_750}
+\centering
+\end{figure}
+
+\begin{figure}[H]
+\caption{750 window}
+\includegraphics[width=11.5cm]{top5nodes}
+\centering
+\end{figure}
+
+\begin{figure}[H]
+\caption{500 / 1000 window}
+\includegraphics[width=11.5cm]{Time_series_500}
+\includegraphics[width=11.5cm]{Time_series_1000}
+\centering
+\end{figure}
+
+
 
 \bibliographystyle{te}
 
+\FloatBarrier
 
-\bibliography{research}
+\bibliography{research}[H]
+
+\section{appendix}
+
+\begin{table}[H]
+\caption{This is the eaxemple table}% title of Table
+\fontsize{10}{10}\selectfont
+\centering % used for centering table
+\begin{tabular}{l c c c c c c}% centered columns (4 columns)
+\hline\hline   \\ [-1.5ex]               %inserts double horizontal lines
+%Case & Method\#1 & Method\#2 & Method\#3 & test \\  [0.5ex]
+Maturity & Mean & Std. Dev & Minimum & Maximum & \textrho(1)  & \textrho(10) \\ [0.5ex] % inserts table %heading
+
+\hline       \\ [-1.5ex]           % inserts single horizontal line
+\textit{Germany} 	&		&		&		&		&		&	\\
+1 year	&	0.0256	&	1.6275	&	-0.9690	&	4.6900	&	1.0000	&	0.9960	\\
+5 years	&	0.0257	&	1.6324	&	-0.9410	&	4.7670	&	0.9990	&	0.9930	\\
+10 years	&	0.0243	&	1.5451	&	-0.7220	&	4.6860	&	0.9930	&	0.9640	\\
+\medskip													
+30 years	&	0.0228	&	1.4482	&	-0.2440	&	5.1950	&	0.9990	&	0.9880	\\
+\textit{Italy}	&		&		&		&		&		&		\\
+1 year	&	0.0241	&	1.5327	&	-0.4840	&	8.3940	&	0.9980	&	0.9860	\\
+5 years	&	0.0239	&	1.5199	&	0.2370	&	7.8950	&	0.9980	&	0.9850	\\
+10 years	&	0.0218	&	1.3876	&	0.8750	&	7.4920	&	0.9980	&	0.9860	\\
+\medskip													
+30 years	&	0.0188	&	1.1971	&	2.0430	&	7.5840	&	0.9980	&	0.9850	\\
+\textit{France}	&		&		&		&		&		&		\\
+1 year	&	0.0250	&	1.5891	&	-0.8010	&	4.6570	&	1.0000	&	0.9960	\\
+5 years	&	0.0247	&	1.5730	&	-0.7730	&	4.9100	&	0.9990	&	0.9930	\\
+10 years	&	0.0231	&	1.4670	&	-0.4150	&	4.8510	&	0.9990	&	0.9910	\\
+\medskip													
+30 years	&	0.0194	&	1.2351	&	0.4190	&	5.1160	&	0.9990	&	0.9860	\\
+\textit{USA}	&		&		&		&		&		&		\\
+1 year	&	0.0254	&	1.6128	&	0.0540	&	5.3230	&	1.0000	&	0.9980	\\
+5 years	&	0.0194	&	1.2315	&	0.5590	&	5.3010	&	0.9990	&	0.9890	\\
+10 years	&	0.0163	&	1.0394	&	1.3890	&	5.3880	&	0.9980	&	0.9830	\\
+30 years	&	0.0151	&	0.9618	&	1.9920	&	5.8390	&	0.9970	&	0.9760	\\
+\textit{Canada}	&		&		&		&		&		&		\\
+1 year	&	0.0193	&	1.2301	&	0.3000	&	4.8090	&	1.0000	&	0.9950	\\
+5 years	&	0.0180	&	1.1463	&	0.4840	&	4.8010	&	0.9990	&	0.9890	\\
+10 years	&	0.0173	&	1.0976	&	0.9830	&	5.0760	&	0.9990	&	0.9870	\\
+\medskip													
+30 years	&	0.0159	&	1.0118	&	1.3060	&	5.6120	&	0.9980	&	0.9850	\\
+\textit{Mexico}	&		&		&		&		&		&		\\
+1 year	&	0.0318	&	2.0250	&	1.5120	&	10.5700	&	0.9790	&	0.9880	\\
+5 years	&	0.0238	&	1.5108	&	3.7860	&	10.8970	&	0.9860	&	0.9810	\\
+10 years	&	0.0213	&	1.3524	&	4.6190	&	12.4130	&	0.9920	&	0.9700	\\
+30 years	&	0.0195	&	1.2384	&	5.8730	&	12.7260	&	0.9930	&	0.9470	\\
+\textit{Japan}	&		&		&		&		&		&		\\
+1 year	&	0.0043	&	0.2715	&	-0.3710	&	0.8500	&	0.9990	&	0.9920	\\
+5 years	&	0.0076	&	0.4852	&	-0.3960	&	1.6310	&	0.9990	&	0.9900	\\
+10 years	&	0.0103	&	0.6563	&	-0.2850	&	2.0500	&	0.9990	&	0.9900	\\
+\medskip													
+30 years	&	0.0120	&	0.7606	&	0.0530	&	3.2950	&	0.9980	&	0.9850	\\
+\textit{China}	&		&		&		&		&		&		\\
+1 year	&	0.0115	&	0.7296	&	0.9570	&	4.3820	&	0.9920	&	0.9660	\\
+5 years	&	0.0093	&	0.5939	&	1.7820	&	4.8740	&	0.9970	&	0.9730	\\
+10 years	&	0.0090	&	0.5702	&	2.4810	&	5.5030	&	0.9930	&	0.9640	\\
+\medskip													
+30 years	&	0.0097	&	0.6149	&	2.4700	&	6.0090	&		&		\\
+\textit{Australia}	&		&		&		&		&		&		\\
+1 year	&	0.0279	&	1.7749	&	0.6750	&	7.3760	&	0.9990	&	0.9920	\\
+5 years	&	0.0264	&	1.6769	&	0.6390	&	6.9600	&	0.9990	&	0.9900	\\
+10 years	&	0.0235	&	1.4971	&	0.8850	&	6.8730	&	0.9990	&	0.9880	\\
+\medskip													
+30 years	&	0.0190	&	1.2069	&	1.5580	&	6.8880	&	0.9980	&	0.9830	\\
+\textit{Norway}	&		&		&		&		&		&		\\
+1 year	&	0.0222	&	1.4100	&	0.1990	&	6.2430	&	0.9990	&	0.9940	\\
+5 years	&	0.0200	&	1.2734	&	0.5450	&	5.3350	&	0.9990	&	0.9910	\\
+10 years	&	0.0188	&	1.1935	&	0.8880	&	5.2760	&	0.9990	&	0.9890	\\
+\medskip													
+30 years	&	0.0175	&	1.1127	&	0.8820	&	5.2730	&	0.9990	&	0.9870	\\
+\textit{United Kingdom}	&		&		&		&		&		&		\\
+1 year	&	0.0308	&	1.9558	&	0.0240	&	5.8830	&	0.9990	&	0.9950	\\
+5 years	&	0.0259	&	1.6444	&	0.1610	&	5.8210	&	0.9990	&	0.9910	\\
+10 years	&	0.0223	&	1.4181	&	0.4000	&	5.5430	&	0.9990	&	0.9890	\\
+\medskip													
+30 years	&	0.0175	&	1.1099	&	0.9390	&	5.0700	&	0.9990	&	0.9870	\\
+\textit{Switzerland}	&		&		&		&		&		&		\\
+1 year	&	0.0195	&	1.2405	&	-1.1650	&	3.3750	&	1.0000	&	0.9960	\\
+5 years	&	0.0187	&	1.1921	&	-1.1960	&	3.2000	&	0.9990	&	0.9930	\\
+10 years	&	0.0188	&	1.1976	&	-1.1380	&	3.4550	&	0.9990	&	0.9910	\\
+30 years	&	0.0173	&	1.1006	&	-0.6440	&	3.7330	&	0.9980	&	0.9860	\\
+
+\hline%inserts single line
+\end{tabular}
+\label{table:nonlin}% is used to refer this table in the text
+\end{table}
 
 \end{document}
 
