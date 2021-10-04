@@ -36,7 +36,7 @@
 
 
 
-\newcommand\fnote[1]{\captionsetup{font={color=green,it,small} }\caption*{#1}}
+\newcommand\fnote[1]{\captionsetup{font={color=olive,it,small} }\caption*{#1}}
 
 \pagestyle{fancy}
 % Clear the header and footer
@@ -76,9 +76,9 @@
  \vspace{4cm}
 Uj szinkod: fekete: az eddigi torzsszoveg
 
-\textcolor{green}{zold}: javitott reszek a megbeszeles alapjan,
+\textcolor{olive}{zold}: javitott reszek a megbeszeles alapjan,
 
-\textcolor{blue}{kek}: teljesen uj resz,
+\textcolor{cyan}{kek}: teljesen uj resz,
 
 \textcolor{magenta}{pink}: az abrak, tablazatok szama, ami valtozhat meg,
 
@@ -97,7 +97,9 @@ Ezt megirjuk kesobb
 
 \newpage
 
-\section{Introduction and literature review}
+\section{Introduction}
+
+\textcolor{red}{egyelore szetszedem az elso fejezetet ket reszre, hogy lassuk mi mennyi terjedelemre}
 
 
 The subprime crisis renewed the interest in analyzing the co-movement of different financial instruments and systemic risk related studies came to the forefront. Shocks can be transmitted differently across various assets, therefore it is convenient to achieve awareness both for regulators and other market participanst in order to react more efficiently. Understanding such network structures are valuable for reducing potential damage and making appropriate future decisions. Analysis of the interconnectedness of different assets plays crucial role in systematic risk assessment. Furthermore, during crises the strength of connections sharply increases and risk spills over across financial institutes and sovereign bonds, as it happened during the Financial Crisis of 2007-2009 and during the European Sovereign Crisis (\cite{diebold2012better}). \textcolor{red}{IDE KELL MAJD HIVATKOZÁST KERESNI}
@@ -119,28 +121,30 @@ We are eager to find the less and most interconnected participants of our system
 
 We find, that there is cointegration between the yield curve factors, therefore our modelling approach (Toda-Yamamoto method) is justified. There is a not negligible amount of significant cross connections among these factors. The Level drives the highest number of linkages while the Curvature is the main receiver. Slope is ranked as second in both comparisons. USD factors have the most net connections (outgoing –incoming) thus it can be considered as the driver of the system. Our dynamic approach shows that during a recession period the sum of the connections in the network increases which statement is supported with different window sized robustness checks.
 
+\newpage
 
-\bigskip{}
-Itt volna meg nehany hivatkozas otletem, itt hagyom magyarul a szoveget ahogy megirtam:
-\bigskip{}
+\section{Literature review}
+
+\textcolor{red}{ide csak siman beraktam az amhad cikk literature review-jet egy az egyben, szerintem ez eleg jo, nagyjabol ezekre az irodalmakra hivatkozhatnank mi is, nem? talan az emerging-es resz nem kell}
+
+\textcolor{cyan}{An overview of existing literature on bond market reveals that there are a few early studies on the interdependence of international bond markets (Ilmanen, 1995; Clare and Lekkos, 2000; Driessen et al., 2003; Laopodis, 2004; Dewachter et al., 2004, among others). Ilmanen (1995) examines the predictable variation in long-maturity government bond returns in six countries
+using a linear regression model with local and global instruments. Clare and Lekkos (2000) decompose the relationship between the government bond markets of Germany, the United Kingdom, and the United States. They find that global factors influence the yield curves for each of these markets and the impact of these factors increases significantly during times of financial stress.
+Driessen et al. (2003) estimate and interpret the factors that jointly determine bond returns of different maturities in the US, Germany, and Japan. They find that the positive correlation between bond markets is driven by the term structure levels, not by term structure slopes. Dewachter et al. (2004) develop a benchmark against which the effects of ECB (European Central Bank) mone-
+tary policy on the German bond market can be evaluated. They find that yield spreads increased substantially during the EMU (European Monetary Union) period. Laopodis (2004) examines the monetary policy implications of the greater integration of the capital markets using long-term interest rates. He finds greater convergence among countries in the EU (European Union)
+as Germany still retains its hegemonic status.} 
+
+\textcolor{cyan}{There are papers on sovereign yield spreads (Balli, 2009; Favero and Missale, 2012; Antonakakis and Vergos, 2013; Costantini et al., 2014). Balli (2009) examines the time-varying nature of European government bond market integration by employing multivariate GARCH models. He states that global factors are sufficient for the volatility of yield differentials among euro government bonds. Favero and Missale (2012) provide new evidence on the determinants of sovereign yield spreads and market sentiment effects in the Eurozone to evaluate the rationale for a common Eurobond jointly guaranteed by Eurozone member states. Antonakakis and Vergos (2013) examine sovereign bond yield spread spillovers between Eurozone countries using the VAR-based spillover index model of Diebold and Yilmaz (2012) and impulse response analyses. Their findings highlight the increased vulnerability of the Eurozone from the destabilizing shocks originating mostly from the Eurozone countries in the periphery and to a lesser extent from the Eurozone core. Costantini et al. (2014) find that fiscal imbalances – namely expected government debt-to-GDP differentials – are the primary long-run drivers of sovereign spreads.}
+
+\textcolor{cyan}{The literature on volatility spillovers in bond markets is scanty. Skintzi and Refenes (2006) examine dynamic linkages among the European bond markets. They find that significant volatility spillovers exist from both the aggregate Euro and US bond markets to the individual European markets. They also conclude that the introduction of the Euro has strengthened the volatility spillover effects and the cross-correlations for most European bond markets. Christiansen (2007) examines volatility spillover from the US and aggregate European bond markets into individual European bond markets using a GARCH volatility-spillover model. Results indicate that for EMU countries, the US volatility spillover effects are rather weak (in economic terms) whereas the European volatility spillover effects are substantial. The bond markets of EMU countries exhibit high integration after the introduction of the euro. The post-Euro period has further strengthened the integration process. They find interest rate convergence as one of the primary drivers of bond market integration.}
+
+\textcolor{cyan}{Gómez-Puig et al. (2014) apply the Granger-causality approach and endogenous breakpoint test to offer an operational definition of contagion to examine (EMU) countries public debt behaviour. A database of yields on 10-year government bonds issued by 11 EMU countries covering fourteen years of monetary union is used. The main results suggest that the 41 new causality patterns, which appeared for the first time in the crisis period, and the intensification of causality recorded in 70\% of the cases provide clear evidence of contagion in the aftermath of the current euro debt crisis. Sibbertsen et al. (2014) study tests for a break in the persistence of EMU government bond yield spreads examining data from France, Italy and Spain and using German interest rates as a kind of benchmark. Their results provide evidence for breaks between 2006 and 2008. The persistence of the yield spreads against German government bonds has increased significantly after this period.}
+
+\textcolor{cyan}{Besides this, few studies have also examined volatility spillovers in bond markets using Diebold and Yilmaz (2009, 2012) methodology. Claeys and Vašíček (2014) measure direction and extent of sovereign bond markets linkages among sixteen EU (European Union) using a factor-augmented version of the VAR model in Diebold and Yilmaz (2009). Fernández-Rodríguez et al. (2015) examine volatility spillovers in EMU sovereign bond markets. They find that slightly more than half of the total variance of the forecast errors is explained by shocks across countries rather than by idiosyncratic shocks. They also report that during the pre-crisis period, most of the triggers in the volatility spillovers were central EMU countries – peripheral countries imported credibility from them – while during the crisis, peripheral countries became the dominant transmitters. Fernández-Rodríguez et al. (2016) examine the time-varying behavior of net pair-wise directional connectedness at different stages of the recent sovereign debt crisis.}
 
 
-\textcolor{cyan}{\cite{yang2016interdependence} az európai kötvények függetlenségét vizsgálják meg és azt találják, hogy a hozamgörbe hosszú vége sokkal integráltabb a rövid lejáratoknál. A hosszú lejárat a befektetői preferenciák szerint, míg a rövid a gazdasági ciklusoktól függ. Összevetve a lejárati szerkezetet, az összekapcsoltság diverz mintát mutat.
-\cite{engsted2007comovement} a német és amerikai kötvénypiac együttmozgását tanulmányozzák és jelentős okságot tapasztalnak az amerikai kötvények felől a németek irányába és csak gyenge kapcsolatot fordítva.
-\cite{davies2007international} az angol, német, japán és svájci államkötvényindexek integrációját vizsgálja és mind a négy ország piacain azonos trendeket figyel meg.
-\cite{vo2009international} ázsiai kötvényeket vet össze fejlett országok (USA és Ausztrália) állampaírjaival. Arra az eredményre jut, hogy az ázsiai oszágok és az Egyesült Államok közötti, ilyen értelemben vett integrációja alacsony szintű.
-Bizonyos tanulmányok a kötvények közötti volatilitás átterjedést vizsgálják. 
-\cite{ahmad2018financial} kutatásának középpontjába a BRICS államok, valamint három globális kötvénypiaci index (USA, Európai Monetáris Unió, Japán) került és hozam, illetve volatilitásterjedési vizsgálatot végeznek rajtuk. Azt tapasztalják, hogy a redszerbe elsődlegesen Oroszroszág, majd Dél-Afrika által jutnak be a sokkok. Kína és India kevésbé kitett, így ezek az országok fedezési célokat szolgálhatnak.
-\cite{fernandez2016using} az EMU tagállamait tanulmányozva arra jutnak, hogy nyugodt időszakban a volatilitás a mag államokból a periféria felé terjed, de az európai szuverén válság idején ez az irány megfordul.
-Más cikkek a kötvények hozamfeláraiból indultak ki. 
-\cite{antonakakis2013sovereign} az eurozóna tagállamainainak kötvényfelárait vizsgálják és azt tapasztalják, hogy a variancia 61\%-át a más országokból való átgyűrűzés magyarázza. 
-\cite{claeys2014measuring} is Európai Uniós országok kötvényfelárait vizsgálják (16, nem csak eurozóna országok) és konklúziójuk szerint az összekötöttség nagy mértékben nőtt a 2008-as pénzügyi válság óta.
-Néhány szerző az adott ország hozamgörbéjére ható globális faktorokat elemzi. \cite{driessen2003common} főkomponenselemzéssel találják meg a kötvényhozamokat mozgató faktorokat és szignifikáns pozitív kapcsolatot állapítanak meg a hozamgörbe szintjei között a vizsgált országok esetén.
-\cite{abbritti2013global} könyvükben affin lejárati szerkezetű hozamgörbékre ható globális faktorokat elemeznek és arra a következtetésre jutnak, hogy ezek a görbe hosszú végét befolyásolják.
-\cite{diebold2008global} létrehozzák dinamikus hozamgörbe modelljüket és kimutatják a Szint, Meredekség és Görbület faktorok szignifikanciáját.
-Ezt \cite{bae2011global} kiegészítik regionáls attribútumokkal is ázsiai országok alapján, de a globális együtthatókat erősebbnek találják a lokálisoknál.
-\cite{sowmya2016linkages} négy fejlett nyugati, és hét ázsiai ország hozamgörbéinek teljes lejárati stuktúráját modellezik. A Diebold-Li faktorok közötti varaiancia terjedését vizsgálva azt kapják, hogy a Szint faktorok között a legnagyobb az átterjedés, ezt követi a Meredekség, majd a Görbület.}
-
+\textcolor{cyan}{Under emerging market setting, a limited number of studies have responded to the need of bond market making in emerging economies. Kim et al. (2006) examine the time-varying bond market integration in case of European emerging countries and report
+the evidence of weak bond market integration. Examining the bond markets of Asian countries with USA and Australia, Vo (2009) reports moderate level of interdependence because of the different institutional structure. Cifarelli and Paladino (2006) examines the volatility comovement between spreads for ten selected emerging economies. The study reports that volatility comovements between spreads are higher for within countries than across spatially distributed countries. Bunda et al. (2009) assess comovements in emerging markets bond returns and disentangles roles of external and domestic factors during episodes of heightened market volatility. Piljak (2013) investigates the time-varying dependence of bond markets of emerging including frontier economies with the 
+USA and also examines the major factors that determine the comovement. The study finds that the impact of domestic factors are higher than the factors on the bond market integration of these countries. Piljak and Swinkels (2017) examine the dynamic interdependence of sovereign debt markets of frontier economies with US bond markets. The study reports that there is a limited interdependence between frontier and US bond markets because of the limited diversification opportunities.}
 
 
 
@@ -170,16 +174,11 @@ The Nelson-Siegel model is a simple way of yield curve fitting, while the approa
 % miközben az eljárás képes megragadni a piacon megfigyelhető stilizált tényeket, például a görbe megszokott alakjait (emelkedő, inverz, púpos). 
 The $\beta_{i}$ parameters have an economic meaning, $\beta_{1}$ represents the long end of the yield curve,  $\beta_{2}$ is the short term component, while $\beta_{3}$ mimics the middle interval. According to the interpretation of \cite{litterman1991common} these factors can be considered as the Level, Slope and Curveture of the yield curve, accordingly. These components can be utilized for interest-rate asset immunization as well. Besides simple estimation, the model of \cite{diebold2006forecasting} has two further advantages compared to non-parametric approaches. First is, that the extrapolation is more accuratge thanks to the model being exponential. The other is the upper mentioned Litterman interpretation with which understanding and comapring results being much easier.
  
-With the extension of \cite{diebold2006forecasting} the Nelson-Siegel model becomes dynamic (the curve fits on multiple observations), which is achieved  the below three steps:
-
+With the extension of \cite{diebold2006forecasting} the Nelson-Siegel model becomes dynamic (the curve fits on multiple observations). The parametrization of the yield cureve can be done at every point in time
+to form a set of time-dependent parameters. This is achieved in a two steps procedure. 
 \begin{itemize}
-%\item A Nelson-Siegel modelt a legkisebb négyzetek elve alapján illesztik (Ordinary Least Squares - OLS)  minden megfigyelési időpontra, megbecsülve ezáltal a $\beta_{1}$ ,  $\beta_{2}$ ,  $\beta_{3}$  paramétereket. (A $\lambda$ paraméter rögzítésre kerül, így az eljárás lineáris.)
-\item The Nelson-Siegel model is fitted based on the Ordinary Least Squares principle, estimating the $\beta_{1}$ ,  $\beta_{2}$ ,  $\beta_{3}$  parameters. (The $\lambda$ parameter is being fixed, therefore the approach is linear.)
-%\item A rendszer dinamikáját egy vektor-autoregresszív (VAR) modell jellemzi, az első szakaszban becsült  $\beta_{1}$,  $\beta_{2}$ és $\beta_{3}$ paraméterek alapján. 
-\item The dyniamics of the system are described by a Vector AutoRegressive (VAR) model, based on the $\beta_{1}$,  $\beta_{2}$ és $\beta_{3}$ parameters estimated in the first phase.
-%\item A $\beta$ paraméterek előrejelezhetőek a VAR modellel és (1) egyenletbe való visszahelyettesítésük-kel a jövőbeli hozamgörbe megbecsülhető.
-\item The $\beta$ parameters can be predicted with the VAR modellel and replacing them to  equation (1) the future yield curve is predictable.
-
+\item \textcolor{olive}{First, the $\lambda$  paramater gets fixed such that the second factor attains its maximum at $\tau$ = 30 months and the $\beta$ parameters get derived.}
+\item \textcolor{olive}{Next, an AR(1)-process is fitted to these time dependent parameters to model the dynamics over time, which results the Dynamic Nelson Siegel model.}
 \end{itemize}
 
 Additional stylized facts achieved by the Diebold-Li model is the high persistance of time dynamics (same yield curve tenors are highly dependent on past values) and the fact that the long end of the curve is less volatile than the short end.
@@ -187,7 +186,7 @@ Additional stylized facts achieved by the Diebold-Li model is the high persistan
 
 \subsubsection{The Toda-Yamamoto model}
 
-\textcolor{green}{The Today-Yamamoto framework is a popular causality testing method. It is widely used in time series analysis. \cite{zhang2009energy} check the relationship between economic growh and carbon emissions or energy consumption and find that neither of the proposed variables leads to economic growth. \cite{hansen2006causal} look for dependencies between foreign direct investments and increase of the GDP, in a sample of 31 developing countries. They find evidence that FDI causes growth.  While checking Healthcare related expenditures and GDP growth, \cite{amiri2012granger} conclude that bidirectional causality is predominant. \cite{basher2012oil} say that there is an evidence that increases in emerging market stock prices increase oil prices. The common factor in the upper mentioned researches, that the authors has to deal with integrated or cointegrated time series sets.}
+\textcolor{olive}{The Today-Yamamoto framework is a popular causality testing method. It is widely used in time series analysis. \cite{zhang2009energy} check the relationship between economic growh and carbon emissions or energy consumption and find that neither of the proposed variables leads to economic growth. \cite{hansen2006causal} look for dependencies between foreign direct investments and increase of the GDP, in a sample of 31 developing countries. They find evidence that FDI causes growth.  While checking Healthcare related expenditures and GDP growth, \cite{amiri2012granger} conclude that bidirectional causality is predominant. \cite{basher2012oil} say that there is an evidence that increases in emerging market stock prices increase oil prices. The common factor in the upper mentioned researches, that the authors has to deal with integrated or cointegrated time series sets.}
 
 The \cite{toda1995statistical} method uses the followig premise: the classic Granger causality test (\cite{granger1969investigating}) obtained by a VAR model, may cause a non-stationarity problem, since it does not account the potential cointegration between the used time series.
 %A VAR modellel kapott klasszikus Granger oksági teszt (\cite{granger1969investigating}) használatakor nemstacionaritási probléma léphet fel, mivel az nem számol az idősorok között fellépő potenciális kointegrációval. 
@@ -217,7 +216,7 @@ From the VAR$(p+d^{max})$  model, the Toda–Yamamoto approach is realized in th
 \item With the application of the upper mentioned parameters, rejecting the Granger test between $X$ and $Y$ means a causality relation in Toda-Yamamoto terms. Bivariate rejection suggests a mutual causal relationship between the variables.
 \end{itemize}
 
-\textcolor{green}{The Toda-Yamamoto procedure  has  three main advantages.  First and foremost, as mentioned above, it can be utilized on integrated an cointegrated time series without any preliminary testing. Second, according to \cite{rambaldi1996testing} the computaion of MWald test is simple, since it can be calulated with a set of Seemingly  Unrelated  Regressions. Third, \cite{zapata1997monte} shows that in an intentionally overfitted environment, the MWALD test performs as well as more complicated procedures (if the sample size is at least 50).}
+\textcolor{olive}{The Toda-Yamamoto procedure  has  three main advantages.  First and foremost, as mentioned above, it can be utilized on integrated an cointegrated time series without any preliminary testing. Second, according to \cite{rambaldi1996testing} the computaion of MWald test is simple, since it can be calulated with a set of Seemingly  Unrelated  Regressions. Third, \cite{zapata1997monte} shows that in an intentionally overfitted environment, the MWALD test performs as well as more complicated procedures (if the sample size is at least 50).}
 
 
 \textcolor{red}{Multilayer causality based network - ez most nem merult fel, kicsit meg is feledkeztem arrol, hogy ezt is akarjuk}
@@ -236,7 +235,7 @@ The yield curve time series of the countries were downloaded from Bloomberg. Twe
 \textcolor{red}{Note 2: DY ezeket a tenorokat hasznalta: 3, 6, 9, 12, 15, 18, 21, 24, 30, 36, 48, 60, 72, 84, 96, 108 and 120}
 
 
-The inputs of the country yield curves are always zero-coupn bonds, denominated in the local currency of the sovereing. Debt in local currency represents the different interest rate cicle of the economy and represents the domestic monetary policy better. Furthermore the debt denominated in local currency has better liquidity and credit rating then holding the same in USD  (\cite{sowmya2016linkages}). Table \textcolor{red}{2} in the appendix provides descriptive statistics for the 1, 5, 10 and 30 years tenors of each country yield curves. The Level (L), Slope (S) and Curvature (C) factors are calculated by \cite{diebold2006forecasting}, \cite{diebold2008global}, assuming a dynamic Nelso-Siegel model. Figure \textcolor{magenta}{1} shows the normalized time series of the factors.  \textcolor{green}{On the below figure period denoted with red shading represents the subprime crysis, while blue shading stands for the European sovereign debt crysis. These periods were determined based on \cite{bostanci2020connected}.}
+The inputs of the country yield curves are always zero-coupn bonds, denominated in the local currency of the sovereing. Debt in local currency represents the different interest rate cicle of the economy and represents the domestic monetary policy better. Furthermore the debt denominated in local currency has better liquidity and credit rating then holding the same in USD  (\cite{sowmya2016linkages}). Table \textcolor{red}{2} in the appendix provides descriptive statistics for the 1, 5, 10 and 30 years tenors of each country yield curves. The Level (L), Slope (S) and Curvature (C) factors are calculated by \cite{diebold2006forecasting}, \cite{diebold2008global}, assuming a dynamic Nelso-Siegel model. Figure \textcolor{magenta}{1} shows the normalized time series of the factors.  \textcolor{olive}{On the below figure period denoted with red shading represents the subprime crysis, while blue shading stands for the European sovereign debt crysis. These periods were determined based on \cite{bostanci2020connected}.}
 
 %---------------------------------------------------------------Fig2------------------------------------------------------------------------------------------------------------
 
@@ -271,6 +270,9 @@ End of the European sovereign debt crysis: Draghi makes the famous Whatever It T
 \end{figure}
 
 %---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\textcolor{red}{itt ket dolog lenne, az egyik az, hogy akkor ezek az abrak legyenek matlabban meg. ha meglenne neked a nyers adatsor ehhez az tok jo lenne, nekem azon a gepemen van ami Martinnal van es egyelore nem tudom elerni. Ha nincs, nem baj, varjunk vele egy hetet.
+Es itt mondtad, hogy van egy eros faktorkomponens, arra egyelore nem nagyon tudok reagalni, azzal kapcsolatban mi lenne a tervunk?}
 
 The descriptive statistics of the factors are represented in Table \textcolor{magenta}{1}. The average Level factor is positive in all cases, highest for Mexico and lowest for Japan. Average Slope refers to the tipical increasing shape of the yield curves (negative values). Slope is negative for all countries meaning that longer maturities have higher values than shorter ones. In absolute terms the USA has the highest Slope, while Australia has the lowest. Potential positive values of Slope represent restricittive monetary politics. Curvature is always negative too, highest for France and lowest for China (in absoluter terms).
 
@@ -388,7 +390,7 @@ Curvature	&	29.167\%	&	78.472\%	&	75.000\%	\\
 
     \begin{tablenotes}
       \small
-      \item \textcolor{green}{\textit{Instead of the 36 x 36 matrix which we obtain from the pairwise Engle-Granger test, we highlight only the factor-wise aggregated values in this table.}}
+      \item \textcolor{olive}{\textit{Instead of the 36 x 36 matrix which we obtain from the pairwise Engle-Granger test, we highlight only the factor-wise aggregated values in this table.}}
     \end{tablenotes}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -496,13 +498,16 @@ Sum.	&	60.16\%	&	81.06\%	&	85.48\%	&	25.24\%	\\
 \end{table}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 
-A legtöbb éllel rendelkező faktorokat az 5. táblázat szemlélteti. A lista első negyede az összesített kapcsolatokra utal, majd a következő oszlopokban külön fel vannak tüntetve a legtöbb bejövő és kimenő nyíllal rendelkező faktorok. Összességében az Egyesült Államok Szintje rendelkezik a legtöbb éllel, 30-cal. Ugyanakkor ezek közül 23 kimenő él és csak 7 bejövő. Ezt a kapcsolati rendszert mutatja a 4 ábra. Általánosságban elmondható, hogy az USA mindhárom faktora listavezető mind a kimenő, mind a nettó (kimenő - bejövő) élek számának tekintetében is. Ez úgy értelmezhető, hogy az Egyesült Államok mindhárom faktora okozója a többi ország faktorainak, míg ők maguk kevés hatást tapasztalnak a többi résztvevőtől. A kifelé mutató nyilak listájában Ausztrália Görbülete előzi Németország Szint faktorát, míg utóbbi faktor foglalja el a nettó élek listáján a negyedik helyet, Kanada Szintje előtt. A legtöbb oksági hatást kapó faktor a francia Görbület, amit az olasz Meredekség, majd ugyanezen ország Görbülete követ.
+%A legtöbb éllel rendelkező faktorokat az 5. táblázat szemlélteti. A lista első negyede az összesített kapcsolatokra utal, majd a következő oszlopokban külön fel vannak tüntetve a legtöbb bejövő és kimenő nyíllal rendelkező faktorok. Összességében az Egyesült Államok Szintje rendelkezik a legtöbb éllel, 30-cal. Ugyanakkor ezek közül 23 kimenő él és csak 7 bejövő. Ezt a kapcsolati rendszert mutatja a 4 ábra. Általánosságban elmondható, hogy az USA mindhárom faktora listavezető mind a kimenő, mind a nettó (kimenő - bejövő) élek számának tekintetében is. Ez úgy értelmezhető, hogy az Egyesült Államok mindhárom faktora okozója a többi ország faktorainak, míg ők maguk kevés hatást tapasztalnak a többi résztvevőtől. A kifelé mutató nyilak listájában Ausztrália Görbülete előzi Németország Szint faktorát, míg utóbbi faktor foglalja el a nettó élek listáján a negyedik helyet, Kanada Szintje előtt. A legtöbb oksági hatást kapó faktor a francia Görbület, amit az olasz Meredekség, majd ugyanezen ország Görbülete követ.
+
+\textcolor{cyan}{Table \textcolor{magenta}{5} contains the fators with the most edges. The first quarter of the list stands for the summarized relationships, then the following columns represent the nodes having the most incoming and outgoing edges separatedly. In total, Level factor of the United States has the most edges, which is 30. from this 30, there are 23 outgoing and 7 incoming arrows. This relationship system is shown on Figure \textcolor{magenta}{5}. Generally speaking, one can say, that all three factors of the USA lead the list regarding both outgoing, both net (outgoing-incoming) edges. This can be interpreted as the USA causes the values of the factors of the remaining participants of the system and in the meanwhile it is not affected by the others. In the list of outgoing edges, Curvature of Asutralia is ahd of the Level of Germany which node is on the fourth place of the net chart, before the Level of Canada. The most causality effect is arriving towards the French Curvature followed by the Italian Slope, then the Curvature of the same country.}
+
 
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHECK THE TABLE HERE, SOMETHING IS BAD
 
 %--------------------------------------------------------------------------Table5--------------------------------------------------------------------------
 \begin{table}[h]
-\caption{A legtöbb éllel rendelkező faktorok} %title of the table
+\caption{Factors having most edges} %title of the table
 \fontsize{10}{10}\selectfont
 \setlength{\tabcolsep}{10pt}
 \centering% centering table
@@ -511,9 +516,9 @@ A legtöbb éllel rendelkező faktorokat az 5. táblázat szemlélteti. A lista 
 \hline\hline \\ [-1.5ex]                         %inserting double-line
 
 
-\multicolumn{4}{c}{Top 5 Össz.}					&	\multicolumn{2}{c}{Top 5 Bejövő}			&	\multicolumn{2}{c}{Top 5 Kimenő}			&	\multicolumn{2}{c}{Top 5 Nettó}	\\	
+\multicolumn{4}{c}{Top 5 Sum}					&	\multicolumn{2}{c}{Top 5 Incoming}			&	\multicolumn{2}{c}{Top 5 Outgoing}			&	\multicolumn{2}{c}{Top 5 Net}	\\	
 \hline \\ [-1.5ex]    
-Csomópont	&	Össz. 	&	Be	&	Ki	&	Csomópont	&	Be	&	Csomópont	&	Ki	&	Csomópont	&	Nettó	\\
+Node	&	Total 	&	In	&	Out	&	Node	&	In	&	Node	&	Out	&	Node	&	Net	\\
 \hline \\ [-1.5ex]    
 USA\_L&	30	&	7	&	23	&	FRA\_C	&	19	&	USA\_L	&	23	&	USA\_L	&	16	\\
 AUS\_S	&	28	&	11	&	17	&	ITA\_S	&	16	&	USA\_S	&	18	&	USA\_S	&	12	\\
@@ -529,9 +534,12 @@ FRA\_C	&	27	&	19	&	8	&	FRA\_S	&	14	&	DEU\_L	&	16	&	CAN\_L	&	7	\\
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 
+\textcolor{red}{itt felirtam magamnak, hogy lehet hogy ezzel a tablazattal nem stimmel vlaami, majd vegignezem a kodot ujra.}
+
+
 %--------------------------------------------------------------------------Fig4--------------------------------------------------------------------------
 \begin{figure}[H]
-\caption{A legtöbb éllel rendelkező csomópont}
+\caption{Node having most edges}
 \includegraphics[width=11.5cm]{USA_B_1_plot_2004-07-01_2019-12-31_0.01-page-001}
 \centering
 \end{figure}
