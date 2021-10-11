@@ -36,7 +36,7 @@
 
 
 
-\newcommand\fnote[1]{\captionsetup{font={color=olive,it,small} }\caption*{#1}}
+\newcommand\fnote[1]{\captionsetup{font={it,small} }\caption*{#1}}
 
 \pagestyle{fancy}
 % Clear the header and footer
@@ -66,25 +66,18 @@
 
 
  \begin{center}
-\Huge\textbf{Interconnectedness - Working title}\\
+\Huge\textbf{Interconnectedness Among Sovereign Yield Curve Factors - Working title}\\
  
 \vspace{3cm}
 
 
  \Large\textit{Milan Badics - Balazs Kotro}
  
- \vspace{4cm}
-Uj szinkod: fekete: az eddigi torzsszoveg
+ \vspace{3cm}
+ 
+\Large\textit{MKE Konferencia - draft version}
 
-\textcolor{olive}{zold}: javitott reszek a megbeszeles alapjan,
 
-\textcolor{cyan}{kek}: teljesen uj resz,
-
-\textcolor{magenta}{pink}: az abrak, tablazatok szama, ami valtozhat meg,
-
-\textcolor{red}{pirossal} a te megjegyzeseid, illetve a neked szant uzeneteim vannak jelolve.
-
-Az elbeszeles ideje meg nem tisztazott, hogy mult vagy jelen ido lenne a jobb
 \vspace{4cm}
 \end{center}
 
@@ -98,9 +91,6 @@ Ezt megirjuk kesobb
 \newpage
 
 \section{Introduction}
-
-\textcolor{red}{egyelore szetszedem az elso fejezetet ket reszre, hogy lassuk mi mennyi terjedelemre}
-
 
 The subprime crisis renewed the interest in analyzing the co-movement of different financial instruments and systemic risk related studies came to the forefront. Shocks can be transmitted differently across various assets, therefore it is convenient to achieve awareness both for regulators and other market participanst in order to react more efficiently. Understanding such network structures are valuable for reducing potential damage and making appropriate future decisions. Analysis of the interconnectedness of different assets plays crucial role in systematic risk assessment. Furthermore, during crises the strength of connections sharply increases and risk spills over across financial institutes and sovereign bonds, as it happened during the Financial Crisis of 2007-2009 and during the European Sovereign Crisis (\cite{diebold2012better}). \textcolor{red}{IDE KELL MAJD HIVATKOZÁST KERESNI}
 
@@ -125,7 +115,6 @@ We find, that there is cointegration between the yield curve factors, therefore 
 
 \section{Literature review}
 
-\textcolor{red}{ide csak siman beraktam az amhad cikk literature review-jet egy az egyben, szerintem ez eleg jo, nagyjabol ezekre az irodalmakra hivatkozhatnank mi is, nem? talan az emerging-es resz nem kell}
 
 \textcolor{cyan}{An overview of existing literature on bond market reveals that there are a few early studies on the interdependence of international bond markets (Ilmanen, 1995; Clare and Lekkos, 2000; Driessen et al., 2003; Laopodis, 2004; Dewachter et al., 2004, among others). Ilmanen (1995) examines the predictable variation in long-maturity government bond returns in six countries
 using a linear regression model with local and global instruments. Clare and Lekkos (2000) decompose the relationship between the government bond markets of Germany, the United Kingdom, and the United States. They find that global factors influence the yield curves for each of these markets and the impact of these factors increases significantly during times of financial stress.
@@ -177,8 +166,8 @@ The $\beta_{i}$ parameters have an economic meaning, $\beta_{1}$ represents the 
 With the extension of \cite{diebold2006forecasting} the Nelson-Siegel model becomes dynamic (the curve fits on multiple observations). The parametrization of the yield cureve can be done at every point in time
 to form a set of time-dependent parameters. This is achieved in a two steps procedure. 
 \begin{itemize}
-\item \textcolor{olive}{First, the $\lambda$  paramater gets fixed such that the second factor attains its maximum at $\tau$ = 30 months and the $\beta$ parameters get derived.}
-\item \textcolor{olive}{Next, an AR(1)-process is fitted to these time dependent parameters to model the dynamics over time, which results the Dynamic Nelson Siegel model.}
+\item First, the $\lambda$  paramater gets fixed such that the second factor attains its maximum at $\tau$ = 30 months and the $\beta$ parameters get derived.
+\item Next, an AR(1)-process is fitted to these time dependent parameters to model the dynamics over time, which results the Dynamic Nelson Siegel model.
 \end{itemize}
 
 Additional stylized facts achieved by the Diebold-Li model is the high persistance of time dynamics (same yield curve tenors are highly dependent on past values) and the fact that the long end of the curve is less volatile than the short end.
@@ -186,7 +175,7 @@ Additional stylized facts achieved by the Diebold-Li model is the high persistan
 
 \subsubsection{The Toda-Yamamoto model}
 
-\textcolor{olive}{The Today-Yamamoto framework is a popular causality testing method. It is widely used in time series analysis. \cite{zhang2009energy} check the relationship between economic growh and carbon emissions or energy consumption and find that neither of the proposed variables leads to economic growth. \cite{hansen2006causal} look for dependencies between foreign direct investments and increase of the GDP, in a sample of 31 developing countries. They find evidence that FDI causes growth.  While checking Healthcare related expenditures and GDP growth, \cite{amiri2012granger} conclude that bidirectional causality is predominant. \cite{basher2012oil} say that there is an evidence that increases in emerging market stock prices increase oil prices. The common factor in the upper mentioned researches, that the authors has to deal with integrated or cointegrated time series sets.}
+{The Today-Yamamoto framework is a popular causality testing method. It is widely used in time series analysis. \cite{zhang2009energy} check the relationship between economic growh and carbon emissions or energy consumption and find that neither of the proposed variables leads to economic growth. \cite{hansen2006causal} look for dependencies between foreign direct investments and increase of the GDP, in a sample of 31 developing countries. They find evidence that FDI causes growth.  While checking Healthcare related expenditures and GDP growth, \cite{amiri2012granger} conclude that bidirectional causality is predominant. \cite{basher2012oil} say that there is an evidence that increases in emerging market stock prices increase oil prices. The common factor in the upper mentioned researches, that the authors has to deal with integrated or cointegrated time series sets.
 
 The \cite{toda1995statistical} method uses the followig premise: the classic Granger causality test (\cite{granger1969investigating}) obtained by a VAR model, may cause a non-stationarity problem, since it does not account the potential cointegration between the used time series.
 %A VAR modellel kapott klasszikus Granger oksági teszt (\cite{granger1969investigating}) használatakor nemstacionaritási probléma léphet fel, mivel az nem számol az idősorok között fellépő potenciális kointegrációval. 
@@ -216,10 +205,9 @@ From the VAR$(p+d^{max})$  model, the Toda–Yamamoto approach is realized in th
 \item With the application of the upper mentioned parameters, rejecting the Granger test between $X$ and $Y$ means a causality relation in Toda-Yamamoto terms. Bivariate rejection suggests a mutual causal relationship between the variables.
 \end{itemize}
 
-\textcolor{olive}{The Toda-Yamamoto procedure  has  three main advantages.  First and foremost, as mentioned above, it can be utilized on integrated an cointegrated time series without any preliminary testing. Second, according to \cite{rambaldi1996testing} the computaion of MWald test is simple, since it can be calulated with a set of Seemingly  Unrelated  Regressions. Third, \cite{zapata1997monte} shows that in an intentionally overfitted environment, the MWALD test performs as well as more complicated procedures (if the sample size is at least 50).}
+The Toda-Yamamoto procedure  has  three main advantages.  First and foremost, as mentioned above, it can be utilized on integrated an cointegrated time series without any preliminary testing. Second, according to \cite{rambaldi1996testing} the computaion of MWald test is simple, since it can be calulated with a set of Seemingly  Unrelated  Regressions. Third, \cite{zapata1997monte} shows that in an intentionally overfitted environment, the MWALD test performs as well as more complicated procedures (if the sample size is at least 50).
 
 
-\textcolor{red}{Multilayer causality based network - ez most nem merult fel, kicsit meg is feledkeztem arrol, hogy ezt is akarjuk}
 
 
 \newpage 
@@ -228,40 +216,39 @@ From the VAR$(p+d^{max})$  model, the Toda–Yamamoto approach is realized in th
 
 \section{Data}
 
-The yield curve time series of the countries were downloaded from Bloomberg. Twelve developed countries were involved into the examination universe, which cover more geographic regions, since they were selected from different continents. Evenually four regions were defined with three-three suvereigns in each. These are the \textit{Pacific} (Australia, China, Japan), \textit{American} (Canada, Mexico, United States), \textit{Euro-zone} (France, Germany, Italy) and the \textit{Non Euro-zone} (United Kingdom, Norway, Switzerland). Ongoingly they are referred as the three letter abbreviation introduced by Worldbank. Respectively:  AUS, CHN, JPN, CAN, MEX, USA, FRA, DEU, ITA, GBR, NOR, CHE. During the empirical analysis, the yield curve is examined by its whole tenor structure with fifteen different maturities: 3, 6, 12, 24, 36, 48, 60, 72, 84, 96, 120, 180, 240 and 360. These apply for all countries. The firs observation day is 7/1/2004 while the last one is 12/31/2019. The uniusual period is determined by the Chinese yieldcurve since in this case data is available form July 2014 only. Furthermore the effects of recent COVID19 pandemic is exluded from this study, therefore we chose the last day of 2019 for ending the time horyzone. Altogether 4045 we work with 4045 daily observations. Missing data points are forward filled ffrom the previous day.
+The yield curve time series of the countries were downloaded from Bloomberg. Twelve developed countries were involved into the examination universe, which cover more geographic regions, since they were selected from different continents. Evenually four regions were defined with three-three suvereigns in each. These are the \textit{Pacific} (Australia, China, Japan), \textit{American} (Canada, Mexico, United States), \textit{Euro-zone} (France, Germany, Italy) and the \textit{Non Euro-zone} (United Kingdom, Norway, Switzerland). Ongoingly they are referred as the three letter abbreviation introduced by Worldbank. Respectively:  AUS, CHN, JPN, CAN, MEX, USA, FRA, DEU, ITA, GBR, NOR, CHE. During the empirical analysis, the yield curve is examined by its whole tenor structure with fifteen different maturities: 3, 6, 12, 24, 36, 48, 60, 72, 84, 96, 120, 180, 240 and 360. These apply for all countries. The first observation day is 7/1/2004 while the last one is 12/31/2019. The uniusual period is determined by the Chinese yieldcurve since in this case data is available form July 2014 only. Furthermore the effects of recent COVID19 pandemic is exluded from this study, therefore we chose the last day of 2019 for ending the time horyzone. Altogether we work with 4045 daily observations. Missing data points are forward filled from the previous day.
 
 \textcolor{red}{Note1: Kik hasznaltak ezeket az orszagokat? nem nagyon talaltam erre forrast}
 
-\textcolor{red}{Note 2: DY ezeket a tenorokat hasznalta: 3, 6, 9, 12, 15, 18, 21, 24, 30, 36, 48, 60, 72, 84, 96, 108 and 120}
-
-
-The inputs of the country yield curves are always zero-coupn bonds, denominated in the local currency of the sovereing. Debt in local currency represents the different interest rate cicle of the economy and represents the domestic monetary policy better. Furthermore the debt denominated in local currency has better liquidity and credit rating then holding the same in USD  (\cite{sowmya2016linkages}). Table \textcolor{red}{2} in the appendix provides descriptive statistics for the 1, 5, 10 and 30 years tenors of each country yield curves. The Level (L), Slope (S) and Curvature (C) factors are calculated by \cite{diebold2006forecasting}, \cite{diebold2008global}, assuming a dynamic Nelso-Siegel model. Figure \textcolor{magenta}{1} shows the normalized time series of the factors.  \textcolor{olive}{On the below figure period denoted with red shading represents the subprime crysis, while blue shading stands for the European sovereign debt crysis. These periods were determined based on \cite{bostanci2020connected}.}
+The inputs of the country yield curves are always zero-coupn bonds, denominated in the local currency of the sovereing. Debt in local currency represents the different interest rate cicle of the economy and represents the domestic monetary policy better. Furthermore the debt denominated in local currency has better liquidity and credit rating then holding the same in USD  (\cite{sowmya2016linkages}). Table \textcolor{magenta}{2} in the appendix provides descriptive statistics for the 1, 5, 10 and 30 years tenors of each country yield curves. The Level (L), Slope (S) and Curvature (C) factors are calculated by \cite{diebold2006forecasting}, \cite{diebold2008global}, assuming a dynamic Nelso-Siegel model. Figure \textcolor{magenta}{1} shows the normalized time series of the factors.  On the below figure period denoted with red shading represents the subprime crysis, while blue shading stands for the European sovereign debt crysis. These periods were determined based on \cite{bostanci2020connected} and \cite{hue2019measuring}.
 
 %---------------------------------------------------------------Fig2------------------------------------------------------------------------------------------------------------
 
 \begin{figure}[H]
 \centering
-\caption{Normlized factor time series}
+
 \begin{subfigure}{.5\linewidth}
 \centering
-\includegraphics[width=\linewidth]{Normalizedlevel}
-\caption{\textbf{Levle}}
+\includegraphics[width=\linewidth]{levels}
+\caption{\textbf{Level}}
 
 \end{subfigure}%
 \begin{subfigure}{.5\linewidth}
 \centering
-\includegraphics[width=\linewidth]{Normalizedslope}
+\includegraphics[width=\linewidth]{slopes}
 \caption{\textbf{Slope}}
 \end{subfigure}\\[1ex]
 \begin{subfigure}{.5\linewidth}
 \centering
-\includegraphics[width=\linewidth]{Normalizedcurvature}
+\includegraphics[width=\linewidth]{curvatures}
+
 \caption{\textbf{Curvature}}
 \end{subfigure}
 
+\caption{Normlized factor time series}
 \fnote{Start of the subprime crysis: J.P. Morgan takes over Bear Stearns, the troubled investment bank (03/16/08);
 
-End of subprime crysis: 12/31/2009  ez teljesen onkenyes;
+End of subprime crysis: 6/30/2009;
 
 Start of the European sovereign debt crysis: Portuguese government calls on EU for bailout (04/06/11);
 
@@ -271,15 +258,14 @@ End of the European sovereign debt crysis: Draghi makes the famous Whatever It T
 
 %---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-\textcolor{red}{itt ket dolog lenne, az egyik az, hogy akkor ezek az abrak legyenek matlabban meg. ha meglenne neked a nyers adatsor ehhez az tok jo lenne, nekem azon a gepemen van ami Martinnal van es egyelore nem tudom elerni. Ha nincs, nem baj, varjunk vele egy hetet.
-Es itt mondtad, hogy van egy eros faktorkomponens, arra egyelore nem nagyon tudok reagalni, azzal kapcsolatban mi lenne a tervunk?}
+\textcolor{red}{Es itt mondtad, hogy van egy eros faktorkomponens, arra egyelore nem nagyon tudok reagalni, azzal kapcsolatban mi lenne a tervunk?}
 
 The descriptive statistics of the factors are represented in Table \textcolor{magenta}{1}. The average Level factor is positive in all cases, highest for Mexico and lowest for Japan. Average Slope refers to the tipical increasing shape of the yield curves (negative values). Slope is negative for all countries meaning that longer maturities have higher values than shorter ones. In absolute terms the USA has the highest Slope, while Australia has the lowest. Potential positive values of Slope represent restricittive monetary politics. Curvature is always negative too, highest for France and lowest for China (in absoluter terms).
 
 
 %-----------------------------------------------------------------------------------Table1-----------------------------------------------------------------------------
 \begin{table}[H]
-\caption{Descriptive statistics of yield curve factors}% title of Table
+
 \fontsize{10}{10}\selectfont
 \centering % used for centering table
 \begin{tabular}{l c c c c c c}% centered columns (4 columns)
@@ -290,61 +276,61 @@ Factor & Average & Std. dev. & Minimum & Maximum & Jarque-Bera t-stat.  & P valu
 \hline       \\ [-1.5ex]           % inserts single horizontal line
 
 
-\textcolor{green}{\textit{\textbf{Germany}}}			&		&		&		&		&		&		\\
+\textit{\textbf{Germany}}		&		&		&		&		&		&		\\
 Level						&	 2.92 &	1.54	&	-0.34	&	5.41	&	347	&	0.00	\\
 Slope				&	-1.86	&	1.06	&	-4.54	&	0.14	&	210	&	0.00	\\
 													
 Curvature					&	-3.72	&	1.72	&	-7.15	&	0.73	&	234	&	0.00	\\
-\textcolor{green}{\textit{\textbf{Italy}}}		&		&		&		&		&		&		\\
+\textit{\textbf{Italy}}		&		&		&		&		&		&		\\
 Level						&	4.78	&	1.29	&	1.98	&	8.00	&	106	&	0.00	\\
 Slope				&	-3.43	&	1.57	&	-7.01	&	-0.44	&	183	&	0.00	\\
 													
 Curvature					&	-4.25	&	2.24	&	-8.60	&	4.75	&	194	&	0.00	\\
-\textcolor{green}{\textit{\textbf{France}}}			&		&		&		&		&		&		\\
+\textit{\textbf{France}}			&		&		&		&		&		&		\\
 Level						&	3.39	&	1.37	&	0.26	&	5.48	&	417	&	0.00	\\
 Slope				&	-2.24	&	1.19	&	-4.73	&	0.02	&	162	&	0.00	\\
 													
 Curvature					&	-4.29	&	1.96	&	-7.82	&	1.07	&	210	&	0.00	\\
-\textcolor{green}{\textit{\textbf{USA}}}			&		&		&		&		&		&		\\
+\textit{\textbf{USA}}			&		&		&		&		&		&		\\
 Level						&	3.96	&	0.99	&	1.88	&	5.87	&	323	&	0.00	\\
 Slope				&	-2.41	&	1.55	&	-5.52	&	0.71	&	139	&	0.00	\\
 													
 Curvature					&	-3.63	&	2.50	&	-9.58	&	0.72	&	228	&	0.00	\\
-\textcolor{green}{\textit{\textbf{Canada}}}				&		&		&		&		&		&		\\
+\textit{\textbf{Canada}}				&		&		&		&		&		&		\\
 Level						&	3.43	&	1.10	&	1.23	&	5.90	&	274	&	0.00	\\
 Slope				&	-1.73	&	1.23	&	-4.84	&	0.58	&	251	&	0.00	\\
 													
 Curvature					&	-2.49	&	1.63	&	-6.26	&	1.31	&	206	&	0.00	\\
-\textcolor{green}{\textit{\textbf{Mexico}}}				&		&		&		&		&		&		\\
+\textit{\textbf{Mexico}}			&		&		&		&		&		&		\\
 Level						&	8.58	&	1.28	&	5.56	&	13.41&	834	&	0.00	\\
 Slope				&	-2.36	&	1.83	&	-6.14	&	0.67	&	340	&	0.00	\\												
 Curvature					&	-4.16	&	2.85&	-14.84&	0.49	&	321	&	0.00	\\
-\textcolor{green}{\textit{\textbf{Japan}}}				&		&		&		&		&		&		\\
+\textit{\textbf{Japan}}				&		&		&		&		&		&		\\
 Level						&	1.70	&	0.83	&	-0.02	&	3.26	&	406	&	0.00	\\
 Slope				&	-1.28	&	0.63	&	-2.83	&	-0.02	&	155	&	0.00	\\
 													
 Curvature					&	-3.69	&	1.28	&	-6.03	&	-0.87	&	278	&	0.00	\\
-\textcolor{green}{\textit{\textbf{China}}}				&		&		&		&		&		&		\\
+\textit{\textbf{China}}				&		&		&		&		&		&		\\
 Level						&	4.02	&	0.62	&	2.70	&	6.52 &	2047	&	0.00	\\
 Slope				&	-1.53	&	0.81	&	-3.87	&	1.65 &	275	&	0.00	\\
 													
 Curvature					&	-1.24	&	0.92	&	-5.20	&	1.25&	1128	&	0.00	\\
-\textcolor{green}{\textit{\textbf{Australia}}}			&		&		&		&		&		&		\\
+\textit{\textbf{Australia}}		&		&		&		&		&		&		\\
 Level						&	4.63	&	1.23	&	1.40	&	6.77	&	262	&	0.00	\\
 Slope				&	-0.89	&	0.98	&	-3.87	&	1.00	&	105	&	0.00	\\
 													
 Curvature					&	-2.08	&	1.84	&	-6.59	&	2.25	&	296	&	0.00	\\
-\textcolor{green}{\textit{\textbf{Norway}}}				&		&		&		&		&		&		\\
+\textit{\textbf{Norway}}				&		&		&		&		&		&		\\
 Level						&	3.22	&	1.12	&	1.02	&	5.23	&	333	&	0.00	\\
 Slope				&	-1.22	&	1.07	&	-4.04	&	2.26	&	167	&	0.00	\\
 													
 Curvature					&	-1.59	&	1.22	&	-4.68	&	1.73	&	337	&	0.00	\\
-\textcolor{green}{\textit{\textbf{United Kingdom}}}		&		&		&		&		&		&		\\
+\textit{\textbf{United Kingdom}}		&		&		&		&		&		&		\\
 Level						&	3.66	&	1.23	&	0.87	&	5.80	&	329	&	0.00	\\
 Slope				&	-1.76	&	1.75	&	-5.42	&	1.35	&	211	&	0.00	\\
 													
 Curvature					&	-3.33	&	3.02	&	-8.77	&	3.65	&	159	&	0.00	\\
-\textcolor{green}{\textit{\textbf{Switzerland}}}				&		&		&		&		&		&		\\
+\textit{\textbf{Switzerland}}				&		&		&		&		&		&		\\
 Level						&	1.77	&	1.18	&	-0.76	&	3.86	&	289	&	0.00	\\
 Slope				&	-1.18	&	0.70	&	-3.32	&	0.91	&	219	&	0.00	\\
 Curvature					&	-2.94	&	1.21	&	-7.77	&	0.62	&	543	&	0.00	\\
@@ -352,6 +338,8 @@ Curvature					&	-2.94	&	1.21	&	-7.77	&	0.62	&	543	&	0.00	\\
 \hline%inserts single line
 \end{tabular}
 \label{table:nonlin}% is used to refer this table in the text
+
+\caption{Descriptive statistics of yield curve factors}% title of Table
 \end{table}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -374,9 +362,9 @@ Before differentiating, a pairwise  (\cite{engle1987co} test is applied for dete
 
 	&	Level 	&	Slope	&	Curvature	\\
 \hline \\ [-1.5ex]  
-Level	&	75.694\%	&	44.444\%	&	64.583\%	\\
-Slope	&	29.167\%	&	74.306\%	&	71.528\%	\\
-Curvature	&	29.167\%	&	78.472\%	&	75.000\%	\\
+Level	&	75.7\%	&	44.4\%	&	64.6\%	\\
+Slope	&	29.2\%	&	74.3\%	&	71.5\%	\\
+Curvature	&	29.2\%	&	78.5\%	&	75.0\%	\\
 
 \hline            
 
@@ -388,38 +376,38 @@ Curvature	&	29.167\%	&	78.472\%	&	75.000\%	\\
 \label{table:nonlin}% is used to refer this table in the text
 \end{table}
 
-    \begin{tablenotes}
-      \small
-      \item \textcolor{olive}{\textit{Instead of the 36 x 36 matrix which we obtain from the pairwise Engle-Granger test, we highlight only the factor-wise aggregated values in this table.}}
-    \end{tablenotes}
+  %  \begin{tablenotes}
+     % \small
+     % \textit{Instead of the 36 x 36 matrix which we obtain from the pairwise Engle-Granger test, we highlight only the factor-wise aggregated values in this table.}
+    %\end{tablenotes}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 
 \newpage
 
-\subsection{Results}
+\section{Results}
 
-\subsubsection{Static interconnectedness}
+\subsection{Static interconnectedness}
 
 %A Toda-Yamamoto módszerrel kapott összekötöttségi hálózatokat statikus és dinamikus szemlélet szerint is elemzem. A statikus modellbe a rendelkezésre álló összes adatpont bekerült. Az idősorokat maximum egyszer differenciázom, a modellhez szükséges optimális késleltetési szintet pedig az AIC alapján határozom meg. Az 1\%-os szignifikancia szint mellett a modellből nyert oksági kapcsolatokat a 3. ábra mutatja. A Szint faktorokat pirossal, a Meredekséget kékkel, a Görbületet zölddel jelölöm. A két faktor közötti nyíl az okság irányát mutatja, a színe pedig arra a faktorra utal, amelyikből kiindult.
 
-\textcolor{cyan}{We perform statical and dynamical analysis of the factor interconnectedness resulted by the Toda-Yamamoto model. All of the available data points were used in the static method. Time series are differenciated once at maximum, and the optimal lag number is determined based on AIC. Figure textcolor{magenta}{2} shows the causailiy relationships on 1 \% sigificance level. Level factors are red, while Slope is blue and the Curvature is shwed in green. The arrow between two factors shows the direction of tha causality and its color represent the factor which it is started from.}
+We perform statical and dynamical analysis of the factor interconnectedness resulted by the Toda-Yamamoto model. All of the available data points were used in the static method. Time series are differenciated once at maximum, and the optimal lag number is determined based on AIC. Figure textcolor{magenta}{2} shows the causailiy relationships on 1 \% sigificance level. Level factors are red, while Slope is blue and the Curvature is shwed in green. The arrow between two factors shows the direction of tha causality and its color represent the factor which it is started from.
 
 %A három alrendszerből a legsűrűbbnek a Meredekségek hálózata bizonyul. A potenciális kapcsolatok 31.06\%-a szignifikáns. Ezt követi a Szint (21.97\%) majd a Görbület (17.42\%). A keresztkapcsolatokat tekintve, az összes Szint faktorból kimenő lehetséges élek 31.25\%-a szignifikáns, a Meredekségeknél ez az arányszám 26.39\%, míg a Görbület ilyen értelemben is a legkevésbé összekötött faktor, a kimenő élek 20.49\%-a szignifikáns.
 
-\textcolor{cyan}{From the three subsystems, the Slope network is the most dense. 31.06\% of the potential relationships are significant. It is followed by Level (21.97\%), then Curvature (17.42\%). Considering cross connections, 31.25\% of the possible edges going out from Level factors are significant. This ratio is 26.39\% for Slope, and Curvature is the least interconnected factor in these terms, only 24.49\% of the outgoing edges are significant.}
+From the three subsystems, the Slope network is the most dense. 31.06\% of the potential relationships are significant. It is followed by Level (21.97\%), then Curvature (17.42\%). Considering cross connections, 31.25\% of the possible edges going out from Level factors are significant. This ratio is 26.39\% for Slope, and Curvature is the least interconnected factor in these terms, only 24.49\% of the outgoing edges are significant.
 
 
 %--------------------------------------------------------------------------------Fig3 -------------------------------------------------------
 \begin{figure}[H]
-\caption{interconnectedness in subnetworks}
-  \begin{subfigure}[t]{.35\textwidth}
+
+  \begin{subfigure}[t]{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{All_plot_onlylevel2004-07-01_2019-12-31_0.01-page-001}
     \caption{\textbf{Level subnetwork}}
   \end{subfigure}
   \hfill
-  \begin{subfigure}[t]{.35\textwidth}
+  \begin{subfigure}[t]{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{All_plot_onlyslope_2004-07-01_2019-12-31_0.01-page-001}
     \caption{\textbf{Slope subnetwork}}
@@ -427,17 +415,18 @@ Curvature	&	29.167\%	&	78.472\%	&	75.000\%	\\
 
   \medskip
 
-  \begin{subfigure}[t]{.35\textwidth}
+  \begin{subfigure}[t]{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{All_plot_onlycurv_2004-07-01_2019-12-31_0.01-page-001}
     \caption{\textbf{Curvature subnetwork}}
   \end{subfigure}
   \hfill
-  \begin{subfigure}[t]{.35\textwidth}
+  \begin{subfigure}[t]{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{All_plot_innerempty_2004-07-01_2019-12-31_0.01-page-001}
     \caption{\textbf{Cross connections}}
   \end{subfigure}
+  \caption{Interconnectedness in subnetworks}
 \end{figure}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -446,13 +435,13 @@ Curvature	&	29.167\%	&	78.472\%	&	75.000\%	\\
 
 %A 4. táblázat (a) része tartalmazza a rendszerben definiált élek számát. A táblázat sorai a kapcsolatok eredetét mutatják, az oszlopok pedig a nyilak végpontjaira utalnak. 1\%-os szignifikancia szinten, a gráfnak 318 éle van, ami az összes lehetséges élnek a 25.24\%-a. A 4. táblázat (b) része tartalmazza az alrendszerek között definiált élek arányát, az abban a viszonyrendszerben értelmezett maximális kapcsolatok számához képest. Ezek alapján elmondható, hogy a Szint és Görbület közötti okság a legsűrűbb, 36.1\%, ezt követi a Meredekség és Görbület közötti összekö-töttség, 31.94\%-kal, a harmadik helyen pedig a Szint alhálózat alatt értelmezett nyilak aránya áll, 31.06\%-kal. A kapcsolati mátrix nem szimmetrikus a főátlóra, a Görbület faktorokból, összesítve kevesebb nyíl irányul mind az alhálózaton belülre, mind kívülre.
 
-\textcolor{cyan}{The (a) part of Table \textcolor{magenta}{4} contains the number of edges defined in the system. Rows of the table represent the origin of the relationship, while columns stand for the endpoints of the arrows. On 1\% significance level, the graph has 318 edges which is 25.24\% of the total potential edges . (b) part of Table \textcolor{magenta}{4} shows the ratio of the edges defined within subnetworks compared to the total potential edges definable in that given relationship system. Based on this, density of causality is the highes for Level - Curvature par, 36.1\% followed by Slope - Curvature which is 31.94\%. The third place goes for the Level subnetork with 31.06\%. The relationship matrix is simmetrical for the diagonal, in total, from the Curvature factor there is less arrows going out both internally and towards other subnetworks.}
+The (a) part of Table \textcolor{magenta}{4} contains the number of edges defined in the system. Rows of the table represent the origin of the relationship, while columns stand for the endpoints of the arrows. On 1\% significance level, the graph has 318 edges which is 25.24\% of the total potential edges . (b) part of Table \textcolor{magenta}{4} shows the ratio of the edges defined within subnetworks compared to the total potential edges definable in that given relationship system. Based on this, density of causality is the highes for Level - Curvature par, 36.1\% followed by Slope - Curvature which is 31.94\%. The third place goes for the Level subnetork with 31.06\%. The relationship matrix is simmetrical for the diagonal, in total, from the Curvature factor there is less arrows going out both internally and towards other subnetworks.
 
 %--------------------------------------------------------------------------Table4--------------------------------------------------------------------------
 
 
 \begin{table}[H]
-\caption{The number and distibution of the sygnificant edges defined in the system} %title of the table
+
 \fontsize{9}{9}\selectfont
 \centering
 \begin{subtable}[t]{0.35\textwidth}
@@ -484,30 +473,27 @@ Sum	&	84	&	113	&	121	&	318	\\
 
 	&	Level	&	Slope	&	Curvature	&	Sum.	\\
 \hline \\ [-1.5ex] 
-Level	&	21.97\%	&	26.39\%	&	36.10\%	&	84.47\%	\\
-Slope	&	20.83\%	&	31.06\%	&	31.94\%	&	83.84\%	\\
-Curvature	&17.36\%	&	23.61\%	&	17.42\%	&	58.40\%	\\
+Level	&	22.0\%	&	26.4\%	&	36.1\%	&	84.5\%	\\
+Slope	&	20.8\%	&	31.1\%	&	31.9\%	&	83.8\%	\\
+Curvature	&17.4\%	&	23.6\%	&	17.4\%	&	58.4\%	\\
 \hline \\ [-1.5ex]  
-Sum.	&	60.16\%	&	81.06\%	&	85.48\%	&	25.24\%	\\
+Sum.	&	60.2\%	&	81.1\%	&	85.5\%	&	25.2\%	\\
 \hline  
 \end{tabular}
 \caption{\textbf{Distribution of edges, grouped by factors}}
 %\label{table:nonlin}% is used to refer this table in the text
 \end{subtable}
-
+\caption{The number and distibution of the sygnificant edges defined in the system} %title of the table
 \end{table}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 
-%A legtöbb éllel rendelkező faktorokat az 5. táblázat szemlélteti. A lista első negyede az összesített kapcsolatokra utal, majd a következő oszlopokban külön fel vannak tüntetve a legtöbb bejövő és kimenő nyíllal rendelkező faktorok. Összességében az Egyesült Államok Szintje rendelkezik a legtöbb éllel, 30-cal. Ugyanakkor ezek közül 23 kimenő él és csak 7 bejövő. Ezt a kapcsolati rendszert mutatja a 4 ábra. Általánosságban elmondható, hogy az USA mindhárom faktora listavezető mind a kimenő, mind a nettó (kimenő - bejövő) élek számának tekintetében is. Ez úgy értelmezhető, hogy az Egyesült Államok mindhárom faktora okozója a többi ország faktorainak, míg ők maguk kevés hatást tapasztalnak a többi résztvevőtől. A kifelé mutató nyilak listájában Ausztrália Görbülete előzi Németország Szint faktorát, míg utóbbi faktor foglalja el a nettó élek listáján a negyedik helyet, Kanada Szintje előtt. A legtöbb oksági hatást kapó faktor a francia Görbület, amit az olasz Meredekség, majd ugyanezen ország Görbülete követ.
+\subsubsection{Top nodes}
 
-\textcolor{cyan}{Table \textcolor{magenta}{5} contains the fators with the most edges. The first quarter of the list stands for the summarized relationships, then the following columns represent the nodes having the most incoming and outgoing edges separatedly. In total, Level factor of the United States has the most edges, which is 30. from this 30, there are 23 outgoing and 7 incoming arrows. This relationship system is shown on Figure \textcolor{magenta}{5}. Generally speaking, one can say, that all three factors of the USA lead the list regarding both outgoing, both net (outgoing-incoming) edges. This can be interpreted as the USA causes the values of the factors of the remaining participants of the system and in the meanwhile it is not affected by the others. In the list of outgoing edges, Curvature of Asutralia is ahd of the Level of Germany which node is on the fourth place of the net chart, before the Level of Canada. The most causality effect is arriving towards the French Curvature followed by the Italian Slope, then the Curvature of the same country.}
-
-
-%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHECK THE TABLE HERE, SOMETHING IS BAD
+Table \textcolor{magenta}{5} contains the fators with the most edges. The first quarter of the list stands for the summarized relationships, then the following columns represent the nodes having the most incoming and outgoing edges separatedly. In total, Level factor of the United States has the most edges, which is 30. from this 30, there are 23 outgoing and 7 incoming arrows. This relationship system is shown on Figure \textcolor{magenta}{5}. Generally speaking, one can say, that all three factors of the USA lead the list regarding both outgoing, both net (outgoing-incoming) edges. This can be interpreted as the USA causes the values of the factors of the remaining participants of the system and in the meanwhile it is not affected by the others. In the list of outgoing edges, Curvature of Asutralia is ahd of the Level of Germany which node is on the fourth place of the net chart, before the Level of Canada. The most causality effect is arriving towards the French Curvature followed by the Italian Slope, then the Curvature of the same country.
 
 %--------------------------------------------------------------------------Table5--------------------------------------------------------------------------
 \begin{table}[h]
-\caption{Factors having most edges} %title of the table
+
 \fontsize{10}{10}\selectfont
 \setlength{\tabcolsep}{10pt}
 \centering% centering table
@@ -529,19 +515,39 @@ FRA\_C	&	27	&	19	&	8	&	FRA\_S	&	14	&	DEU\_L	&	16	&	CAN\_L	&	7	\\
 \hline            
 \end{tabular}
 \label{table:nonlin}% is used to refer this table in the text
+
+\caption{Factors having most edges} %title of the table
+
 \end{table}
 
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 
-\textcolor{red}{itt felirtam magamnak, hogy lehet hogy ezzel a tablazattal nem stimmel vlaami, majd vegignezem a kodot ujra.}
 
 
 %--------------------------------------------------------------------------Fig4--------------------------------------------------------------------------
 \begin{figure}[H]
-\caption{Node having most edges}
-\includegraphics[width=11.5cm]{USA_B_1_plot_2004-07-01_2019-12-31_0.01-page-001}
+
+\includegraphics[width=13.5cm]{USA_B_1_plot_2004-07-01_2019-12-31_0.01-page-001}
 \centering
+\caption{Node having most summarized edges}
+
+\end{figure}
+
+\begin{figure}[H]
+
+\includegraphics[width=13.5cm]{top_out}
+\centering
+\caption{Node having most outgoing edges}
+
+\end{figure}
+
+\begin{figure}[H]
+
+\includegraphics[width=13.5cm]{top_in}
+\centering
+\caption{Node having most incoming edges}
+
 \end{figure}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -560,7 +566,7 @@ FRA\_C	&	27	&	19	&	8	&	FRA\_S	&	14	&	DEU\_L	&	16	&	CAN\_L	&	7	\\
 
 
 \begin{table}[H]
-\caption{Descriptive statistics of country yield curve nodes}% title of Table
+
 \fontsize{10}{10}\selectfont
 \centering % used for centering table
 \begin{tabular}{l c c c c c c}% centered columns (4 columns)
@@ -644,11 +650,12 @@ Node & Average & St. dev & Minimum & Maximum & \textrho(1)  & \textrho(10) \\ [0
 \hline%inserts single line
 \end{tabular}
 \label{table:nonlin}% is used to refer this table in the text
+\caption{Descriptive statistics of country yield curve nodes}% title of Table
 \end{table}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 
 \begin{table}
-\caption{Results of unit-root tests}
+
 \fontsize{10}{10}\selectfont
 \centering% centering table
 \captionsetup{justification=centering}
@@ -812,6 +819,7 @@ Curvature	&	0.06	&	0.10	&	0.05	&	0.10	&	0.04	&	0.10	&	0.03	&	0.10	&	0.16	&	0.10	
 \hspace{\fill}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 %\label{tab:table1}
+\caption{Results of unit-root tests}
 \end{table}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
