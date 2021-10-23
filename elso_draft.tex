@@ -71,7 +71,7 @@
 \vspace{3cm}
 
 
- \Large\textit{Milan Badics - Balazs Kotro}
+ \Large\textit{Milan Csaba Badics - Balazs Kotro}
  
  \vspace{3cm}
  
@@ -82,7 +82,7 @@
 \end{center}
 
 \begin{abstract}
-Yet to come...
+We are investigating the interconnectedness of the yield curve factors of 12 developed economies worldwide. From the yield curve time series we extract the Level, Slope and Curvature factors by the Diebold-Li decomposition technique for every day. On the recieved 36 observation series a pairwise Toda-Yamamoto causality test is performed in order to identify connections. Our static results show that there is a significant amount cross connections among the different factos. On average Level is the most connected factor, followed by Slope and Curvature. We also identify the USA to be the main driver of the observation universe. Our dynamic results show that during turbulent economic periods the density of the connections gets higher. On the chosen time horizone, USD Level, USD Curvature and Norwegian Slope are the most interconnected factors.
 \end{abstract}
 
 
@@ -90,63 +90,57 @@ Yet to come...
 
 \newpage
 
-\section{Introduction}
+\section{Introduction and literature review}
 
-The subprime crisis renewed the interest in analyzing the co-movement of different financial instruments and systemic risk related studies came to the forefront. Shocks can be transmitted differently across various assets, therefore it is convenient to achieve awareness both for regulators and other market participanst in order to react more efficiently. Understanding such network structures are valuable for reducing potential damage and making appropriate future decisions. Analysis of the interconnectedness of different assets plays crucial role in systematic risk assessment. Furthermore, during crises the strength of connections sharply increases and risk spills over across financial institutes and sovereign bonds, as it happened during the Financial Crisis of 2007-2009 and during the European Sovereign Crisis (\cite{diebold2012better}). \textcolor{red}{IDE KELL MAJD HIVATKOZÁST KERESNI}
+The subprime crisis renewed the interest in analyzing the co-movements of different financial instruments and systemic risk related studies came to the forefront. Shocks can be transmitted differently across various assets, therefore it is convenient to achieve awareness both for regulators and other market participanst in order to react more efficiently. Understanding such network structures are valuable for reducing potential damage and making appropriate future decisions. Analysis of the interconnectedness of different assets plays crucial role in systematic risk assessment. Furthermore, during crisises the strength of connections sharply increases and risk spills over across financial institutes and sovereign bonds, as it happened during the Financial Crisis of 2008-2009 and during the European Sovereign Crisis (\cite{diebold2012better}). %\textcolor{red}{IDE KELL MAJD HIVATKOZÁST KERESNI}
 
-Because the financial system is a huge complex interactive system, in recent years scholars began using complex network theory to investigate the interconnectedness of financial institutions. \cite{acemoglu2015systemic} pointed out that in smaller financial systems, shocks make the densely interconnected network steadier, however after a certain size the opposite applies. According to \cite{elliott2014financial}, diversification initially allows failure cascades to travel within the system, but as it increases further, organizations are better insured against one another's failures. Depending more on other participants makes personal sensitivity lower on own investments. \textcolor{red}{SZERINTEM ITT VAN MÉG 1-2 FONTOS CIKK RÁNÉZEK MAJD}
+Since the financial system is a huge, complicated, interactive system, in recent years scholars began using complex network theories to investigate the interconnectedness of financial institutions. \cite{acemoglu2015systemic} points out that in smaller financial systems, shocks make the densely interconnected network steadier, however after a certain size the opposite applies. According to \cite{elliott2014financial}, diversification initially allows failure cascades to travel within the system, but as it increases further, organizations are better insured against anothers' failures. Depending more on other participants makes personal sensitivity lower on own investments. %\textcolor{red}{SZERINTEM ITT VAN MÉG 1-2 FONTOS CIKK RÁNÉZEK MAJD}
 
-In the empirical literature there are several methods to measure connectedness. In the last decade the widespread methods are Granger causality network (\cite{billio2012econometric}), CoVaR (\cite{adrian2008federal}), MES (\cite{acharya2012capital}) and numerous studies appeared based on the Vector AutoRegressive Diebold-Yilmaz (DY) framework (\cite{diebold2009measuring}, \cite{diebold2012better}). Compared to CoVaR and MES methods the advantage of Granger causality based frameworks is the ability to examine the network both micro (pairwise connectedness) and macro (total connectedness) level. As a result, these methods have been often used to analyse the network on different asset classes like equities, bonds, exchange rates or commodity prices. Most analysis focus on the whole system or some subpart.The dynamics of individual assets' role in the system have not been explored yet. \textcolor{red}{IDE KELL hivatkozások összeszednem}
+In the empirical literature there are several methods to measure connectedness. In the last decade the widespread methods are Granger causality network (\cite{billio2012econometric}), CoVaR (\cite{adrian2008federal}), MES (\cite{acharya2012capital}) and numerous studies appeared based on the Vector AutoRegressive Diebold-Yilmaz (DY) framework (\cite{diebold2009measuring}, \cite{diebold2012better}). Compared to CoVaR and MES methods, the advantage of Granger causality based frameworks is the ability to examine the network both on micro (pairwise connectedness) and macro (total connectedness) level. As result, these methods have been often used to analyse the network on different asset classes like equities, bonds, exchange rates or commodity prices. Most analysis focuses on the whole system or some subpart. The dynamics of individual assets' role in the system have not been explored yet. %\textcolor{red}{IDE KELL hivatkozások összeszednem}
 
-\smallskip{}
-\textcolor{red}{KELLENE EGY KOINTEGRÁCIÓT Nem szokta vizsgálni bekezdés}
-\smallskip{}
+%\smallskip{}
+%\textcolor{red}{KELLENE EGY KOINTEGRÁCIÓT Nem szokta vizsgálni bekezdés}
+%\smallskip{}
 
-Central banks traditionally rely on the co-movement of different maturities of yield curves to make effective monetary policy decisions. According to the expectations hypothesis, long-term interest rates are influenced by current and expected future short-term interest rates. However, increasing globalization of financial systems and structural changes across economies have disrupted the integration of the maturity spectrum of different yield curves. Short-end movements are more exposed to monetary policy decisions, so their interconnectedness is more consistent with the alternation of business cycles. The long end of the yield curve is mainly affected by global investment, with current preferences and risk appetite being the primary drivers. The integration of distant maturity points is driven by global capital flows and the volume of investments. \textcolor{red}{IDE MINDENKÉPP KELLENEK HIVATKOZÁSOK}
+Central banks traditionally rely on the co-movements of different maturities of yield curves to make effective monetary policy decisions. According to the expectations hypothesis, long-term interest rates are influenced by current and expected future short-term interest rates. However, increasing globalization of financial systems and structural changes across economies have disrupted the integration of the maturity spectrum of different yield curves. Short-end movements are more exposed to monetary policy decisions, so their interconnectedness is more consistent with the alternation of business cycles. The long end of the yield curve is mainly affected by global investment, with current preferences and risk appetite being the primary drivers. The integration of distant maturity points is driven by global capital flows and the volume of investments. %\textcolor{red}{IDE MINDENKÉPP KELLENEK HIVATKOZÁSOK}
 
-Usually, a tenor structure consists of multiple maturities which means one-one individual time series. It is challenging to deal with such a magnitude of data, therefore in raw format the yield curve itself is not used. \cite{fernandez2016using} examined only the 10Y yield curve point on EMU countries while \cite{claeys2014measuring} chose the spread between EU government bond yieldsand German sovereign bondyield, also considering 10 years of maturity. \cite{ahmad2018financial} picked bond indices to analyze and \cite{sowmya2016linkages}
-decomposed the yield curve to Level, Slope and Curvature factors with the Diebold-Li dimension reduction technique. Multilayer networks, in which the links in each layer represent different types of connections between the same nodes, can combine different measures of interconnectedness to effectively describe complex financial systems. Such networks are already widely used in dependency networks of financial markets. However, few literatures consider multilayer networks to study the interconnectedness of the financial system from the perspective of information propagation. \textcolor{red}{EZT KI KELL BŐVÍTENEM}
+Usually, a tenor structure consists of multiple maturities which means one-one individual time series. It is challenging to deal with such a magnitude of data, therefore in raw format the yield curve itself is not used. \cite{fernandez2016using} examines only the 10Y yield curve point on EMU countries while \cite{claeys2014measuring} choose the spread between EU government bond yields and German sovereign bond yield, also considering 10 years of maturity. \cite{ahmad2018financial} pick bond indices to analyze and \cite{sowmya2016linkages}
+decompose the yield curve to Level, Slope and Curvature factors with the Diebold-Li dimension reduction technique. 
 
-We are eager to find the less and most interconnected participants of our system via understanding the connections not only between particular factors, but involving all three of them. We are also curious for the behavior of such linkages during time, thus besides static analysis we performed rolling window-based tests as well. Our contribution to the existing literature is fourfold. We analyze the interconnectedness of different yield curve factors with the consideration of cointegration among the time series. This is the first study which examines the crosswise causality connections among Level, Slope and Curvature. We chose developed economies from all over the World in order to achieve a wide geographical coverage. \textcolor{red}{ITT LEHET KELLENE MÉG MAGYARÁZAT}
+We are eager to find the less and most interconnected participants of our system, via understanding the connections not only between particular factors, but involving all three of them. We are also curious for the behavior of such linkages during time, thus besides static analysis we performed rolling window-based tests as well. Our contribution to the existing literature is fourfold. We analyze the interconnectedness of different yield curve factors with the consideration of cointegration among the time series. This is the first study which examines the crosswise causality connections among Level, Slope and Curvature. We choose developed economies from all over the World in order to achieve a wide geographical coverage. %\textcolor{red}{ITT LEHET KELLENE MÉG MAGYARÁZAT}
 
-We find, that there is cointegration between the yield curve factors, therefore our modelling approach (Toda-Yamamoto method) is justified. There is a not negligible amount of significant cross connections among these factors. The Level drives the highest number of linkages while the Curvature is the main receiver. Slope is ranked as second in both comparisons. USD factors have the most net connections (outgoing –incoming) thus it can be considered as the driver of the system. Our dynamic approach shows that during a recession period the sum of the connections in the network increases which statement is supported with different window sized robustness checks.
-
-\newpage
-
-\section{Literature review}
-
-\textcolor{red}{Ez az Amhad cikk literature review-ja, szerintem eleg jo, csak ezt azt meg hozza lehetne tenni}
-
-There are a few pioneer studies about the intedependence of the sovereign bond market.
-\cite{ilmanen1995time} examines the predictable variation in long-maturity government bond returns in six countries using a linear regression model with local and global instruments. 
-\cite{clare2000analysis} decompose the relationship between the government bond markets of Germany, the United Kingdom, and the United States. They find that global factors influence the yield curves for each of these markets and the impact of these factors increases significantly during times of financial stress.
-\cite{driessen2003common} estimate and interpret the factors that jointly determine bond returns of different maturities in the US, Germany, and Japan. They find that the positive correlation between bond markets is driven by the term structure levels, not by term structure slopes. 
-\cite{dewachter2004effect} develop a benchmark against which the effects of ECB (European Central Bank) monetary policy on the German bond market can be evaluated. They find that yield spreads increased substantially during the EMU (European Monetary Union) period. 
-\cite{laopodis2004monetary} examines the monetary policy implications of the greater integration of the capital markets using long-term interest rates. He finds greater convergence among countries in the EU (European Union)
-as Germany still retains its hegemonic status.
-
-There are papers on sovereign yield spreads. 
-\cite{balli2009spillover} examines the time-varying nature of European government bond market integration by employing multivariate GARCH models. He states that global factors are sufficient for the volatility of yield differentials among euro government bonds. 
-\cite{favero2012sovereign} provide new evidence on the determinants of sovereign yield spreads and market sentiment effects in the Eurozone to evaluate the rationale for a common Eurobond jointly guaranteed by Eurozone member states. 
-\cite{antonakakis2013sovereign}examine sovereign bond yield spread spillovers between Eurozone countries using the VAR-based spillover index model of \cite{diebold2012better} and impulse response analyses. Their findings highlight the increased vulnerability of the Eurozone from the destabilizing shocks 
-originating mostly from the Eurozone countries in the periphery and to a lesser extent from the Eurozone core. 
-\cite{costantini2014determinants} find that fiscal imbalances – namely expected government debt-to-GDP differentials – are the primary long-run drivers of sovereign spreads.
-
-The literature on volatility spillovers in bond markets is scanty. 
-\cite{skintzi2006volatility} examine dynamic linkages among the European bond markets. They find that significant volatility spillovers exist from both the aggregate Euro and US bond markets to the individual European markets. They also conclude that the introduction of the Euro has strengthened the volatility spillover effects and the cross-correlations for most European bond markets. 
-\cite{christiansen2007volatility} examines volatility spillover from the US and aggregate European bond markets into individual European bond markets using a GARCH volatility-spillover model. Results indicate that for EMU countries, the US volatility spillover effects are rather weak (in economic terms) whereas the European volatility spillover effects are substantial. The bond markets of EMU countries exhibit high integration after the introduction of the euro. The post-Euro period has further strengthened the integration process. They find interest rate convergence as one of the primary drivers of bond market integration.
-
-\cite{gomez2014update} apply the Granger-causality approach and endogenous breakpoint test to offer an operational definition of contagion to examine (EMU) countries public debt behaviour. A database of yields on 10-year government bonds issued by 11 EMU countries covering fourteen years of monetary union is used. The main results suggest that the 41 new causality patterns, which appeared for the first time in the crisis period, and the intensification of causality recorded in 70\% of the cases provide clear evidence of contagion in the aftermath of the current euro debt crisis. 
-\cite{sibbertsen2014testing} study tests for a break in the persistence of EMU government bond yield spreads examining data from France, Italy and Spain and using German interest rates as a kind of benchmark. Their results provide evidence for breaks between 2006 and 2008. The persistence of the yield spreads against German government bonds has increased significantly after this period.
-
-Besides this, few studies have also examined volatility spillovers in bond markets using \cite{diebold2009measuring}, \cite{diebold2012better} methodology. 
-\cite{claeys2014measuring} measure direction and extent of sovereign bond markets linkages among sixteen EU (European Union) using a factor-augmented version of the VAR model in \cite{diebold2009measuring}. 
-\cite{fernandez2015volatility} examine volatility spillovers in EMU sovereign bond markets. They find that slightly more than half of the total variance of the forecast errors is explained by shocks across countries rather than by idiosyncratic shocks. They also report that during the pre-crisis period, most of the triggers in the volatility spillovers were central EMU countries – peripheral countries imported credibility from them – while during the crisis, peripheral countries became the dominant transmitters. 
-\cite{fernandez2016using} examine the time-varying behavior of net pair-wise directional connectedness at different stages of the recent sovereign debt crisis.
+We find that there is cointegration between the yield curve factors, therefore our modelling approach (Toda-Yamamoto method) is justified. There is a not negligible amount of significant cross connections among these factors. The Level drives the highest number of linkages while the Curvature is the main receiver. Slope is ranked as second in both comparisons. USD factors have the most net connections (outgoing – incoming) thus it can be considered as the main driver of the system. Our dynamic approach shows that during a recession period the sum of the connections in the network increases which statement is supported with different window sized robustness checks.
 
 
+%\section{Literature review}
 
-\newpage 
+%There are a few pioneer studies about the intedependence of the sovereign bond market.
+%\cite{ilmanen1995time} examines the predictable variation in long-maturity government bond returns in six countries using a linear regression model with local and global instruments. 
+%\cite{clare2000analysis} decompose the relationship between the government bond markets of Germany, the United Kingdom, and the United States. They find that global factors influence the yield curves for each of these markets and the impact of these factors increases significantly during times of financial stress.
+%\cite{driessen2003common} estimate and interpret the factors that jointly determine bond returns of different maturities in the US, Germany, and Japan. They find that the positive correlation between bond markets is driven by the term structure levels, not by term structure slopes. 
+%\cite{dewachter2004effect} develop a benchmark against which the effects of ECB (European Central Bank) monetary policy on the German bond market can be evaluated. They find that yield spreads increased substantially during the EMU (European Monetary Union) period. 
+%\cite{laopodis2004monetary} examines the monetary policy implications of the greater integration of the capital markets using long-term interest rates. He finds greater convergence among countries in the EU (European Union)
+%as Germany still retains its hegemonic status.
+
+%There are papers on sovereign yield spreads. 
+%\cite{balli2009spillover} examines the time-varying nature of European government bond market integration by employing multivariate GARCH models. He states that global factors are sufficient for the volatility of yield differentials among euro government bonds. 
+%\cite{favero2012sovereign} provide new evidence on the determinants of sovereign yield spreads and market sentiment effects in the Eurozone to evaluate the rationale for a common Eurobond jointly guaranteed by Eurozone member states. 
+%\cite{antonakakis2013sovereign}examine sovereign bond yield spread spillovers between Eurozone countries using the VAR-based spillover index model of \cite{diebold2012better} and impulse response analyses. Their findings highlight the increased vulnerability of the Eurozone from the destabilizing shocks 
+%originating mostly from the Eurozone countries in the periphery and to a lesser extent from the Eurozone core. 
+%\cite{costantini2014determinants} find that fiscal imbalances – namely expected government debt-to-GDP differentials – are the primary long-run drivers of sovereign spreads.
+
+%The literature on volatility spillovers in bond markets is scanty. 
+%\cite{skintzi2006volatility} examine dynamic linkages among the European bond markets. They find that significant volatility spillovers exist from both the aggregate Euro and US bond markets to the individual European markets. They also conclude that the introduction of the Euro has strengthened the volatility spillover effects and the cross-correlations for most European bond markets. 
+%\cite{christiansen2007volatility} examines volatility spillover from the US and aggregate European bond markets into individual European bond markets using a GARCH volatility-spillover model. Results indicate that for EMU countries, the US volatility spillover effects are rather weak (in economic terms) whereas the European volatility spillover effects are substantial. The bond markets of EMU countries exhibit high integration after the introduction of the euro. The post-Euro period has further strengthened the integration process. They find interest rate convergence as one of the primary drivers of bond market integration.
+
+%\cite{gomez2014update} apply the Granger-causality approach and endogenous breakpoint test to offer an operational definition of contagion to examine (EMU) countries public debt behaviour. A database of yields on 10-year government bonds issued by 11 EMU countries covering fourteen years of monetary union is used. The main results suggest that the 41 new causality patterns, which appeared for the first time in the crisis period, and the intensification of causality recorded in 70\% of the cases provide clear evidence of contagion in the aftermath of the current euro debt crisis. 
+%\cite{sibbertsen2014testing} study tests for a break in the persistence of EMU government bond yield spreads examining data from France, Italy and Spain and using German interest rates as a kind of benchmark. Their results provide evidence for breaks between 2006 and 2008. The persistence of the yield spreads against German government bonds has increased significantly after this period.
+
+%Besides this, few studies have also examined volatility spillovers in bond markets using \cite{diebold2009measuring}, \cite{diebold2012better} methodology. 
+%\cite{claeys2014measuring} measure direction and extent of sovereign bond markets linkages among sixteen EU (European Union) using a factor-augmented version of the VAR model in \cite{diebold2009measuring}. 
+%\cite{fernandez2015volatility} examine volatility spillovers in EMU sovereign bond markets. They find that slightly more than half of the total variance of the forecast errors is explained by shocks across countries rather than by idiosyncratic shocks. They also report that during the pre-crisis period, most of the triggers in the volatility spillovers were central EMU countries – peripheral countries imported credibility from them – while during the crisis, peripheral countries became the dominant transmitters. 
+%\cite{fernandez2016using} examine the time-varying behavior of net pair-wise directional connectedness at different stages of the recent sovereign debt crisis.
+
 
 
 \section{Methodology}
@@ -157,7 +151,7 @@ Besides this, few studies have also examined volatility spillovers in bond marke
 %A hozamgörbe modelleknek az a célja, hogy lehetővé tegyék a hozamgörbe illesztését, ezt követő paraméteres struktúrán alapuló interpolációját és extrapolációját, amely megegyezik más, nem parametrikus (statisztikai alapú) illesztési modellekkel, például a simító spline-okkal.
 The target of the yield curve models is to enable the fitting of the yield curve, then the parametric interpolation and extrapolation afterwards, which is in line with the non-parametric (statistics based) fitting methods, such as smoothing splines.
 %A statisztikai modellek mellett \cite{diebold2006forecasting} modellje terjedt el a tudományos irodalomban és az ipari alkalmazásban egyaránt. A módszer a \cite{nelson1987parsimonious} által kidolgozott hozamgörbe modellezés dinamikus kiegészítése. A piacon megfigyelt hozamgörbe a  következő egyenletnek feleltethető meg:
-Besides the statistical approaches, the model of \cite{diebold2006forecasting} spread widely both in the academic literature and in industrial applications. This method is the dinamic extension of the yield curve modelling elaborated by \cite{nelson1987parsimonious}. The observed yield curve can be described with the following equation:
+Besides the statistical approaches, the model of \cite{diebold2006forecasting} spread widely both in the academic literature and in industrial applications. This method is the dynamic extension of the yield curve modelling elaborated by \cite{nelson1987parsimonious}. The observed yield curve can be described with the following equation:
 
 %---------------------------------------------------------------EQ1------------------------------------------------------------------------------------------------------------
 \begin{equation}
@@ -168,15 +162,15 @@ y_{\tau}=\beta_{1}+\beta_{2}\left ( \frac{1-e^{-\lambda\tau}}{\lambda\tau} \righ
 %where \textit{y\textsubscript{it}(m\textsubscript{it})} are the observed rates on a given date \textit{i} and maturity \textit{t}, and \textbeta\textsubscript{1t}, \textbeta\textsubscript{2t}, \textbeta\textsubscript{3t} 
 
 where $y_{\tau}$ are the realized values for $\tau$ maturity, $\beta_{1}$, $\beta_{2}$ és $\beta_{3}$ are time varying parameters, and $\lambda$ is the exponential decay factor.
-The Nelson-Siegel model is a simple way of yield curve fitting, while the approach is capable to capture the stylized facts observable in the market, such as the usual shape of yield curves (forward sloping, inverse, humped).
+The Nelson-Siegel model is a simple way of yield curve fitting, while the approach is capable to capture the stylized facts observable on the market, such as the usual shape of yield curves (forward sloping, inverse, humped).
 % miközben az eljárás képes megragadni a piacon megfigyelhető stilizált tényeket, például a görbe megszokott alakjait (emelkedő, inverz, púpos). 
-The $\beta_{i}$ parameters have an economic meaning, $\beta_{1}$ represents the long end of the yield curve,  $\beta_{2}$ is the short term component, while $\beta_{3}$ mimics the middle interval. According to the interpretation of \cite{litterman1991common} these factors can be considered as the Level, Slope and Curveture of the yield curve, accordingly. These components can be utilized for interest-rate asset immunization as well. Besides simple estimation, the model of \cite{diebold2006forecasting} has two further advantages compared to non-parametric approaches. First is, that the extrapolation is more accuratge thanks to the model being exponential. The other is the upper mentioned Litterman interpretation with which understanding and comapring results being much easier.
+The $\beta_{i}$ parameters have an economic meaning, $\beta_{1}$ represents the long end of the yield curve,  $\beta_{2}$ is the short term component, while $\beta_{3}$ mimics the middle interval. According to the interpretation of \cite{litterman1991common} these factors can be considered as the Level, Slope and Curveture of the yield curve, accordingly. These components can be utilized for interest-rate asset immunization as well. Besides simple estimation, the model of \cite{diebold2006forecasting} has two further advantages compared to non-parametric approaches. First is, that the extrapolation is more accuratge thanks to the model being exponential. The other is the upper mentioned Litterman interpretation with which understanding and comapring results becomes much easier.
  
 With the extension of \cite{diebold2006forecasting} the Nelson-Siegel model becomes dynamic (the curve fits on multiple observations). The parametrization of the yield cureve can be done at every point in time
-to form a set of time-dependent parameters. This is achieved in a two steps procedure. 
+to form a set of time-dependent parameters. This is achieved in a two steps procedure:
 \begin{itemize}
 \item First, the $\lambda$  paramater gets fixed such that the second factor attains its maximum at $\tau$ = 30 months and the $\beta$ parameters get derived.
-\item Next, an AR(1)-process is fitted to these time dependent parameters to model the dynamics over time, which results the Dynamic Nelson Siegel model.
+\item Next, an AR(1)-process is fitted to these time dependent parameters to model the dynamics over time, which results the dynamic Nelson-Siegel model.
 \end{itemize}
 
 Additional stylized facts achieved by the Diebold-Li model is the high persistance of time dynamics (same yield curve tenors are highly dependent on past values) and the fact that the long end of the curve is less volatile than the short end.
@@ -184,11 +178,11 @@ Additional stylized facts achieved by the Diebold-Li model is the high persistan
 
 \subsubsection{The Toda-Yamamoto model}
 
-{The Today-Yamamoto framework is a popular causality testing method. It is widely used in time series analysis. \cite{zhang2009energy} check the relationship between economic growh and carbon emissions or energy consumption and find that neither of the proposed variables leads to economic growth. \cite{hansen2006causal} look for dependencies between foreign direct investments and increase of the GDP, in a sample of 31 developing countries. They find evidence that FDI causes growth.  While checking Healthcare related expenditures and GDP growth, \cite{amiri2012granger} conclude that bidirectional causality is predominant. \cite{basher2012oil} say that there is an evidence that increases in emerging market stock prices increase oil prices. The common factor in the upper mentioned researches, that the authors has to deal with integrated or cointegrated time series sets.
+The Today-Yamamoto framework is a popular causality testing method. It is widely used in time series analysis. \cite{zhang2009energy} check the relationship between economic growh and carbon emissions or energy consumption and find that neither of the proposed variables leads to economic growth. \cite{hansen2006causal} look for dependencies between foreign direct investments and increase of the GDP in a sample of 31 developing countries. They find evidence that FDI causes growth.  While checking healthcare related expenditures and GDP growth, \cite{amiri2012granger} conclude that bidirectional causality is predominant. \cite{basher2012oil} say that there is an evidence that increases in emerging market stock prices increase oil prices. The common factor in the upper mentioned researches, that the authors has to deal with integrated or cointegrated time series sets.
 
-The \cite{toda1995statistical} method uses the followig premise: the classic Granger causality test (\cite{granger1969investigating}) obtained by a VAR model, may cause a non-stationarity problem, since it does not account the potential cointegration between the used time series.
+The \cite{toda1995statistical} method uses the followig premise: the classic Granger causality test (\cite{granger1969investigating}) obtained by a VAR model may cause a non-stationarity problem since it does not account the potential cointegration between the used time series.
 %A VAR modellel kapott klasszikus Granger oksági teszt (\cite{granger1969investigating}) használatakor nemstacionaritási probléma léphet fel, mivel az nem számol az idősorok között fellépő potenciális kointegrációval. 
-\cite{toda1995statistical} point out, that the usual Wald test leads to integrated or cointegrated VAR model, which eventually results spurious Granger causal connections. The Toda-Yamamoto approach eliminates this shortcoming by introducing a modified Wald test (MWald) which has restrictions on the parameters of the VAR$(p)$ model. The test is based on a  $\chi_{p}$  distribuiton, where $p' = p + d^{max}$. The order of VAR is increased artificially, $p$ gets increased by $d^{max}$ which is the maximal order of the integration. Then a VAR with order of $(p + d^{max})$ is estimated, where the last  $d^{max}$ lag coefficient is ignored. A VAR$(p + d^{max})$  model is desribed by equations a (2) and (3):
+\cite{toda1995statistical} point out, that the usual Wald test leads to integrated or cointegrated VAR model, which eventually results spurious Granger causal connections. The Toda-Yamamoto approach eliminates this shortcoming by introducing a modified Wald test (MWald) which has restrictions on the parameters of the VAR$(p)$ model. The test is based on a  $\chi_{p}$  distribuiton, where $p' = p + d^{max}$. The order of VAR is increased artificially, $p$ gets increased by $d^{max}$ which is the maximal order of the integration. Then a VAR with order of $(p + d^{max})$ is estimated, where the last  $d^{max}$ lag coefficient is ignored. A VAR$(p + d^{max})$  model is described by equations a (2) and (3):
 
 %---------------------------------------------------------------EQ2------------------------------------------------------------------------------------------------------------
 \begin{equation}
@@ -203,7 +197,7 @@ X_t=\alpha_1+\sum_{i=1}^{p} \delta_{2i} Y_{t-i}+\sum_{j=p+1}^{d^{max}} \alpha_{2
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 where $\alpha, \delta, \theta$ and $\beta$ are model parameters, $p$ is the optimal lag of the original VAR model, $\omega_{1t}$ és $\omega_{2t}$  are the errors of the VAR model, and $d^{max}$ is the maximal order of integration in terms of the Toda-Yamamoto model.
-hereby based on (2), there is a Granger causality between $X$ and $Y$, $\delta_{1i}  \neq 0$ for all $i$. In the same manner, based on (3),  Granger causality is observable between $Y$ and $X$, if  $\delta_{2i}  \neq 0$ for all $i$.
+Hereby based on (2), there is a Granger causality between $X$ and $Y$, $\delta_{1i}  \neq 0$ for all $i$. In the same manner, based on (3),  Granger causality is observable between $Y$ and $X$, if  $\delta_{2i}  \neq 0$ for all $i$.
 From the VAR$(p+d^{max})$  model, the Toda–Yamamoto approach is realized in three steps: 
 
 \begin{itemize}
@@ -214,22 +208,17 @@ From the VAR$(p+d^{max})$  model, the Toda–Yamamoto approach is realized in th
 \item With the application of the upper mentioned parameters, rejecting the Granger test between $X$ and $Y$ means a causality relation in Toda-Yamamoto terms. Bivariate rejection suggests a mutual causal relationship between the variables.
 \end{itemize}
 
-The Toda-Yamamoto procedure  has  three main advantages.  First and foremost, as mentioned above, it can be utilized on integrated an cointegrated time series without any preliminary testing. Second, according to \cite{rambaldi1996testing} the computaion of MWald test is simple, since it can be calulated with a set of Seemingly  Unrelated  Regressions. Third, \cite{zapata1997monte} shows that in an intentionally overfitted environment, the MWALD test performs as well as more complicated procedures (if the sample size is at least 50).
-
-
-
-
-\newpage 
+The Toda-Yamamoto procedure  has  three main advantages.  First and foremost, as mentioned above, it can be utilized on integrated an cointegrated time series without any preliminary testing. Second, according to \cite{rambaldi1996testing} the computaion of MWald test is simple, since it can be calulated with a set of Seemingly  Unrelated  Regressions. Third, \cite{zapata1997monte} shows that in an intentionally overfitted environment, the MWALD test performs as well as more complicated procedures (if the sample size is at least 50). 
 
 
 
 \section{Data}
 
-The yield curve time series of the countries were downloaded from Bloomberg. Twelve developed countries were involved into the examination universe, which cover more geographic regions, since they were selected from different continents. Evenually four regions were defined with three-three suvereigns in each. These are the \textit{Pacific} (Australia, China, Japan), \textit{American} (Canada, Mexico, United States), \textit{Euro-zone} (France, Germany, Italy) and the \textit{Non Euro-zone} (United Kingdom, Norway, Switzerland). Ongoingly they are referred as the three letter abbreviation introduced by Worldbank. Respectively:  AUS, CHN, JPN, CAN, MEX, USA, FRA, DEU, ITA, GBR, NOR, CHE. During the empirical analysis, the yield curve is examined by its whole tenor structure with fifteen different maturities: 3, 6, 12, 24, 36, 48, 60, 72, 84, 96, 120, 180, 240 and 360. These apply for all countries. The first observation day is 7/1/2004 while the last one is 12/31/2019. The uniusual period is determined by the Chinese yieldcurve since in this case data is available form July 2014 only. Furthermore the effects of recent COVID19 pandemic is exluded from this study, therefore we chose the last day of 2019 for ending the time horyzone. Altogether we work with 4045 daily observations. Missing data points are forward filled from the previous day.
+The yield curve time series of the countries are downloaded from Bloomberg. Twelve developed countries are involved in the examination universe, which cover more geographic regions, since they are selected from different continents. Evenually four regions are defined with three-three sovereigns in each. These are the \textit{Pacific} (Australia, China, Japan), \textit{American} (Canada, Mexico, United States), \textit{Euro-zone} (France, Germany, Italy) and the \textit{Non Euro-zone} (United Kingdom, Norway, Switzerland). Ongoingly they are referred as the three letter abbreviation introduced by Worldbank. Respectively:  AUS, CHN, JPN, CAN, MEX, USA, FRA, DEU, ITA, GBR, NOR, CHE. During the empirical analysis, the yield curve is examined by its whole tenor structure with fifteen different maturities: 3, 6, 12, 24, 36, 48, 60, 72, 84, 96, 120, 180, 240 and 360. These apply for all countries. The first observation day is 7/1/2004 while the last one is 12/31/2019. The uniusual period is determined by the Chinese yield curve since in this case data is available form July 2014 only. Furthermore the effects of recent COVID19 pandemic is exluded from this study, therefore we choose the last day of 2019 for ending the time horizone. Altogether we work with 4045 daily observations. Missing data points are forward filled from the previous day.
 
-\textcolor{red}{Note1: Kik hasznaltak ezeket az orszagokat? nem nagyon talaltam erre forrast}
+%\textcolor{red}{Note1: Kik hasznaltak ezeket az orszagokat? nem nagyon talaltam erre forrast}
 
-The inputs of the country yield curves are always zero-coupn bonds, denominated in the local currency of the sovereing. Debt in local currency represents the different interest rate cicle of the economy and represents the domestic monetary policy better. Furthermore the debt denominated in local currency has better liquidity and credit rating then holding the same in USD  (\cite{sowmya2016linkages}). Table \textcolor{magenta}{2} in the appendix provides descriptive statistics for the 1, 5, 10 and 30 years tenors of each country yield curves. The Level (L), Slope (S) and Curvature (C) factors are calculated by \cite{diebold2006forecasting}, \cite{diebold2008global}, assuming a dynamic Nelso-Siegel model. Figure \textcolor{magenta}{1} shows the normalized time series of the factors.  On the below figure period denoted with red shading represents the subprime crysis, while blue shading stands for the European sovereign debt crysis. These periods were determined based on \cite{bostanci2020connected} and \cite{hue2019measuring}.
+The inputs of the country yield curves are always zero-coupon bonds, denominated in the local currency of the soverein. Debt in local currency represents the different interest rate cycles of the economy and represents the domestic monetary policy better. Furthermore the debt denominated in local currency has better liquidity and credit rating then holding the same in USD  (\cite{sowmya2016linkages}). Table \textcolor{magenta}{2} in the appendix provides descriptive statistics for the 1, 5, 10 and 30 Y tenors of each country yield curves. The Level (L), Slope (S) and Curvature (C) factors are calculated by \cite{diebold2006forecasting}, \cite{diebold2008global}, assuming a dynamic Nelson-Siegel model. Figure \textcolor{magenta}{1} shows the normalized time series of the factors.  On the below figure period denoted with red shading represents the subprime crisis, while blue shading stands for the European sovereign debt crisis. These periods are determined based on \cite{bostanci2020connected} and \cite{hue2019measuring}.
 
 %---------------------------------------------------------------Fig2------------------------------------------------------------------------------------------------------------
 
@@ -255,21 +244,21 @@ The inputs of the country yield curves are always zero-coupn bonds, denominated 
 \end{subfigure}
 
 \caption{Normlized factor time series}
-\fnote{Start of the subprime crysis: J.P. Morgan takes over Bear Stearns, the troubled investment bank (03/16/08);
+\fnote{Start of the subprime crisis: J.P. Morgan takes over Bear Stearns, the troubled investment bank (03/16/08);
 
-End of subprime crysis: 6/30/2009;
+End of subprime crisis: 6/30/2009;
 
-Start of the European sovereign debt crysis: Portuguese government calls on EU for bailout (04/06/11);
+Start of the European sovereign debt crisis: Portuguese government calls on EU for bailout (04/06/11);
 
-End of the European sovereign debt crysis: Draghi makes the famous Whatever It Takes speech (07/26/12).}
+End of the European sovereign debt crisis: Draghi makes the famous ''Whatever It Takes'' speech (07/26/12).}
 
 \end{figure}
 
 %---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-\textcolor{red}{Es itt mondtad, hogy van egy eros faktorkomponens, arra egyelore nem nagyon tudok reagalni, azzal kapcsolatban mi lenne a tervunk?}
+%\textcolor{red}{Es itt mondtad, hogy van egy eros faktorkomponens, arra egyelore nem nagyon tudok reagalni, azzal kapcsolatban mi lenne a tervunk?}
 
-The descriptive statistics of the factors are represented in Table \textcolor{magenta}{1}. The average Level factor is positive in all cases, highest for Mexico and lowest for Japan. Average Slope refers to the tipical increasing shape of the yield curves (negative values). Slope is negative for all countries meaning that longer maturities have higher values than shorter ones. In absolute terms the USA has the highest Slope, while Australia has the lowest. Potential positive values of Slope represent restricittive monetary politics. Curvature is always negative too, highest for France and lowest for China (in absoluter terms).
+The descriptive statistics of the factors are represented in Table \textcolor{magenta}{1}. The average Level factor is positive in all cases, highest for Mexico and lowest for Japan. Average Slope refers to the tipical increasing shape of the yield curves (negative values). Slope is negative for all countries meaning that longer maturities have higher values than shorter ones. In absolute terms the USA has the highest Slope, while Australia has the lowest. Potential positive values of Slope represent restrictive monetary politics. Curvature is always negative too, highest for France and lowest for China (in absolute terms).
 
 
 %-----------------------------------------------------------------------------------Table1-----------------------------------------------------------------------------
@@ -357,9 +346,9 @@ Curvature					&	-2.94	&	1.21	&	-7.77	&	0.62	&	543	&	0.00	\\
 \bigskip
 
 
-Factor time sereies are tested with (\cite{bera1981efficient}) test for normality. Neither of them passes the acceptance criteria therefor null-hypothesis for normaility is rejected. Furthermore ADF and KPSS unit-root tests for stationarity is applied. Curvature for China and Slope for Japan is stationary on the usual 95\% confidence level. The tests can be applied for first differenence of the remaining time series. The unit-root test results are represented in Table \textcolor{magenta}{5} in the Appendix.
+Factor time sereies are tested with (\cite{bera1981efficient}) test for normality. Neither of them passes the acceptance criteria therefore the null-hypothesis for normaility is rejected. Furthermore ADF and KPSS unit-root tests for stationarity are applied. Curvature for China and Slope for Japan is stationary on the usual 95\% confidence level. The tests can be applied for first differenence of the remaining time series too. The unit-root test results are represented in Table \textcolor{magenta}{5} in the Appendix.
 
-Before differentiating, a pairwise  (\cite{engle1987co} test is applied for determining cointegration. Table \textcolor{magenta}{2}. represents the ratio of the cointegrated time series aggregated by factors. Besides the diagonal, the Slope - Curvature and the Curvature - Slope pairs both show a value more than 70\%. Since the time series are not stationary on the same order and the ratio of cointegrated time series are high, we consider the Toda-Yamamoto approach to be justified for analyzing connections.
+Before differentiating, a pairwise  (\cite{engle1987co} test is applied for determining cointegrations. Table \textcolor{magenta}{2} represents the ratio of the cointegrated time series aggregated by factors. Besides the diagonal, the Slope - Curvature and the Curvature - Slope pairs both show a value more than 70\%. Since the time series are not stationary on the same order and the ratio of cointegrated time series is high, we consider the Toda-Yamamoto approach to be justified for analyzing connections.
 
 %--------------------------------------------------------------------------------Table3 -------------------------------------------------------
 \begin{table}[H]
@@ -394,7 +383,7 @@ Curvature	&	29.2\%	&	78.5\%	&	75.0\%	\\
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 
-\newpage
+
 
 \section{Results}
 
@@ -402,11 +391,11 @@ Curvature	&	29.2\%	&	78.5\%	&	75.0\%	\\
 
 %A Toda-Yamamoto módszerrel kapott összekötöttségi hálózatokat statikus és dinamikus szemlélet szerint is elemzem. A statikus modellbe a rendelkezésre álló összes adatpont bekerült. Az idősorokat maximum egyszer differenciázom, a modellhez szükséges optimális késleltetési szintet pedig az AIC alapján határozom meg. Az 1\%-os szignifikancia szint mellett a modellből nyert oksági kapcsolatokat a 3. ábra mutatja. A Szint faktorokat pirossal, a Meredekséget kékkel, a Görbületet zölddel jelölöm. A két faktor közötti nyíl az okság irányát mutatja, a színe pedig arra a faktorra utal, amelyikből kiindult.
 
-We perform statical and dynamical analysis of the factor interconnectedness resulted by the Toda-Yamamoto model. All of the available data points were used in the static method. Time series are differenciated once at maximum, and the optimal lag number is determined based on AIC. Figure textcolor{magenta}{2} shows the causailiy relationships on 1 \% sigificance level. Level factors are red, while Slope is blue and the Curvature is shwed in green. The arrow between two factors shows the direction of tha causality and its color represent the factor which it is started from.
+We perform static and dynamic analysis of the factor interconnectedness resulted by the Toda-Yamamoto model. All of the available data points are used in the static method. Time series are differenciated once at maximum, and the optimal lag number is determined based on AIC. Figure textcolor{magenta}{2} shows the causailiy relationships on 1 \% sigificance level. Level factors are red, while Slope is blue and the Curvature is showed in green. The arrow between two factors shows the direction of the causality and its color represent the factor which it is started from.
 
 %A három alrendszerből a legsűrűbbnek a Meredekségek hálózata bizonyul. A potenciális kapcsolatok 31.06\%-a szignifikáns. Ezt követi a Szint (21.97\%) majd a Görbület (17.42\%). A keresztkapcsolatokat tekintve, az összes Szint faktorból kimenő lehetséges élek 31.25\%-a szignifikáns, a Meredekségeknél ez az arányszám 26.39\%, míg a Görbület ilyen értelemben is a legkevésbé összekötött faktor, a kimenő élek 20.49\%-a szignifikáns.
 
-From the three subsystems, the Slope network is the most dense. 31.06\% of the potential relationships are significant. It is followed by Level (21.97\%), then Curvature (17.42\%). Considering cross connections, 31.25\% of the possible edges going out from Level factors are significant. This ratio is 26.39\% for Slope, and Curvature is the least interconnected factor in these terms, only 24.49\% of the outgoing edges are significant.
+From the three subsystems, the Slope network is the most dense. 31.06\% of the potential relationships is significant. It is followed by Level (21.97\%), then Curvature (17.42\%). Considering cross connections, 31.25\% of the possible edges going out from Level factors is significant. This ratio is 26.39\% for Slope, and Curvature is the least interconnected factor in these terms, only 24.49\% of the outgoing edges is significant.
 
 
 %--------------------------------------------------------------------------------Fig3 -------------------------------------------------------
@@ -446,7 +435,7 @@ From the three subsystems, the Slope network is the most dense. 31.06\% of the p
 
 %A 4. táblázat (a) része tartalmazza a rendszerben definiált élek számát. A táblázat sorai a kapcsolatok eredetét mutatják, az oszlopok pedig a nyilak végpontjaira utalnak. 1\%-os szignifikancia szinten, a gráfnak 318 éle van, ami az összes lehetséges élnek a 25.24\%-a. A 4. táblázat (b) része tartalmazza az alrendszerek között definiált élek arányát, az abban a viszonyrendszerben értelmezett maximális kapcsolatok számához képest. Ezek alapján elmondható, hogy a Szint és Görbület közötti okság a legsűrűbb, 36.1\%, ezt követi a Meredekség és Görbület közötti összekö-töttség, 31.94\%-kal, a harmadik helyen pedig a Szint alhálózat alatt értelmezett nyilak aránya áll, 31.06\%-kal. A kapcsolati mátrix nem szimmetrikus a főátlóra, a Görbület faktorokból, összesítve kevesebb nyíl irányul mind az alhálózaton belülre, mind kívülre.
 
-The (a) part of Table \textcolor{magenta}{4} contains the number of edges defined in the system. Rows of the table represent the origin of the relationship, while columns stand for the endpoints of the arrows. On 1\% significance level, the graph has 318 edges which is 25.24\% of the total potential edges . (b) part of Table \textcolor{magenta}{4} shows the ratio of the edges defined within subnetworks compared to the total potential edges definable in that given relationship system. Based on this, density of causality is the highes for Level - Curvature par, 36.1\% followed by Slope - Curvature which is 31.94\%. The third place goes for the Level subnetork with 31.06\%. The relationship matrix is simmetrical for the diagonal, in total, from the Curvature factor there is less arrows going out both internally and towards other subnetworks.
+The (a) part of Table \textcolor{magenta}{4} contains the number of edges defined in the system. Rows of the table represent the origin of the relationship, while columns stand for the endpoints of the arrows. On 1\% significance level, the graph has 318 edges which is 25.24\% of the total potential edges. (b) part of Table \textcolor{magenta}{4} shows the ratio of the edges defined within subnetworks compared to the total potential edges definable in that given relationship system. Based on this, density of causality is the highest for Level - Curvature pair, 36.1\% followed by Slope - Curvature which is 31.94\%. The third place goes for the Level subnetork with 31.06\%. The relationship matrix is symmetrical for the diagonal, in total from the Curvature factor there is less arrows going out both internally and towards other subnetworks.
 
 %--------------------------------------------------------------------------Table4--------------------------------------------------------------------------
 
@@ -500,7 +489,7 @@ Sum.	&	60.2\%	&	81.1\%	&	85.5\%	&	25.2\%	\\
 
 \subsubsection{Top nodes}
 
-Table \textcolor{magenta}{5} contains the fators with the most edges. The first quarter of the list stands for the summarized relationships, then the following columns represent the nodes having the most incoming and outgoing edges separatedly. In total, Level factor of the United States has the most edges, which is 30. from this 30, there are 23 outgoing and 7 incoming arrows. This relationship system is shown on Figure \textcolor{magenta}{5}. Generally speaking, one can say, that all three factors of the USA lead the list regarding both outgoing, both net (outgoing-incoming) edges. This can be interpreted as the USA causes the values of the factors of the remaining participants of the system and in the meanwhile it is not affected by the others. In the list of outgoing edges, Curvature of Asutralia is ahd of the Level of Germany which node is on the fourth place of the net chart, before the Level of Canada. The most causality effect is arriving towards the French Curvature followed by the Italian Slope, then the Curvature of the same country.
+Table \textcolor{magenta}{5} contains the factors with the most edges. The first quarter of the list stands for the summarized relationships, then the following columns represent the nodes having the most incoming and outgoing edges separatedly. In total, Level factor of the United States has the most edges, which is 30. Fom this 30, there are 23 outgoing and 7 incoming arrows. This relationship system is shown on Figure \textcolor{magenta}{5}. Generally speaking, all three factors of the USA leads the list regarding both outgoing and net (outgoing-incoming) edges. This can be interpreted as the USA has a high affecting power on the values of the factors of the remaining participants in the system and in the meanwhile it is not affected by the others. In the list of outgoing edges, Curvature of Asutralia is ahead of the Level of Germany which node is on the fourth place of the net chart, before the Level of Canada. The most causality effect is arriving towards the French Curvature followed by the Italian Slope, then the Curvature of the same country.
 
 %--------------------------------------------------------------------------Table5--------------------------------------------------------------------------
 \begin{table}[h]
@@ -579,7 +568,7 @@ After the static examination we performed a dynamic analysis of the factor inter
 
 %A 6. ábra a vizsgált periódus alatt átlagosan letöbb nettósított éllel rendelkező faktorok idősorait mutatja. Ezek növekvő sorrendben: Norvégia Meredekség, USA Görbület és USA Szint. A subprime válság mindhárom faktorra hatással volt, itt az idősorok kiugró értékeket mutatnak. Norvégia Meredekség faktora az európai adósságválság ideje alatt emelkedett meg kimondottan. Ez azzal magyarázható, hogy 2011 végén Norvégia szuverén befektetési alapja eladta a teljes ír és portugál államadósság-állományát, és csökkentette spanyol és olasz kötvényinek tulajdonjogát.
 
-Figure \textcolor{magenta}{7} shows the factors having the most edges during the whole observation period. In ascending order these are Norwegian Slope, American Curvature and American Level. Subprime crysis had an effect on both three of them, time series have a peak during this period. The Slope factor of Norway increased drastically during the European Sovereign crysis. This can be explained by the fact that in the end of 2011, The sovereign investment fund of Norway sold whole of its Irish and Portugal sovereign debt, and decreased the ownership ratio in Spanish and Italian bonds.
+Figure \textcolor{magenta}{7} shows the factors having the most edges during the whole observation period. In ascending order, these are Norwegian Slope, American Curvature and American Level. Subprime crisis had an effect on both three of them, time series have a peak during this period. The Slope factor of Norway increased drastically during the European Sovereign crisis. This can be explained by the fact that in the end of 2011, the sovereign investment fund of Norway sold whole of its Irish and Portugal sovereign debt, and decreased the ownership ratio in Spanish and Italian bonds.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -593,7 +582,7 @@ Figure \textcolor{magenta}{7} shows the factors having the most edges during the
 
 %A 6. táblázat az így kapott öt részidőszak átlagos éleinek számát mutatja be, faktoronkénti bontásban. Jól látható, hogy a subprime válság periódusa alatt minden élszám több, mint duplájára emelkedett. Ezután lassú csökkenés következett, a második válságos periódust a kapott számok nem is tükrözik. Ennek oka, hogy a 2008-as krízis a teljes világra kiterjedt, míg az európai adósságválság alapvetően az európai országokat (főképp az Euro-zónát) érintette. 
 
-By defining two turbulent periods, which are colored on the plots, and three calm ones, we divided our observation horizon to five subsets. Table \textcolor{magenta}{5} shows the average edge count for such periods aggregated by factors. One can see that during the subprime crisis, all of the edge numbers increased to more than double. This is followed by a slow decrease, the second turbulent period is not even represented by the numbers. The reason is, that the crisis of 2008 was global, while the Europen sovereing crisis had affect mainly on the European countries and especially on the Euro-zone.
+By defining two turbulent periods, which are colored on the plots, and three calm ones we devide our observation horizone to five subsets. Table \textcolor{magenta}{5} shows the average edge count for such periods aggregated by factors. One can see that during the subprime crisis, all of the edge numbers increases to more than double. This is followed by a slow decrease, the second turbulent period is not even represented by the numbers. The reason is that the crisis of 2008 was global, while the Europen soverein crisis had affect mainly on the European countries and especially on the Euro-zone.
 
 %-----------------------------------------------------------------------------------table6------------------------------------------------------------------
 
@@ -621,14 +610,10 @@ Cross connections	&		225	&	61.8	&	142.2	&	109.1	& 	101.2	& 	76.1\\
 \end{table}
 
 
-
-\newpage
-
 \section{Robostness checks}
 
 Yet to come...
 
-\newpage
 
 \bibliographystyle{te}
 
