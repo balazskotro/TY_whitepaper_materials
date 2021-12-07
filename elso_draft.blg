@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: elso_draft.aux
+The style file: te.bst
+Database file #1: research.bib
+"" can't start a style-file command---line 1518 of file te.bst
+ : 
+ : 
+(Error may have been on previous line)
+You've used 33 entries,
+            2904 wiz_defined-function locations,
+            806 strings with 10557 characters,
+and the built_in function-call counts, 19931 in all, are:
+= -- 1705
+> -- 819
+< -- 21
++ -- 264
+- -- 231
+* -- 1635
+:= -- 2932
+add.period$ -- 98
+call.type$ -- 33
+change.case$ -- 243
+chr.to.int$ -- 33
+cite$ -- 66
+duplicate$ -- 1465
+empty$ -- 1496
+format.name$ -- 360
+if$ -- 3987
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 303
+newline$ -- 145
+num.names$ -- 132
+pop$ -- 525
+preamble$ -- 1
+purify$ -- 209
+quote$ -- 0
+skip$ -- 511
+stack$ -- 0
+substring$ -- 1119
+swap$ -- 732
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 294
+warning$ -- 0
+while$ -- 163
+width$ -- 0
+write$ -- 407
+(There was 1 error message)

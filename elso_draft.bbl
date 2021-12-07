@@ -1,0 +1,218 @@
+\begin{thebibliography}{33}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+
+\bibitem[{Acemoglu et~al.(2015)Acemoglu, Ozdaglar, and
+  Tahbaz-Salehi}]{acemoglu2015systemic}
+Acemoglu, Daron, Asuman Ozdaglar, and Alireza Tahbaz-Salehi (2015),
+  \enquote{Systemic risk and stability in financial networks.} \emph{American
+  Economic Review}, 105, 564--608.
+\bibAnnoteFile{acemoglu2015systemic}
+
+\bibitem[{Acharya et~al.(2012)Acharya, Engle, and
+  Richardson}]{acharya2012capital}
+Acharya, Viral, Robert Engle, and Matthew Richardson (2012), \enquote{Capital
+  shortfall: A new approach to ranking and regulating systemic risks.}
+  \emph{American Economic Review}, 102, 59--64.
+\bibAnnoteFile{acharya2012capital}
+
+\bibitem[{Adrian et~al.(2008)Adrian, Moench, and Shin}]{adrian2008federal}
+Adrian, Tobias, Emanuel Moench, and Hyun~Song Shin (2008), \enquote{Federal
+  reserve bank of new york.} In \emph{Liquidity, Monetary Policy, and Financial
+  Cycles, Federal Reserve Bank of NY Current Issues in Econ. and Fin},
+  Citeseer.
+\bibAnnoteFile{adrian2008federal}
+
+\bibitem[{Ahmad et~al.(2018)Ahmad, Mishra, and Daly}]{ahmad2018financial}
+Ahmad, Wasim, Anil~V Mishra, and Kevin~J Daly (2018), \enquote{Financial
+  connectedness of brics and global sovereign bond markets.} \emph{Emerging
+  Markets Review}, 37, 1--16.
+\bibAnnoteFile{ahmad2018financial}
+
+\bibitem[{Amiri and Ventelou(2012)}]{amiri2012granger}
+Amiri, Arshia and Bruno Ventelou (2012), \enquote{Granger causality between
+  total expenditure on health and gdp in oecd: Evidence from the toda--yamamoto
+  approach.} \emph{Economics Letters}, 116, 541--544.
+\bibAnnoteFile{amiri2012granger}
+
+\bibitem[{Basher et~al.(2012)Basher, Haug, and Sadorsky}]{basher2012oil}
+Basher, Syed~Abul, Alfred~A Haug, and Perry Sadorsky (2012), \enquote{Oil
+  prices, exchange rates and emerging stock markets.} \emph{Energy Economics},
+  34, 227--240.
+\bibAnnoteFile{basher2012oil}
+
+\bibitem[{Bera and Jarque(1981)}]{bera1981efficient}
+Bera, Anil~K and Carlos~M Jarque (1981), \enquote{Efficient tests for
+  normality, homoscedasticity and serial independence of regression residuals:
+  Monte carlo evidence.} \emph{Economics letters}, 7, 313--318.
+\bibAnnoteFile{bera1981efficient}
+
+\bibitem[{Billio et~al.(2012)Billio, Getmansky, Lo, and
+  Pelizzon}]{billio2012econometric}
+Billio, Monica, Mila Getmansky, Andrew~W Lo, and Loriana Pelizzon (2012),
+  \enquote{Econometric measures of connectedness and systemic risk in the
+  finance and insurance sectors.} \emph{Journal of financial economics}, 104,
+  535--559.
+\bibAnnoteFile{billio2012econometric}
+
+\bibitem[{Bostanci and Yilmaz(2020)}]{bostanci2020connected}
+Bostanci, Gorkem and Kamil Yilmaz (2020), \enquote{How connected is the global
+  sovereign credit risk network?} \emph{Journal of Banking \& Finance}, 113,
+  105761.
+\bibAnnoteFile{bostanci2020connected}
+
+\bibitem[{Claeys and Va{\v{s}}{\'\i}{\v{c}}ek(2014)}]{claeys2014measuring}
+Claeys, Peter and Bo{\v{r}}ek Va{\v{s}}{\'\i}{\v{c}}ek (2014),
+  \enquote{Measuring bilateral spillover and testing contagion on sovereign
+  bond markets in europe.} \emph{Journal of Banking \& Finance}, 46, 151--165.
+\bibAnnoteFile{claeys2014measuring}
+
+\bibitem[{Demirer et~al.(2018)Demirer, Diebold, Liu, and
+  Yilmaz}]{demirer2018estimating}
+Demirer, Mert, Francis~X Diebold, Laura Liu, and Kamil Yilmaz (2018),
+  \enquote{Estimating global bank network connectedness.} \emph{Journal of
+  Applied Econometrics}, 33, 1--15.
+\bibAnnoteFile{demirer2018estimating}
+
+\bibitem[{Diebold and Li(2006)}]{diebold2006forecasting}
+Diebold, Francis~X and Canlin Li (2006), \enquote{Forecasting the term
+  structure of government bond yields.} \emph{Journal of econometrics}, 130,
+  337--364.
+\bibAnnoteFile{diebold2006forecasting}
+
+\bibitem[{Diebold et~al.(2008)Diebold, Li, and Yue}]{diebold2008global}
+Diebold, Francis~X, Canlin Li, and Vivian~Z Yue (2008), \enquote{Global yield
+  curve dynamics and interactions: a dynamic nelson--siegel approach.}
+  \emph{Journal of Econometrics}, 146, 351--363.
+\bibAnnoteFile{diebold2008global}
+
+\bibitem[{Diebold and Yilmaz(2009)}]{diebold2009measuring}
+Diebold, Francis~X and Kamil Yilmaz (2009), \enquote{Measuring financial asset
+  return and volatility spillovers, with application to global equity markets.}
+  \emph{The Economic Journal}, 119, 158--171.
+\bibAnnoteFile{diebold2009measuring}
+
+\bibitem[{Diebold and Yilmaz(2012)}]{diebold2012better}
+Diebold, Francis~X and Kamil Yilmaz (2012), \enquote{Better to give than to
+  receive: Predictive directional measurement of volatility spillovers.}
+  \emph{International Journal of Forecasting}, 28, 57--66.
+\bibAnnoteFile{diebold2012better}
+
+\bibitem[{Diebold and Y{\i}lmaz(2014)}]{diebold2014network}
+Diebold, Francis~X and Kamil Y{\i}lmaz (2014), \enquote{On the network topology
+  of variance decompositions: Measuring the connectedness of financial firms.}
+  \emph{Journal of Econometrics}, 182, 119--134.
+\bibAnnoteFile{diebold2014network}
+
+\bibitem[{Elliott et~al.(2014)Elliott, Golub, and
+  Jackson}]{elliott2014financial}
+Elliott, Matthew, Benjamin Golub, and Matthew~O Jackson (2014),
+  \enquote{Financial networks and contagion.} \emph{American Economic Review},
+  104, 3115--53.
+\bibAnnoteFile{elliott2014financial}
+
+\bibitem[{Engle and Granger(1987)}]{engle1987co}
+Engle, Robert~F and Clive~WJ Granger (1987), \enquote{Co-integration and error
+  correction: representation, estimation, and testing.} \emph{Econometrica:
+  journal of the Econometric Society}, 251--276.
+\bibAnnoteFile{engle1987co}
+
+\bibitem[{Fern{\'a}ndez-Rodr{\'\i}guez
+  et~al.(2016)Fern{\'a}ndez-Rodr{\'\i}guez, G{\'o}mez-Puig, and
+  Sosvilla-Rivero}]{fernandez2016using}
+Fern{\'a}ndez-Rodr{\'\i}guez, Fernando, Marta G{\'o}mez-Puig, and Sim{\'o}n
+  Sosvilla-Rivero (2016), \enquote{Using connectedness analysis to assess
+  financial stress transmission in emu sovereign bond market volatility.}
+  \emph{Journal of international Financial Markets, institutions and Money},
+  43, 126--145.
+\bibAnnoteFile{fernandez2016using}
+
+\bibitem[{Gai and Kapadia(2010)}]{gai2010contagion}
+Gai, Prasanna and Sujit Kapadia (2010), \enquote{Contagion in financial
+  networks.} \emph{Proceedings of the Royal Society A: Mathematical, Physical
+  and Engineering Sciences}, 466, 2401--2423.
+\bibAnnoteFile{gai2010contagion}
+
+\bibitem[{Glasserman and Young(2015)}]{glasserman2015likely}
+Glasserman, Paul and H~Peyton Young (2015), \enquote{How likely is contagion in
+  financial networks?} \emph{Journal of Banking \& Finance}, 50, 383--399.
+\bibAnnoteFile{glasserman2015likely}
+
+\bibitem[{Granger(1969)}]{granger1969investigating}
+Granger, Clive~WJ (1969), \enquote{Investigating causal relations by
+  econometric models and cross-spectral methods.} \emph{Econometrica: journal
+  of the Econometric Society}, 424--438.
+\bibAnnoteFile{granger1969investigating}
+
+\bibitem[{Hansen and Rand(2006)}]{hansen2006causal}
+Hansen, Henrik and John Rand (2006), \enquote{On the causal links between fdi
+  and growth in developing countries.} \emph{World Economy}, 29, 21--41.
+\bibAnnoteFile{hansen2006causal}
+
+\bibitem[{Hu{\'e} et~al.(2019)Hu{\'e}, Lucotte, and Tokpavi}]{hue2019measuring}
+Hu{\'e}, Sullivan, Yannick Lucotte, and Sessi Tokpavi (2019),
+  \enquote{Measuring network systemic risk contributions: A leave-one-out
+  approach.} \emph{Journal of Economic Dynamics and Control}, 100, 86--114.
+\bibAnnoteFile{hue2019measuring}
+
+\bibitem[{Ilmanen(1995)}]{ilmanen1995time}
+Ilmanen, Antti (1995), \enquote{Time-varying expected returns in international
+  bond markets.} \emph{The Journal of Finance}, 50, 481--506.
+\bibAnnoteFile{ilmanen1995time}
+
+\bibitem[{Laopodis(2004)}]{laopodis2004monetary}
+Laopodis, Nikiforos~T (2004), \enquote{Monetary policy implications of
+  comovements among long-term interest rates.} \emph{Journal of International
+  Financial Markets, Institutions and Money}, 14, 135--164.
+\bibAnnoteFile{laopodis2004monetary}
+
+\bibitem[{Litterman and Scheinkman(1991)}]{litterman1991common}
+Litterman, Robert and Jose Scheinkman (1991), \enquote{Common factors affecting
+  bond returns.} \emph{Journal of fixed income}, 1, 54--61.
+\bibAnnoteFile{litterman1991common}
+
+\bibitem[{Nelson and Siegel(1987)}]{nelson1987parsimonious}
+Nelson, Charles~R and Andrew~F Siegel (1987), \enquote{Parsimonious modeling of
+  yield curves.} \emph{Journal of business}, 473--489.
+\bibAnnoteFile{nelson1987parsimonious}
+
+\bibitem[{Rambaldi and Doran(1996)}]{rambaldi1996testing}
+Rambaldi, Alicia~N and Howard~Edwin Doran (1996), \emph{Testing for granger
+  non-casuality in cointegrated systems made easy}. Department of Econometrics,
+  University of New England.
+\bibAnnoteFile{rambaldi1996testing}
+
+\bibitem[{Sowmya et~al.(2016)Sowmya, Prasanna, and
+  Bhaduri}]{sowmya2016linkages}
+Sowmya, Subramaniam, Krishna Prasanna, and Saumitra Bhaduri (2016),
+  \enquote{Linkages in the term structure of interest rates across sovereign
+  bond markets.} \emph{Emerging Markets Review}, 27, 118--139.
+\bibAnnoteFile{sowmya2016linkages}
+
+\bibitem[{Toda and Yamamoto(1995)}]{toda1995statistical}
+Toda, Hiro~Y and Taku Yamamoto (1995), \enquote{Statistical inference in vector
+  autoregressions with possibly integrated processes.} \emph{Journal of
+  econometrics}, 66, 225--250.
+\bibAnnoteFile{toda1995statistical}
+
+\bibitem[{Zapata and Rambaldi(1997)}]{zapata1997monte}
+Zapata, Hector~O and Alicia~N Rambaldi (1997), \enquote{Monte carlo evidence on
+  cointegration and causation.} \emph{Oxford Bulletin of Economics and
+  statistics}, 59, 285--298.
+\bibAnnoteFile{zapata1997monte}
+
+\bibitem[{Zhang and Cheng(2009)}]{zhang2009energy}
+Zhang, Xing-Ping and Xiao-Mei Cheng (2009), \enquote{Energy consumption, carbon
+  emissions, and economic growth in china.} \emph{Ecological economics}, 68,
+  2706--2712.
+\bibAnnoteFile{zhang2009energy}
+
+\end{thebibliography}
