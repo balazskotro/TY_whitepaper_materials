@@ -90,59 +90,86 @@ We are investigating the interconnectedness of the yield curve factors of 12 dev
 
 \newpage
 
-\section{Introduction and literature review}
+\section{Introduction}
 
-The subprime crisis renewed the interest in analyzing the co-movements of different financial instruments and systemic risk related studies came to the forefront. Shocks can be transmitted differently across various assets, therefore it is convenient to achieve awareness both for regulators and other market participanst in order to react more efficiently. Understanding such network structures are valuable for reducing potential damage and making appropriate future decisions. Analysis of the interconnectedness of different assets plays crucial role in systematic risk assessment. Furthermore, during crisises the strength of connections sharply increases and risk spills over across financial institutes and sovereign bonds, as it happened during the Financial Crisis of 2008-2009 and during the European Sovereign Crisis (\cite{diebold2012better}, \cite{diebold2014network}, \cite{demirer2018estimating}). \textcolor{red}{itt ezt annyira nem erzem jonak, csak felsoroltam 3 diebold cikket}
+The subprime crisis renewed the interest in analyzing the co-movements of different financial instruments and systemic risk related studies came to the forefront. 
+Shocks can be transmitted differently across various assets, therefore it is convenient to achieve awareness both for regulators and other market participanst in order to react more efficiently. 
+Understanding such network structures are valuable for reducing potential damage and making appropriate future decisions. 
+Analysis of the interconnectedness of different assets plays crucial role in systematic risk assessment. 
+Furthermore, during crisises the strength of connections sharply increases and risk spills over across financial institutes and sovereign bonds, as it happened during the Financial Crisis of 2008-2009 and during the European Sovereign Crisis (\cite{diebold2012better}, \cite{diebold2014network}, \cite{demirer2018estimating}).
 
-Since the financial system is a huge, complicated, interactive system, in recent years scholars began using complex network theories to investigate the interconnectedness of financial institutions. \cite{acemoglu2015systemic} points out that in smaller financial systems, shocks make the densely interconnected network steadier, however after a certain size the opposite applies. \textcolor{cyan}{\cite{glasserman2015likely} has some common features with the previously mentioned article, however they allow continuous distributions of the shocks. By doing so, they state that the probability of default of a firm is lower when a shock hits some of its neighbors compared with when the firm is directly hit.} According to \cite{elliott2014financial}, diversification initially allows failure cascades to travel within the system, but as it increases further, organizations are better insured against anothers' failures. Depending more on other participants makes personal sensitivity lower on own investments. An other mechanism of shock transmission is the decrease of interbank loan availability as known as funding liquidity shock. \textcolor{cyan}{\cite{gai2010contagion} examine the liquidity hoarding that formed on the interbank funding markets. They find that such accumulation of liquidity can flow through a banking network, with serious consequences. As soon as one bank draws down or shortens the terms of its interbank loans, the related banks are eager to do the same. This results a liquidity shock that is not characterized by the damping of interbank default shocks.}
-%\textcolor{red}{SZERINTEM ITT VAN MÉG 1-2 FONTOS CIKK RÁNÉZEK MAJD}
+The literature distingusghes between two different channels of impacts which are mutually exclusive.
+Fundamentals of different economical entities may be interconnected by flows of goods, services, and capital. 
+These effects are known in the literature as \textit{spillovers} (\cite{masson1999contagion}), \textit{interdependence} and \textit{interconnectedness}  (\cite{forbes2002no}, \cite{forbes2012big}), or \textit{fundamentals-based contagion} (\cite{kaminsky2000crises}). 
+On the other hand, financial shocks in one firm or country may conceivably trigger crises elsewhere their fundamentals. This transmission mechanism is known in the literature as \textit{pure contagion} (\cite{masson1999contagion}). We are using the terminology \textit{interconnectedness} for the rest of the paper since that expression captures the essence of the behavior of the examined factors.
 
-In the empirical literature there are several methods to measure connectedness. In the last decade the widespread methods are Granger causality network (\cite{billio2012econometric}), CoVaR (\cite{adrian2008federal}), MES (\cite{acharya2012capital}) and numerous studies appeared based on the Vector AutoRegressive Diebold-Yilmaz (DY) framework (\cite{diebold2009measuring}, \cite{diebold2012better}, \cite{diebold2014network}). Compared to CoVaR and MES methods, the advantage of Granger causality based frameworks is the ability to examine the network both on micro (pairwise connectedness) and macro (total connectedness) level. As result, these methods have been often used to analyse the network on different asset classes like equities, bonds, exchange rates or commodity prices. Most analysis focuses on the whole system or some subpart. The dynamics of individual assets' role in the system have not been explored yet. %\textcolor{red}{IDE KELL hivatkozások összeszednem}
+Since the financial system is a huge, complicated, interactive system, in recent years scholars began using complex network theories to investigate the interconnectedness of financial institutions. 
+\cite{acemoglu2015systemic} points out that in smaller financial systems, shocks make the densely interconnected network steadier, however after a certain size the opposite applies. 
+\cite{glasserman2015likely} has some common features with the previously mentioned article, however they allow continuous distributions of the shocks. 
+By doing so, they state that the probability of default of a firm is lower when a shock hits some of its neighbors compared with when the firm is directly hit.
+According to \cite{elliott2014financial}, diversification initially allows failure cascades to travel within the system, but as it increases further, organizations are better insured against anothers' failures. 
+Depending more on other participants makes personal sensitivity lower on own investments. 
+An other mechanism of shock transmission is the decrease of interbank loan availability as known as funding liquidity shock.
+\cite{gai2010contagion} examine the liquidity hoarding that formed on the interbank funding markets. 
+They find that such accumulation of liquidity can flow through a banking network, with serious consequences. 
+As soon as one bank draws down or shortens the terms of its interbank loans, the related banks are eager to do the same. 
+This results a liquidity shock that is not characterized by the damping of interbank default shocks.
 
-%\smallskip{}
-%\textcolor{red}{KELLENE EGY KOINTEGRÁCIÓT Nem szokta vizsgálni bekezdés}
-%\smallskip{}
+In the empirical literature there are several methods to measure connectedness. 
+In the last decade the widespread methods are Granger causality network (\cite{billio2012econometric}), CoVaR (\cite{adrian2008federal}), MES (\cite{acharya2012capital}) and numerous studies appeared based on the Vector AutoRegressive Diebold-Yilmaz (DY) framework (\cite{diebold2009measuring}, \cite{diebold2012better}, \cite{diebold2014network}). 
+Compared to CoVaR and MES methods, the advantage of Granger causality based frameworks is the ability to examine the network both on micro (pairwise connectedness) and macro (total connectedness) level. 
+As result, these methods have been often used to analyse the network on different asset classes like equities, bonds, exchange rates or commodity prices. 
+Most analysis focuses on the whole system or some subpart. The dynamics of individual assets' role in the system have not been explored yet.
 
-Central banks traditionally rely on the co-movements of different maturities of yield curves to make effective monetary policy decisions. According to the expectations hypothesis, long-term interest rates are influenced by current and expected future short-term interest rates (\cite{laopodis2004monetary}). However, increasing globalization of financial systems and structural changes across economies have disrupted the integration of the maturity spectrum of different yield curves. Short-end movements are more exposed to monetary policy decisions, so their interconnectedness is more consistent with the alternation of business cycles. The long end of the yield curve is mainly affected by global investment, with current preferences and risk appetite being the primary drivers. The integration of distant maturity points is driven by global capital flows and the volume of investments (\cite{ilmanen1995time}). \textcolor{red}{ezek hellyel-kozzel erintik ennek a bekezdesnek a tartalmat, nem tudom hogy jo lesz-e}
+First: Granger causality finds a lot of spurious correlations and time series are cointegrated, better to use Ty method
 
-Usually, a tenor structure consists of multiple maturities which means one-one individual time series. It is challenging to deal with such a magnitude of data, therefore in raw format the yield curve itself is not used. \cite{fernandez2016using} examines only the 10Y yield curve point on EMU countries while \cite{claeys2014measuring} choose the spread between EU government bond yields and German sovereign bond yield, also considering 10 years of maturity. \cite{ahmad2018financial} pick bond indices to analyze and \cite{sowmya2016linkages}
-decompose the yield curve to Level, Slope and Curvature factors with the Diebold-Li dimension reduction technique. 
+Second: There is a significant amount of cross connection between different factors of the yield curves
 
-We are eager to find the less and most interconnected participants of our system, via understanding the connections not only between particular factors, but involving all three of them. We are also curious for the behavior of such linkages during time, thus besides static analysis we performed rolling window-based tests as well. Our contribution to the existing literature is fourfold. We analyze the interconnectedness of different yield curve factors with the consideration of cointegration among the time series. This is the first study which examines the crosswise causality connections among Level, Slope and Curvature. We choose developed economies from all over the World in order to achieve a wide geographical coverage. %\textcolor{red}{ITT LEHET KELLENE MÉG MAGYARÁZAT}
+Third: The USA is the main driver of the univers
 
-We find that there is cointegration between the yield curve factors, therefore our modelling approach (Toda-Yamamoto method) is justified. There is a not negligible amount of significant cross connections among these factors. The Level drives the highest number of linkages while the Curvature is the main receiver. Slope is ranked as second in both comparisons. USD factors have the most net connections (outgoing – incoming) thus it can be considered as the main driver of the system. Our dynamic approach shows that during a recession period the sum of the connections in the network increases which statement is supported with different window sized robustness checks.
+Fourth: Sertain factors behave differently in recession and in normal times
 
+\newpage 
 
-%\section{Literature review}
+\section{Literature review}
 
-%There are a few pioneer studies about the intedependence of the sovereign bond market.
-%\cite{ilmanen1995time} examines the predictable variation in long-maturity government bond returns in six countries using a linear regression model with local and global instruments. 
-%\cite{clare2000analysis} decompose the relationship between the government bond markets of Germany, the United Kingdom, and the United States. They find that global factors influence the yield curves for each of these markets and the impact of these factors increases significantly during times of financial stress.
-%\cite{driessen2003common} estimate and interpret the factors that jointly determine bond returns of different maturities in the US, Germany, and Japan. They find that the positive correlation between bond markets is driven by the term structure levels, not by term structure slopes. 
-%\cite{dewachter2004effect} develop a benchmark against which the effects of ECB (European Central Bank) monetary policy on the German bond market can be evaluated. They find that yield spreads increased substantially during the EMU (European Monetary Union) period. 
-%\cite{laopodis2004monetary} examines the monetary policy implications of the greater integration of the capital markets using long-term interest rates. He finds greater convergence among countries in the EU (European Union)
-%as Germany still retains its hegemonic status.
+Central banks traditionally rely on the co-movements of different maturities of yield curves to make effective monetary policy decisions. 
+According to the expectations hypothesis, long-term interest rates are influenced by current and expected future short-term interest rates (\cite{laopodis2004monetary}). 
+However, increasing globalization of financial systems and structural changes across economies have disrupted the integration of the maturity spectrum of different yield curves. 
+Short-end movements are more exposed to monetary policy decisions, so their interconnectedness is more consistent with the alternation of business cycles. 
+The long end of the yield curve is mainly affected by global investment, with current preferences and risk appetite being the primary drivers. 
+The integration of distant maturity points is driven by global capital flows and the volume of investments (\cite{ilmanen1995time}).
 
-%There are papers on sovereign yield spreads. 
-%\cite{balli2009spillover} examines the time-varying nature of European government bond market integration by employing multivariate GARCH models. He states that global factors are sufficient for the volatility of yield differentials among euro government bonds. 
-%\cite{favero2012sovereign} provide new evidence on the determinants of sovereign yield spreads and market sentiment effects in the Eurozone to evaluate the rationale for a common Eurobond jointly guaranteed by Eurozone member states. 
-%\cite{antonakakis2013sovereign}examine sovereign bond yield spread spillovers between Eurozone countries using the VAR-based spillover index model of \cite{diebold2012better} and impulse response analyses. Their findings highlight the increased vulnerability of the Eurozone from the destabilizing shocks 
-%originating mostly from the Eurozone countries in the periphery and to a lesser extent from the Eurozone core. 
-%\cite{costantini2014determinants} find that fiscal imbalances – namely expected government debt-to-GDP differentials – are the primary long-run drivers of sovereign spreads.
+An overview of existing literature on bond market reveals that connection metrics can be calculated via numerous methods based on different underlyings. 
+Bond returns have been in the scope of research for decades. 
+\cite{ilmanen1995time} examines the predictable variation in long-maturity government bond returns in six countries using a linear regression model with local and global instruments. 
+\cite{driessen2003common} estimate and interpret the factors that jointly determine bond returns of different maturities in the US, Germany, and Japan. They find that the positive correlation between bond markets is driven by the term structure levels, not by term structure slopes.
+\cite{engsted2007comovement} analyzed the co-movement of US and German bond markets and found significant spillover effects from the US to Germany and only limited spillover vice versa. 
+\cite{piljak2013bond} compared the co-movement of the total bond return index in ten emerging economies and four frontier markets with that of the US market and found that domestic and global factors explain the variation in the bond returns in emerging and frontier markets.\cite{ahmad2018financial} used panel regression method to analyze the determinants of net spillover. They found that government debt, current account deficit, and interest rate are major determinants of financial connectedness.
 
-%The literature on volatility spillovers in bond markets is scanty. 
-%\cite{skintzi2006volatility} examine dynamic linkages among the European bond markets. They find that significant volatility spillovers exist from both the aggregate Euro and US bond markets to the individual European markets. They also conclude that the introduction of the Euro has strengthened the volatility spillover effects and the cross-correlations for most European bond markets. 
-%\cite{christiansen2007volatility} examines volatility spillover from the US and aggregate European bond markets into individual European bond markets using a GARCH volatility-spillover model. Results indicate that for EMU countries, the US volatility spillover effects are rather weak (in economic terms) whereas the European volatility spillover effects are substantial. The bond markets of EMU countries exhibit high integration after the introduction of the euro. The post-Euro period has further strengthened the integration process. They find interest rate convergence as one of the primary drivers of bond market integration.
+Other articles make consequences based on bond yields or certain points of the yield curve. 
+\cite{sutton2000there} examined the co-movement of bond yields of the US, the UK, Japan, Germany and Canada, and highlighted that the long end of term structure of interest rates is positively correlated across markets. He used bond yields of 3 months and 10 years as proxies for short-term and long-term interest rates.
+\cite{laopodis2004monetary} examines the monetary policy implications of the greater integration of the capital markets using long-term interest rates. He finds greater convergence among countries in the EU (European Union) as Germany still retains its hegemonic status.
+\cite{kumar2011dynamics} examined the bond market integration in six G7 economies using the smooth-transition copula-GARCH model. 
+Their results highlighted that the long end of the yield curve is more integrated than the short end of the yield curve.  
+\cite{fernandez2015volatility} examine volatility spillovers in EMU sovereign bond markets. They find that slightly more than half of the total variance of the forecast errors is explained by shocks across countries rather than by idiosyncratic shocks. They also report that during the pre-crisis period, most of the triggers in the volatility spillovers were central EMU countries – peripheral countries imported credibility from them – while during the crisis, peripheral countries became the dominant transmitters. 
+\cite{fernandez2016using} examine the time-varying behavior of net pair-wise directional connectedness at different stages of the recent sovereign debt crisis.
 
-%\cite{gomez2014update} apply the Granger-causality approach and endogenous breakpoint test to offer an operational definition of contagion to examine (EMU) countries public debt behaviour. A database of yields on 10-year government bonds issued by 11 EMU countries covering fourteen years of monetary union is used. The main results suggest that the 41 new causality patterns, which appeared for the first time in the crisis period, and the intensification of causality recorded in 70\% of the cases provide clear evidence of contagion in the aftermath of the current euro debt crisis. 
-%\cite{sibbertsen2014testing} study tests for a break in the persistence of EMU government bond yield spreads examining data from France, Italy and Spain and using German interest rates as a kind of benchmark. Their results provide evidence for breaks between 2006 and 2008. The persistence of the yield spreads against German government bonds has increased significantly after this period.
+There are papers where bond spreads are used.
+\cite{balli2009spillover} examines the time-varying nature of European government bond market integration by employing multivariate GARCH models. 
+He states that global factors are sufficient for the volatility of yield differentials among euro government bonds.
+\cite{favero2012sovereign} provide new evidence on the determinants of sovereign yield spreads and market sentiment effects in the Eurozone to evaluate the rationale for a common Eurobond jointly guaranteed by Eurozone member states. 
+\cite{antonakakis2013sovereign} examined the spillovers in the sovereign yield spread among Euro zone countries and found 61\% of the variances are explained by the spillovers from other countries. 
+\cite{sibbertsen2014testing} study tests for a break in the persistence of EMU government bond yield spreads examining data from France, Italy and Spain and using German interest rates as a kind of benchmark. 
+Their results provide evidence for breaks between 2006 and 2008. The persistence of the yield spreads against German government bonds has increased significantly after this period. 
+\cite{claeys2014measuring} measure direction and extent of sovereign bond markets linkages among sixteen EU (European Union) using a factor-augmented version of the VAR model.
 
-%Besides this, few studies have also examined volatility spillovers in bond markets using \cite{diebold2009measuring}, \cite{diebold2012better} methodology. 
-%\cite{claeys2014measuring} measure direction and extent of sovereign bond markets linkages among sixteen EU (European Union) using a factor-augmented version of the VAR model in \cite{diebold2009measuring}. 
-%\cite{fernandez2015volatility} examine volatility spillovers in EMU sovereign bond markets. They find that slightly more than half of the total variance of the forecast errors is explained by shocks across countries rather than by idiosyncratic shocks. They also report that during the pre-crisis period, most of the triggers in the volatility spillovers were central EMU countries – peripheral countries imported credibility from them – while during the crisis, peripheral countries became the dominant transmitters. 
-%\cite{fernandez2016using} examine the time-varying behavior of net pair-wise directional connectedness at different stages of the recent sovereign debt crisis.
+\cite{bae2011global}  identified the yield curve interactions for the East Asian regions and found that more than regional factors, global factors play an important role in explaining yield curve dynamics. 
+\cite{abbritti2013global} measured the impact of global factors using the affine term structure model, and concluded that global factors influence the long end of the yield curve. 
+\cite{sowmya2016linkages} investigate linkages between latent factors of the yield curves of four developend countries and seven Asian Economies. They find that the regional influence is higher in slope and curvature factors among the Asian countries. The number of linkages
+are high during periods of crisis. 
 
-
+\newpage 
 
 \section{Methodology}
 \noindent
@@ -215,12 +242,37 @@ The Toda-Yamamoto procedure  has  three main advantages.  First and foremost, as
 
 \section{Data}
 
-The yield curve time series of the countries are downloaded from Bloomberg. Twelve developed countries are involved in the examination universe, which cover more geographic regions, since they are selected from different continents. Evenually four regions are defined with three-three sovereigns in each. These are the \textit{Pacific} (Australia, China, Japan), \textit{American} (Canada, Mexico, United States), \textit{Euro-zone} (France, Germany, Italy) and the \textit{Non Euro-zone} (United Kingdom, Norway, Switzerland). Ongoingly they are referred as the three letter abbreviation introduced by Worldbank. Respectively:  AUS, CHN, JPN, CAN, MEX, USA, FRA, DEU, ITA, GBR, NOR, CHE. During the empirical analysis, the yield curve is examined by its whole tenor structure with fifteen different maturities: 3, 6, 12, 24, 36, 48, 60, 72, 84, 96, 120, 180, 240 and 360. These apply for all countries. The first observation day is 7/1/2004 while the last one is 12/31/2019. The uniusual period is determined by the Chinese yield curve since in this case data is available form July 2014 only. Furthermore the effects of recent COVID19 pandemic is exluded from this study, therefore we choose the last day of 2019 for ending the time horizone. Altogether we work with 4045 daily observations. Missing data points are forward filled from the previous day.
+Twelve developed countries were selected to the examination universe based on the OECD classification. 
+We chose those twelve countries which have the highest GDP and have a yieldcurve time series history back from 1/1/1999. 
+The rates were collected from Bloomberg.
+The following sovereigns were chosen: Australia, Canada, Switzerland, Germany, Spain, France, Great Britan, Italy, Japan, South Korea, The Neatherlands and The United states of America. 
+Ongoingly they are referred as the three letter abbreviation introduced by OECD. 
+Respectively:  AUS, CAN, CHN, DEU, ESP, FRA, GBR, ITA, JPN, KOR, NLD and USA. 
+During the empirical analysis, each yield curve is examined by its whole node structure with fifteen different maturities: 3, 6, 12, 24, 36, 48, 60, 72, 84, 96, 120, 180, 240 and 360 moths. 
+These apply for all countries. 
+The first observation day is 1/1/1999 while the last one is 12/31/2021. 
+Altogether we work with 6001 daily observations. 
+Missing data points are forward filled from the previous day.
 
-%\textcolor{red}{Note1: Kik hasznaltak ezeket az orszagokat? nem nagyon talaltam erre forrast}
+The inputs of the country yield curves are always zero-coupon bonds, denominated in the local currency of the soverein. 
+Debt in local currency represents the different interest rate cycles of the economy and represents the domestic monetary policy better. 
+Furthermore the debt denominated in local currency has better liquidity and credit rating then holding the same in USD  (\cite{sowmya2016linkages}). 
+Table 2 in the appendix provides descriptive statistics for the 1, 5, 10 and 30 year nodes of each country yield curves. 
+The Level (L), Slope (S) and Curvature (C) factors are calculated by \cite{diebold2006forecasting}, \cite{diebold2008global}, assuming a dynamic Nelson-Siegel model. 
+Figure 1 shows the normalized time series of the factors. 
+On the below figure period denoted with green shading represents the dotcom bubble, the red shading represents the subprime crisis, the blue stands for the European sovereign debt crisis and yellow shading indicates the Covid19 pandemic. 
+These periods are determined based on \cite{bostanci2020connected} and \cite{hue2019measuring}.
 
-The inputs of the country yield curves are always zero-coupon bonds, denominated in the local currency of the soverein. Debt in local currency represents the different interest rate cycles of the economy and represents the domestic monetary policy better. Furthermore the debt denominated in local currency has better liquidity and credit rating then holding the same in USD  (\cite{sowmya2016linkages}). Table \textcolor{magenta}{2} in the appendix provides descriptive statistics for the 1, 5, 10 and 30 Y tenors of each country yield curves. The Level (L), Slope (S) and Curvature (C) factors are calculated by \cite{diebold2006forecasting}, \cite{diebold2008global}, assuming a dynamic Nelson-Siegel model. Figure \textcolor{magenta}{1} shows the normalized time series of the factors.  On the below figure period denoted with red shading represents the subprime crisis, while blue shading stands for the European sovereign debt crisis. These periods are determined based on \cite{bostanci2020connected} and \cite{hue2019measuring}.
-
+Observing the below graphs one can notice several stylized facts. 
+Level factors declined and converged accross countries during the observation period. 
+\cite{holston2017measuring} point out that the natural rare r* declined over the past 25 years in advanced economics thanks to global, macro and demographic fators. 
+\cite{evans2007economic} find evidence form the US market, claiming that macro shocks sihft the level factor of the yield curve.
+Slope time series show countercyclical behavior and comoves across countries.
+According to \cite{estrella1991term} slope factor can predict recessions.
+On Figure 1/(b) drops can be seen during the period of the dotcom bubble and the subprime crisis. 
+Also majority of Slope time series are in a downward trend during the Covid19 period.
+Curvature explains the variation in interest rates across maturities and represents term premium. 
+It is mainly related to the current state of monetary policy and it has less exposure to the macroeconomic shocks (\cite{dewachter2006macro})
 %---------------------------------------------------------------Fig2------------------------------------------------------------------------------------------------------------
 
 \begin{figure}[H]
@@ -228,30 +280,37 @@ The inputs of the country yield curves are always zero-coupon bonds, denominated
 
 \begin{subfigure}{.5\linewidth}
 \centering
-\includegraphics[width=\linewidth]{levels}
+\includegraphics[width=\linewidth]{Level}
 \caption{\textbf{Level}}
 
 \end{subfigure}%
 \begin{subfigure}{.5\linewidth}
 \centering
-\includegraphics[width=\linewidth]{slopes}
+\includegraphics[width=\linewidth]{Slope}
 \caption{\textbf{Slope}}
 \end{subfigure}\\[1ex]
 \begin{subfigure}{.5\linewidth}
 \centering
-\includegraphics[width=\linewidth]{curvatures}
+\includegraphics[width=\linewidth]{Curvature}
 
 \caption{\textbf{Curvature}}
 \end{subfigure}
 
 \caption{Normlized factor time series}
-\fnote{Start of the subprime crisis: J.P. Morgan takes over Bear Stearns, the troubled investment bank (03/16/08);
+\fnote{
+Start of the dotcom bubble: NASDAQ Composite stock market index peaked at 5,048.62 (03/10/2000);
 
-End of subprime crisis: 6/30/2009;
+End of the dotcom bubble: Enron declared bankruptcy (12/02/2001);
+
+Start of the subprime crisis: J.P. Morgan takes over Bear Stearns, the troubled investment bank (03/16/08);
+
+End of subprime crisis: Dodd - Frank Act being enacted (06/21/2010);
 
 Start of the European sovereign debt crisis: Portuguese government calls on EU for bailout (04/06/11);
 
-End of the European sovereign debt crisis: Draghi makes the famous ''Whatever It Takes'' speech (07/26/12).}
+End of the European sovereign debt crisis: Draghi makes the famous ''Whatever It Takes'' speech (07/26/12)
+
+Start of Covid19 pandemic: WHO declared the novel coronavirus outbreak a global pandemic (01/20/2020). }
 
 \end{figure}
 
@@ -259,7 +318,7 @@ End of the European sovereign debt crisis: Draghi makes the famous ''Whatever It
 
 %\textcolor{red}{Es itt mondtad, hogy van egy eros faktorkomponens, arra egyelore nem nagyon tudok reagalni, azzal kapcsolatban mi lenne a tervunk?}
 
-The descriptive statistics of the factors are represented in Table \textcolor{magenta}{1}. The average Level factor is positive in all cases, highest for Mexico and lowest for Japan. Average Slope refers to the tipical increasing shape of the yield curves (negative values). Slope is negative for all countries meaning that longer maturities have higher values than shorter ones. In absolute terms the USA has the highest Slope, while Australia has the lowest. Potential positive values of Slope represent restrictive monetary politics. Curvature is always negative too, highest for France and lowest for China (in absolute terms).
+The descriptive statistics of the factors are represented in Table 1. The average Level factor is positive in all cases, highest for South Korea and lowest for Japan. Average Slope refers to the tipical increasing shape of the yield curves (negative values). Slope is negative for all countries meaning that longer maturities have higher values than shorter ones. In absolute terms Italy has the highest Slope, while Australia has the lowest. Potential positive values of Slope represent restrictive monetary politics. Curvature is always negative too, highest for Italy and lowest for Great Britan (in absolute terms).
 
 
 %-----------------------------------------------------------------------------------Table1-----------------------------------------------------------------------------
@@ -275,64 +334,55 @@ Factor & Average & Std. dev. & Minimum & Maximum & Jarque-Bera t-stat.  & P valu
 \hline       \\ [-1.5ex]           % inserts single horizontal line
 
 
-\textit{\textbf{Germany}}		&		&		&		&		&		&		\\
-Level						&	 2.92 &	1.54	&	-0.34	&	5.41	&	347	&	0.00	\\
-Slope				&	-1.86	&	1.06	&	-4.54	&	0.14	&	210	&	0.00	\\
-													
-Curvature					&	-3.72	&	1.72	&	-7.15	&	0.73	&	234	&	0.00	\\
-\textit{\textbf{Italy}}		&		&		&		&		&		&		\\
-Level						&	4.78	&	1.29	&	1.98	&	8.00	&	106	&	0.00	\\
-Slope				&	-3.43	&	1.57	&	-7.01	&	-0.44	&	183	&	0.00	\\
-													
-Curvature					&	-4.25	&	2.24	&	-8.60	&	4.75	&	194	&	0.00	\\
-\textit{\textbf{France}}			&		&		&		&		&		&		\\
-Level						&	3.39	&	1.37	&	0.26	&	5.48	&	417	&	0.00	\\
-Slope				&	-2.24	&	1.19	&	-4.73	&	0.02	&	162	&	0.00	\\
-													
-Curvature					&	-4.29	&	1.96	&	-7.82	&	1.07	&	210	&	0.00	\\
-\textit{\textbf{USA}}			&		&		&		&		&		&		\\
-Level						&	3.96	&	0.99	&	1.88	&	5.87	&	323	&	0.00	\\
-Slope				&	-2.41	&	1.55	&	-5.52	&	0.71	&	139	&	0.00	\\
-													
-Curvature					&	-3.63	&	2.50	&	-9.58	&	0.72	&	228	&	0.00	\\
-\textit{\textbf{Canada}}				&		&		&		&		&		&		\\
-Level						&	3.43	&	1.10	&	1.23	&	5.90	&	274	&	0.00	\\
-Slope				&	-1.73	&	1.23	&	-4.84	&	0.58	&	251	&	0.00	\\
-													
-Curvature					&	-2.49	&	1.63	&	-6.26	&	1.31	&	206	&	0.00	\\
-\textit{\textbf{Mexico}}			&		&		&		&		&		&		\\
-Level						&	8.58	&	1.28	&	5.56	&	13.41&	834	&	0.00	\\
-Slope				&	-2.36	&	1.83	&	-6.14	&	0.67	&	340	&	0.00	\\												
-Curvature					&	-4.16	&	2.85&	-14.84&	0.49	&	321	&	0.00	\\
-\textit{\textbf{Japan}}				&		&		&		&		&		&		\\
-Level						&	1.70	&	0.83	&	-0.02	&	3.26	&	406	&	0.00	\\
-Slope				&	-1.28	&	0.63	&	-2.83	&	-0.02	&	155	&	0.00	\\
-													
-Curvature					&	-3.69	&	1.28	&	-6.03	&	-0.87	&	278	&	0.00	\\
-\textit{\textbf{China}}				&		&		&		&		&		&		\\
-Level						&	4.02	&	0.62	&	2.70	&	6.52 &	2047	&	0.00	\\
-Slope				&	-1.53	&	0.81	&	-3.87	&	1.65 &	275	&	0.00	\\
-													
-Curvature					&	-1.24	&	0.92	&	-5.20	&	1.25&	1128	&	0.00	\\
-\textit{\textbf{Australia}}		&		&		&		&		&		&		\\
-Level						&	4.63	&	1.23	&	1.40	&	6.77	&	262	&	0.00	\\
-Slope				&	-0.89	&	0.98	&	-3.87	&	1.00	&	105	&	0.00	\\
-													
-Curvature					&	-2.08	&	1.84	&	-6.59	&	2.25	&	296	&	0.00	\\
-\textit{\textbf{Norway}}				&		&		&		&		&		&		\\
-Level						&	3.22	&	1.12	&	1.02	&	5.23	&	333	&	0.00	\\
-Slope				&	-1.22	&	1.07	&	-4.04	&	2.26	&	167	&	0.00	\\
-													
-Curvature					&	-1.59	&	1.22	&	-4.68	&	1.73	&	337	&	0.00	\\
-\textit{\textbf{United Kingdom}}		&		&		&		&		&		&		\\
-Level						&	3.66	&	1.23	&	0.87	&	5.80	&	329	&	0.00	\\
-Slope				&	-1.76	&	1.75	&	-5.42	&	1.35	&	211	&	0.00	\\
-													
-Curvature					&	-3.33	&	3.02	&	-8.77	&	3.65	&	159	&	0.00	\\
-\textit{\textbf{Switzerland}}				&		&		&		&		&		&		\\
-Level						&	1.77	&	1.18	&	-0.76	&	3.86	&	289	&	0.00	\\
-Slope				&	-1.18	&	0.70	&	-3.32	&	0.91	&	219	&	0.00	\\
-Curvature					&	-2.94	&	1.21	&	-7.77	&	0.62	&	543	&	0.00	\\
+\textit{\textbf{Australia}} & & & & & & \\
+Level & 4.86 & 1.51 & 1.06 & 7.71 & 523 & 0\\
+Slope & -1.11 & 0.99 & -4.14 & 0.97 & 88 & 0\\
+Curvature & -2.14 & 1.91 & -6.8 & 2.93 & 207 & 0\\
+\textit{\textbf{Canada}} & & & & & & \\
+Level & 3.92 & 1.56 & 0.7 & 6.62 & 394 & 0\\
+Slope & -1.84 & 1.37 & -5.35 & 0.58 & 346 & 0\\
+Curvature & -2.19 & 1.95 & -6.27 & 4.83 & 401 & 0\\
+\textit{\textbf{Australia}} & & & & & & \\
+Level & 2.17 & 1.55 & -0.79 & 4.63 & 516 & 0\\
+Slope & -1.59 & 0.94 & -4.1 & -0.06 & 559 & 0\\
+Curvature & -2.68 & 1.46 & -7.25 & 1.05 & 46 & 0\\
+\textit{\textbf{Germany}} & & & & & & \\
+Level & 3.33 & 1.98 & -0.55 & 6.56 & 529 & 0\\
+Slope & -1.84 & 1.11 & -4.69 & 0.22 & 233 & 0\\
+Curvature & -3.5 & 1.74 & -6.81 & 0.96 & 251 & 0\\
+\textit{\textbf{Spain}} & & & & & & \\
+Level & 4.53 & 1.73 & 0.75 & 8.56 & 382 & 0\\
+Slope & -2.79 & 1.53 & -7.35 & -0.07 & 269 & 0\\
+Curvature & -4 & 2.1 & -8.75 & 3.9 & 111 & 0\\
+\textit{\textbf{France}} & & & & & & \\
+Level & 3.7 & 1.8 & 0.11 & 6.63 & 559 & 0\\
+Slope & -2.16 & 1.17 & -4.85 & 0.16 & 241 & 0\\
+Curvature & -3.98 & 1.91 & -8.08 & 0.57 & 49 & 0\\
+\textit{\textbf{Great Britan}} & & & & & & \\
+Level & 3.68 & 1.38 & 0.47 & 5.77 & 741 & 0\\
+Slope & -1.43 & 1.69 & -5.4 & 1.81 & 295 & 0\\
+Curvature & -1.83 & 3.6 & -8.79 & 8.77 & 96 & 0\\
+\textit{\textbf{Italy}} & & & & & & \\
+Level & 4.82 & 1.44 & 1.43 & 7.9 & 466 & 0\\
+Slope & -3.03 & 1.39 & -6.36 & -0.24 & 185 & 0\\
+Curvature & -4.18 & 1.96 & -8.74 & 4.06 & 136 & 0\\
+\textit{\textbf{Japan}} & & & & & & \\
+Level & 1.79 & 0.91 & -0.03 & 3.57 & 600 & 0\\
+Slope & -1.42 & 0.75 & -3.3 & -0.09 & 322 & 0\\
+Curvature & -3.73 & 1.44 & -6.54 & -0.95 & 507 & 0\\
+\textit{\textbf{South Korea}} & & & & & & \\
+Level & 6.04 & 2.34 & 1.88 & 12.21 & 516 & 0\\
+Slope & -3 & 1.59 & -7.85 & 0.1 & 173 & 0\\
+Curvature & -4.16 & 3.01 & -14.38 & 2.67 & 1967 & 0\\
+\textit{\textbf{The Netherlands}} & & & & & & \\
+Level & 3.43 & 1.97 & -0.36 & 7.01 & 525 & 0\\
+Slope & -1.96 & 1.15 & -4.89 & 0.2 & 236 & 0\\
+Curvature & -3.29 & 1.57 & -8.4 & 0.74 & 176 & 0\\
+\textit{\textbf{USA}} & & & & & & \\
+Level & 4.37 & 1.45 & 0.96 & 6.98 & 375 & 0\\
+Slope & -2.46 & 1.72 & -5.71 & 0.91 & 300 & 0\\
+Curvature & -3.63 & 2.69 & -10.35 & 3.27 & 199 & 0\\
+
 
 \hline%inserts single line
 \end{tabular}
@@ -347,9 +397,9 @@ Curvature					&	-2.94	&	1.21	&	-7.77	&	0.62	&	543	&	0.00	\\
 \bigskip
 
 
-Factor time sereies are tested with (\cite{bera1981efficient}) test for normality. Neither of them passes the acceptance criteria therefore the null-hypothesis for normaility is rejected. Furthermore ADF and KPSS unit-root tests for stationarity are applied. Curvature for China and Slope for Japan is stationary on the usual 95\% confidence level. The tests can be applied for first differenence of the remaining time series too. The unit-root test results are represented in Table \textcolor{magenta}{5} in the Appendix.
+Factor time sereies are tested with (\cite{bera1981efficient}) test for normality. Neither of them passes the acceptance criteria therefore the null-hypothesis for normaility is rejected. Furthermore ADF and KPSS unit-root tests for stationarity are applied. According to the ADF test, Level for Australia, Level for USA and Slope for Japan is stationary on 99\% confidence level while according to the KPSS test, neier of the time series is stationary. The tests can be applied for first differenence of the remaining time series too. The first difference is stationary for all of the time series which is confirmed by both of the used tests. The unit-root test results are represented in Table 5 in the Appendix.
 
-Before differentiating, a pairwise  (\cite{engle1987co} test is applied for determining cointegrations. Table \textcolor{magenta}{2} represents the ratio of the cointegrated time series aggregated by factors. Besides the diagonal, the Slope - Curvature and the Curvature - Slope pairs both show a value more than 70\%. Since the time series are not stationary on the same order and the ratio of cointegrated time series is high, we consider the Toda-Yamamoto approach to be justified for analyzing connections.
+Before differentiating, a pairwise  (\cite{engle1987co} test is applied for determining cointegrations. Table 2 represents the ratio of the cointegrated time series aggregated by factors. Besides the diagonal, the Level - Curvature and the Slope - Curvature pairs both show a value more than 85\%. Since the time series are not stationary on the same order and the ratio of cointegrated time series is high, we consider the Toda-Yamamoto approach to be justified for analyzing connections.
 
 %--------------------------------------------------------------------------------Table3 -------------------------------------------------------
 \begin{table}[H]
@@ -361,9 +411,9 @@ Before differentiating, a pairwise  (\cite{engle1987co} test is applied for dete
 
 	&	Level 	&	Slope	&	Curvature	\\
 \hline \\ [-1.5ex]  
-Level	&	75.7\%	&	44.4\%	&	64.6\%	\\
-Slope	&	29.2\%	&	74.3\%	&	71.5\%	\\
-Curvature	&	29.2\%	&	78.5\%	&	75.0\%	\\
+Level	&	81.9\%	&	22.2\%	&	85.4\%	\\
+Slope	&	15.3\%	&	53.5\%	&	90.3\%	\\
+Curvature	&	23.6\%	&	54.2\%	&	91.0\%	\\
 
 
 \hline            
@@ -635,77 +685,67 @@ Yet to come...
 Node & Average & St. dev & Minimum & Maximum & \textrho(1)  & \textrho(10) \\ [0.5ex] % inserts table %heading
 
 \hline       \\ [-1.5ex]           % inserts single horizontal line
-\textbf{\textit{Germany}} 	&		&		&		&		&		&	\\
-1 year	&	0.026	&	1.628	&	-0.969	&	4.690	&	1.000	&	0.996	\\
-5 years	&	0.026	&	1.632	&	-0.941	&	4.767	&	0.999	&	0.993	\\
-10 years	&	0.024	&	1.545	&	-0.722	&	4.686	&	0.993	&	0.964	\\
-												
-30 years	&	0.023	&	1.448	&	-0.244	&	5.195	&	0.999	&	0.988	\\
-\textbf{\textit{Italy}}	&		&		&		&		&		&		\\
-1 year	&	0.024	&	1.533	&	-0.484	&	8.394	&	0.998	&	0.986	\\
-5 years	&	0.024	&	1.520	&	0.237	&	7.895	&	0.998	&	0.985	\\
-10 years	&	0.022	&	1.388	&	0.875	&	7.492	&	0.998	&	0.986	\\
-												
-30 year	&	0.019	&	1.197	&	2.043	&	7.584	&	0.998	&	0.985	\\
-\textbf{\textit{France}}	&		&		&		&		&		&		\\
-1 year	&	0.025	&	1.589	&	-0.801	&	4.657	&	1.000	&	0.996	\\
-5 years	&	0.025	&	1.573	&	-0.773	&	4.910	&	0.999	&	0.993	\\
-10 years	&	0.023	&	1.467	&	-0.415	&	4.851	&	0.999	&	0.991	\\
-												
-30 years	&	0.019	&	1.235	&	0.419	&	5.116	&	0.999	&	0.986	\\
-\textbf{\textit{USA}}	&		&		&		&		&		&		\\
-1 year	&	0.025	&	1.613	&	0.054	&	5.323	&	1.000	&	0.998	\\
-5 years	&	0.019	&	1.232	&	0.559	&	5.301	&	0.999	&	0.980	\\
-10 years	&	0.016	&	1.039	&	1.389	&	5.388	&	0.998	&	0.983	\\
+\textit{\textbf{Australia}} & & & & & & \\
+1 year & 3.64 & 1.95 & -0.05 & 7.39 & 0.999 & 0.994\\
+5 years & 4.01 & 1.91 & 0.24 & 7.3 & 0.999 & 0.994\\
+10 years & 4.36 & 1.75 & 0.61 & 7.43 & 0.999 & 0.993\\
+30 years & 4.77 & 1.46 & 1.17 & 7.67 & 0.999 & 0.99\\
+\textit{\textbf{Canada}} & & & & & & \\
+1 year & 2.18 & 1.65 & 0.12 & 6.43 & 0.999 & 0.993\\
+5 years & 2.85 & 1.67 & 0.28 & 6.7 & 0.999 & 0.994\\
+10 years & 3.36 & 1.62 & 0.45 & 6.78 & 0.999 & 0.994\\
+30 years & 3.62 & 1.41 & 0.71 & 6.25 & 0.999 & 0.994\\
+\textit{\textbf{Australia}} & & & & & & \\
+1 year & 0.53 & 1.28 & -1.09 & 3.83 & 1 & 0.994\\
+5 years & 1.03 & 1.42 & -1.11 & 3.97 & 1 & 0.996\\
+10 years & 1.54 & 1.44 & -0.97 & 4.2 & 1 & 0.996\\
+30 years & 2.05 & 1.56 & -0.7 & 4.95 & 0.999 & 0.994\\
+\textit{\textbf{Germany}} & & & & & & \\
+1 year & 1.35 & 1.87 & -0.99 & 5.24 & 1 & 0.997\\
+5 years & 1.92 & 1.97 & -1.01 & 5.39 & 1 & 0.996\\
+10 years & 2.51 & 1.93 & -0.87 & 5.75 & 1 & 0.996\\
+30 years & 3.14 & 1.88 & -0.47 & 6.48 & 0.999 & 0.994\\
+\textit{\textbf{Spain}} & & & & & & \\
+1 year & 1.78 & 1.77 & -0.8 & 6.44 & 0.999 & 0.99\\
+5 years & 2.74 & 1.85 & -0.45 & 7.65 & 0.999 & 0.992\\
+10 years & 3.53 & 1.81 & -0.01 & 7.67 & 0.999 & 0.993\\
+30 years & 4.35 & 1.58 & 0.85 & 7.85 & 0.999 & 0.991\\
+\textit{\textbf{France}} & & & & & & \\
+1 year & 1.4 & 1.84 & -0.87 & 5.3 & 1 & 0.996\\
+5 years & 2.09 & 1.88 & -0.78 & 5.4 & 1 & 0.996\\
+10 years & 2.81 & 1.84 & -0.44 & 5.92 & 1 & 0.995\\
+30 years & 3.55 & 1.66 & 0.24 & 6.51 & 0.999 & 0.994\\
+\textit{\textbf{Great Britan}} & & & & & & \\
+1 year & 2.28 & 2.24 & -0.17 & 6.62 & 1 & 0.996\\
+5 years & 2.82 & 1.97 & -0.11 & 6.52 & 1 & 0.996\\
+10 years & 3.23 & 1.67 & 0.11 & 5.92 & 0.999 & 0.994\\
+30 years & 3.46 & 1.26 & 0.53 & 5.06 & 0.999 & 0.992\\
+\textit{\textbf{Italy}} & & & & & & \\
+1 year & 1.86 & 1.7 & -0.59 & 8.17 & 0.999 & 0.989\\
+5 years & 2.92 & 1.66 & -0.1 & 7.76 & 0.999 & 0.99\\
+10 years & 3.75 & 1.52 & 0.49 & 7.35 & 0.999 & 0.99\\
+30 years & 4.58 & 1.32 & 1.5 & 7.37 & 0.999 & 0.989\\
+\textit{\textbf{Japan}} & & & & & & \\
+1 year & 0.08 & 0.24 & -0.35 & 0.84 & 0.998 & 0.988\\
+5 years & 0.43 & 0.48 & -0.39 & 1.72 & 0.998 & 0.985\\
+10 years & 0.96 & 0.71 & -0.28 & 2.58 & 0.999 & 0.99\\
+30 years & 1.84 & 0.81 & 0.04 & 3.31 & 0.999 & 0.99\\
+\textit{\textbf{South Korea}} & & & & & & \\
+1 year & 3.09 & 2.12 & 0.35 & 10.11 & 0.997 & 0.986\\
+5 years & 4.21 & 2.07 & 0.79 & 10.55 & 0.996 & 0.985\\
+10 years & 4.96 & 1.95 & 1.44 & 11.1 & 0.995 & 0.982\\
+30 years & 5.97 & 2.87 & 1.71 & 14.57 & 0.997 & 0.984\\
+\textit{\textbf{The Netherlands}} & & & & & & \\
+1 year & 1.39 & 1.87 & -0.94 & 5.31 & 1 & 0.997\\
+5 years & 2.05 & 1.95 & -0.85 & 5.52 & 1 & 0.996\\
+10 years & 2.69 & 1.92 & -0.63 & 5.91 & 1 & 0.996\\
+30 years & 3.19 & 1.86 & -0.39 & 7.56 & 0.999 & 0.994\\
+\textit{\textbf{USA}} & & & & & & \\
+1 year & 1.92 & 1.93 & 0.04 & 7.07 & 1 & 0.995\\
+5 years & 2.78 & 1.63 & 0.2 & 6.95 & 0.999 & 0.992\\
+10 years & 3.45 & 1.44 & 0.5 & 6.92 & 0.999 & 0.99\\
+30 years & 4.09 & 1.23 & 1.08 & 6.67 & 0.999 & 0.988\\
 
-30 years	&	0.015	&	0.962	&	1.992	&	5.839	&	0.997	&	0.976	\\
-\textbf{\textit{Canada}}	&		&		&		&		&		&		\\
-1 year	&	0.019	&	1.230	&	0.300	&	4.809	&	1.000	&	0.995	\\
-5 years	&	0.018	&	1.146	&	0.484	&	4.801	&	0.999	&	0.989	\\
-10 years	&	0.017	&	1.098	&	0.983	&	5.076	&	0.999	&	0.987	\\
-												
-30 years	&	0.016	&	1.012	&	1.306	&	5.612	&	0.998	&	0.985	\\
-\textbf{\textit{Mexico}}	&		&		&		&		&		&		\\
-1 year	&	0.032	&	2.025	&	1.512	&	10.570	&	0.979	&	0.988	\\
-5 years	&	0.024	&	1.511	&	3.786	&	10.897	&	0.986	&	0.981	\\
-10 years	&	0.021	&	1.352	&	4.619	&	12.413	&	0.992	&	0.970	\\
-
-30 years	&	0.020	&	1.238	&	5.873	&	12.726	&	0.993	&	0.947	\\
-\textbf{\textit{Japan}}	&		&		&		&		&		&		\\
-1 year	&	0.004	&	0.272	&	-0.371	&	0.850	&	0.999	&	0.992	\\
-5 years	&	0.008	&	0.485	&	-0.396	&	1.631	&	0.999	&	0.990	\\
-10 years	&	0.010	&	0.656	&	-0.285	&	2.050	&	0.999	&	0.990	\\
-												
-30 years	&	0.012	&	0.761	&	0.053 	&	3.295	&	0.998	&	0.985	\\
-\textbf{\textit{China}}	&		&		&		&		&		&		\\
-1 year	&	0.012	&	0.730	&	0.957	&	4.382	&	0.992	&	0.966	\\
-5 years	&	0.009	&	0.594	&	1.782	&	4.874	&	0.997	&	0.973	\\
-10 years	&	0.009	&	0.570	&	2.481	&	5.503	&	0.993	&	0.964	\\
-												
-30 years	&	0.010	&	0.615	&	2.470	&	6.009	&		&		\\
-\textbf{\textit{Australia}}	&		&		&		&		&		&		\\
-1 year	&	0.028	&	1.775	&	0.675	&	7.376	&	0.999	&	0.992	\\
-5 years	&	0.026	&	1.677	&	0.639	&	6.960	&	0.999	&	0.990	\\
-10 years	&	0.024	&	1.497	&	0.885	&	6.873	&	0.999	&	0.988	\\
-												
-30 years	&	0.019	&	1.207	&	1.558	&	6.888	&	0.998	&	0.983	\\
-\textbf{\textit{Norway}}	&		&		&		&		&		&		\\
-1 year	&	0.022	&	1.410	&	0.199	&	6.243	&	0.999	&	0.994	\\
-5 years	&	0.020	&	1.273	&	0.545	&	5.335	&	0.999	&	0.991	\\
-10 years	&	0.019	&	1.194	&	0.888	&	5.276	&	0.999	&	0.989	\\
-												
-30 years	&	0.018	&	1.113	&	0.882	&	5.273	&	0.999	&	0.987	\\
-\textbf{\textit{United Kingdom}}	&		&		&		&		&		&		\\
-1 year	&	0.031	&	1.956	&	0.024	&	5.883	&	0.999	&	0.995	\\
-5 years	&	0.026	&	1.644	&	0.161	&	5.821	&	0.999	&	0.991	\\
-10 years	&	0.022	&	1.418	&	0.400	&	5.543	&	0.999	&	0.989	\\
-												
-30 years	&	0.018	&	1.110	&	0.939	&	5.070	&	0.999	&	0.987	\\
-\textbf{\textit{Switzerland}}	&		&		&		&		&		&		\\
-1 year	&	0.020	&	1.241	&	-1.165	&	3.375	&	1.000	&	0.996	\\
-5 years	&	0.019	&	1.192	&	-1.196	&	3.200	&	0.999	&	0.993	\\
-10 years	&	0.019	&	1.198	&	-1.138	&	3.455	&	0.999	&	0.991	\\
-30 years	&	0.017	&	1.101	&	-0.644	&	3.733	&	0.998	&	0.986	\\
 
 \hline%inserts single line
 \end{tabular}
@@ -727,28 +767,27 @@ Node & Average & St. dev & Minimum & Maximum & \textrho(1)  & \textrho(10) \\ [0
 \hline\hline \\ [-1.5ex]                         
  
 
-Country	&	\multicolumn{2}{c}{DEU}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{FRA}			&	\multicolumn{2}{c}{USA}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{MEX}			\\[0.5ex] 
+Country	&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{CHE}			&	\multicolumn{2}{c}{DEU}			&	\multicolumn{2}{c}{ESP}			&	\multicolumn{2}{c}{FRA}			\\[0.5ex] 
 
 & value &P 		& value &P 			& value &P  		& value& P         			& value &P				& value &P\\
 
 \hline       \\ [-1.5ex] 
 
-Level	&	-2.30	&	0.45	&	-1.47	&	0.81	&	-2.16	&	0.51	&	-3.66	&	0.03	&	-3.06	&	0.13	&	-3.97	&	0.01	\\
-Slope	&	-2.09	&	0.54	&	-2.26	&	0.47	&	-1.64	&	0.73	&	-1.50	&	0.79	&	-1.57	&	0.76	&	-1.88	&	0.63	\\
-\medskip
-Curvature	&	-2.22	&	0.49	&-3.59	&0.03	&	-2.36	&	0.43	&	-1.62	&	0.74	&	-2.35	&	0.43	&	-2.71	&	0.28	\\
+Level	&	-4.07 & 0.01 & -3.82 & 0.02 & -3.28 & 0.07 & -3.65 & 0.03 & -1.81 & 0.66 & -3.4 & 0.05	\\
+Slope	&	-2.76 & 0.26 & -2.28 & 0.46 & -2.85 & 0.22 & -2.41 & 0.41 & -2.12 & 0.53 & -2.27 & 0.46	\\
+Curvature	&	-3.8 & 0.02 & -2.96 & 0.17 & -3.39 & 0.06 & -3 & 0.15 & -3.77 & 0.02 & -2.93 & 0.18\\
 
 \hline   \\ [-1.5ex]    
 
-Country	&	\multicolumn{2}{c}{JPN}			&	\multicolumn{2}{c}{CHN}			&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{NOR}			&	\multicolumn{2}{c}{GBR}			&	\multicolumn{2}{c}{CHE}			\\
+Country	&	\multicolumn{2}{c}{GBR}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{JPN}			&	\multicolumn{2}{c}{KOR}			&	\multicolumn{2}{c}{NLD}			&	\multicolumn{2}{c}{USA}			\\
 
  & value &P & value &P& value &P & value &P& value &P & value &P\\
 
 \hline       \\ [-1.5ex] 
 
-Level	&	-2.97	&	0.17	&	-3.69	&	0.02	&	-2.90	&	0.20	&	-2.63	&	0.31	&	-2.16	&	0.51	&	-2.50	&	0.37	\\
-Slope	&	-4.85	&	0.01	&	-3.69	&	0.03	&	-2.30	&	0.45	&	-2.72	&	0.27	&	-0.95	&	0.95	&	-3.14	&	0.10	\\
-Curvature	&	-2.03	&0.57	&	-5.52	&	0.01	&	-2.61	&	0.32	&	-3.67	&	0.02	&	-1.62	&	0.74	&	-3.14	&	0.10	\\
+Level	&	-2.53 & 0.35 & -2.13 & 0.52 & -2.87 & 0.21 & -3.8 & 0.02 & -3.58 & 0.03 & -4.85 & 0.01	\\
+Slope	&	-1.81 & 0.66 & -2.65 & 0.3 & -4.04 & 0.01 & -3.01 & 0.15 & -2.25 & 0.47 & -2.11 & 0.53	\\
+Curvature	&	-1.74 & 0.69 & -3.88 & 0.02 & -3.23 & 0.08 & -3.17 & 0.09 & -3.37 & 0.06 & -2.09 & 0.54\\
 \hline
 \end{tabular}
 \caption{\textbf{ADF test results}}
@@ -764,30 +803,28 @@ Curvature	&	-2.03	&0.57	&	-5.52	&	0.01	&	-2.61	&	0.32	&	-3.67	&	0.02	&	-1.62	&	0
 \hline\hline \\ [-1.5ex]                         %inserting double-line
 %Audio Name&\multicolumn{2}{c}{Sum of Extracted Bits}&\multicolumn{4}{c}{Sum of Extracted Bits} \\ [0.5ex] 
 
-Country	&	\multicolumn{2}{c}{DEU}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{FRA}			&	\multicolumn{2}{c}{USA}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{MEX}			\\[0.5ex] 
+Country	&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{CHE}			&	\multicolumn{2}{c}{DEU}			&	\multicolumn{2}{c}{ESP}			&	\multicolumn{2}{c}{FRA}			\\[0.5ex] 
 
  & value &P & value &P& value &P & value &P& value &P & value &P\\
 
 \hline       \\ [-1.5ex] 
 
-Level	&	32.89	&	0.01	&	14.58	&	0.01	&	29.87	&	0.00	&	26.85	&	0.01	&	32.18	&	0.01	&	15.24	&	0.01	\\
-Slope	&	4.26	&	0.01	&	7.61	&	0.01	&	4.50	&	0.01	&	5.30	&	0.01	&	5.40	&	0.01	&	4.78	&	0.01	\\
-\medskip
-Curvature	&	8.96	&	0.01	&	10.21	&	0.01	&	15.21	&	0.01	&	7.34	&	0.01	&	4.59	&	0.01	&	4.92	&	0.01	\\
+Level	&	42.12 & 0.01 & 46.78 & 0.01 & 47.05 & 0.01 & 46.65 & 0.01 & 26.73 & 0.01 & 43.84 & 0.01	\\
+Slope	&	2.6 & 0.01 & 5.96 & 0.01 & 17.84 & 0.01 & 7.04 & 0.01 & 5.28 & 0.01 & 4.35 & 0.01	\\
+Curvature	&	25.95 & 0.01 & 9.02 & 0.01 & 2.19 & 0.01 & 4.68 & 0.01 & 13.63 & 0.01 & 9.35 & 0.01	\\
 
 
 \hline   \\ [-1.5ex]    
 
-Country	&	\multicolumn{2}{c}{JPN}			&	\multicolumn{2}{c}{CHN}			&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{NOR}			&	\multicolumn{2}{c}{GBR}			&	\multicolumn{2}{c}{CHE}			\\
+Country	&	\multicolumn{2}{c}{GBR}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{JPN}			&	\multicolumn{2}{c}{KOR}			&	\multicolumn{2}{c}{NLD}			&	\multicolumn{2}{c}{USA}			\\
 
  & value &P & value &P& value &P & value &P& value &P & value &P\\
 
 \hline       \\ [-1.5ex] 
 
-Level	&	33.94	&	0.01	&	3.55	&	0.01	&	29.17	&	0.01	&	30.06	&	0.01	&	28.70	&	0.01	&	31.96	&	0.01	\\
-Slope	&	33.21	&	0.01	&	14.99	&	0.01	&	7.32	&	0.01	&	1.25	&	0.01	&	7.53	&	0.01	&	5.49	&	0.01	\\
-\medskip
-Curvature	&	15.95	&	0.01	&	2.91	&	0.01	&	24.67	&	0.01	&	11.56	&	0.01	&	13.33	&	0.01	&	5.67	&	0.01	\\
+Level	&	37.13 & 0.01 & 27.24 & 0.01 & 41.1 & 0.01 & 40.53 & 0.01 & 46.11 & 0.01 & 43.45 & 0.01	\\
+Slope	&	11.57 & 0.01 & 6.97 & 0.01 & 42.39 & 0.01 & 8.66 & 0.01 & 6.15 & 0.01 & 4.17 & 0.01	\\
+Curvature	&	24.63 & 0.01 & 10.87 & 0.01 & 23.87 & 0.01 & 6.57 & 0.01 & 4.27 & 0.01 & 6.01 & 0.01	\\
 
 
 \hline
@@ -806,30 +843,28 @@ Curvature	&	15.95	&	0.01	&	2.91	&	0.01	&	24.67	&	0.01	&	11.56	&	0.01	&	13.33	&	0
 \hline\hline \\ [-1.5ex]                         %inserting double-line
 %Audio Name&\multicolumn{2}{c}{Sum of Extracted Bits}&\multicolumn{4}{c}{Sum of Extracted Bits} \\ [0.5ex] 
 
-Country	&	\multicolumn{2}{c}{DEU}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{FRA}			&	\multicolumn{2}{c}{USA}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{MEX}			\\[0.5ex] 
+Country	&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{CHE}			&	\multicolumn{2}{c}{DEU}			&	\multicolumn{2}{c}{ESP}			&	\multicolumn{2}{c}{FRA}			\\[0.5ex] 
 
  & value &P & value &P& value &P & value &P& value &P & value &P\\
 
 \hline       \\ [-1.5ex] 
 
-Level	&	-17.05	&	0.01	&	-16.01	&	0.01	&	-15.99	&	0.01	&	-15.79	&	0.01	&	-16.35	&	0.01	&	-16.56	&	0.01	\\
-Slope	&	-15.90	&	0.01	&	-14.62	&	0.01	&	-14.59	&	0.01	&	-16.55	&	0.01	&	-16.32	&	0.01	&	-15.19	&	0.01	\\
-\medskip
-Curvature	&-18.52	&	0.01	&	-18.67	&	0.01	&	-17.65	&	0.01	&	-17.45	&	0.01	&	-16.02	&	0.01	&	-18.88	&	0.01	\\
+Level	&	-4.07 & 0.01 & -17.58 & 0.01 & -17.92 & 0.01 & -18.64 & 0.01 & -18.18 & 0.01 & -17.19 & 0.01	\\
+Slope	&	-16.63 & 0.01 & -15.41 & 0.01 & -17.35 & 0.01 & -17.26 & 0.01 & -17.53 & 0.01 & -15.97 & 0.01	\\
+Curvature	& -18.11 & 0.01 & -17.43 & 0.01 & -17.52 & 0.01 & -18.33 & 0.01 & -18.47 & 0.01 & -18.22 & 0.01	\\
 
 
 \hline   \\ [-1.5ex]    
 
-Country	&	\multicolumn{2}{c}{JPN}			&	\multicolumn{2}{c}{CHN}			&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{NOR}			&	\multicolumn{2}{c}{GBR}			&	\multicolumn{2}{c}{CHE}			\\
+Country	&	\multicolumn{2}{c}{GBR}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{JPN}			&	\multicolumn{2}{c}{KOR}			&	\multicolumn{2}{c}{NLD}			&	\multicolumn{2}{c}{USA}			\\
 
  & value &P & value &P& value &P & value &P& value &P & value &P\\
 
 \hline       \\ [-1.5ex] 
 
-Level	&	-16.55	&	0.01	&	-16.99	&	0.01	&	-15.61	&	0.01	&	-16.43	&	0.01	&	-16.48	&	0.01	&	-15.57	&	0.01	\\
-Slope	&		&		&	-18.90	&	0.01	&	-17.87	&	0.01	&	-17.61	&	0.01	&	-16.12	&	0.01	&	-14.59	&	0.01	\\
-\medskip
-Curvature	&	-17.51	&	0.01	&		&		&	-18.06	&	0.01	&	-17.04	&	0.01	&	-16.45	&	0.01	&	-14.27	&	0.01	\\
+Level	&	-17.96 & 0.01 & -18.3 & 0.01 & -18.15 & 0.01 & -18.88 & 0.01 & -18.39 & 0.01 & -4.86 & 0.01	\\
+Slope	&		-15.86 & 0.01 & -15.55 & 0.01 & -4.05 & 0.01 & -16.74 & 0.01 & -16.62 & 0.01 & -16.26 & 0.01	\\
+Curvature	&	-17.69 & 0.01 & -19.95 & 0.01 & -17.92 & 0.01 & -19.12 & 0.01 & -18.64 & 0.01 & -18.58 & 0.01	\\
 
 
 
@@ -848,28 +883,28 @@ Curvature	&	-17.51	&	0.01	&		&		&	-18.06	&	0.01	&	-17.04	&	0.01	&	-16.45	&	0.01	
 \hline\hline \\ [-1.5ex]                         %inserting double-line
 %Audio Name&\multicolumn{2}{c}{Sum of Extracted Bits}&\multicolumn{4}{c}{Sum of Extracted Bits} \\ [0.5ex] 
 
-Slope	&	\multicolumn{2}{c}{DEU}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{FRA}			&	\multicolumn{2}{c}{USA}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{MEX}			\\[0.5ex] 
+Country	&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{CAN}			&	\multicolumn{2}{c}{CHE}			&	\multicolumn{2}{c}{DEU}			&	\multicolumn{2}{c}{ESP}			&	\multicolumn{2}{c}{FRA}			\\[0.5ex] 
 
  & value &P & value &P& value &P & value &P& value &P & value &P\\
 
 \hline       \\ [-1.5ex] 
 
-Level	&	0.04	&	0.10	&	0.13	&	0.10	&	0.06	&	0.10	&	0.03	&	0.10	&	0.06	&	0.10	&	0.08	&	0.10	\\
-Slope	&	0.08	&	0.10	&	0.07	&	0.10	&	0.12	&	0.10	&	0.16	&	0.10	&	0.17	&	0.10	&	0.09	&	0.10	\\
-Curvature	&	0.05	&	0.10	&	0.02	&	0.10	&0.05	&	0.10	&	0.08	&	0.10	&	0.08	&	0.10	&	0.01	&	0.10	\\
+Level	&	0.06 & 0.1 & 0.06 & 0.1 & 0.04 & 0.1 & 0.08 & 0.1 & 0.13 & 0.1 & 0.1 & 0.1	\\
+Slope	&	0.05 & 0.1 & 0.16 & 0.1 & 0.03 & 0.1 & 0.07 & 0.1 & 0.07 & 0.1 & 0.08 & 0.1\\
+Curvature	&	0.03 & 0.1 & 0.06 & 0.1 & 0.05 & 0.1 & 0.04 & 0.1 & 0.03 & 0.1 & 0.03 & 0.1\\
 
 
 \hline   \\ [-1.5ex]    
 
-Slope	&	\multicolumn{2}{c}{JPN}			&	\multicolumn{2}{c}{CHN}			&	\multicolumn{2}{c}{AUS}			&	\multicolumn{2}{c}{NOR}			&	\multicolumn{2}{c}{GBR}			&	\multicolumn{2}{c}{CHE}			\\
+Country	&	\multicolumn{2}{c}{GBR}			&	\multicolumn{2}{c}{ITA}			&	\multicolumn{2}{c}{JPN}			&	\multicolumn{2}{c}{KOR}			&	\multicolumn{2}{c}{NLD}			&	\multicolumn{2}{c}{USA}			\\
 
  & value &P & value &P& value &P & value &P& value &P & value &P\\
 
 \hline       \\ [-1.5ex] 
 
-Level	&	0.03	&	0.10	&	0.16	&	0.10	&	0.05	&	0.10	&	0.04	&	0.10	&	0.07	&	0.10	&	0.04	&	0.10	\\
-Slope	&	0.03	&	0.10	&	0.03	&	0.10	&	0.04	&	0.10	&	0.08	&	0.10	&	0.24	&	0.10	&	0.14	&	0.10	\\
-Curvature	&	0.06	&	0.10	&	0.05	&	0.10	&	0.04	&	0.10	&	0.03	&	0.10	&	0.16	&	0.10	&	0.05	&	0.10	\\
+Level	&	0.11 & 0.1 & 0.14 & 0.1 & 0.03 & 0.1 & 0.05 & 0.1 & 0.09 & 0.1 & 0.05 & 0.1	\\
+Slope	&	0.24 & 0.1 & 0.07 & 0.1 & 0.02 & 0.1 & 0.06 & 0.1 & 0.09 & 0.1 & 0.14 & 0.1 \\
+Curvature	&	0.11 & 0.1 & 0.02 & 0.1 & 0.1 & 0.1 & 0.02 & 0.1 & 0.03 & 0.1 & 0.08 & 0.1	\\
 
 
 \hline
