@@ -1,0 +1,5 @@
+This is a rolling TY run between 1998-09-30 and 2001-08-15
+The number of Level edges are 0 which is 0.00% of the total possible edges, 132
+The number of Slope edges are 12 which is 9.09% of the total possible edges, 132
+The number of Curvature edges are 0 which is 0.00% of the total possible edges, 132
+The number of total edges are 12 which is 9.09% of the total possible edges, 132

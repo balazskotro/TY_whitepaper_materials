@@ -1,0 +1,4 @@
+This is a rolling TY run between 1998-09-30 and 2001-08-15
+The number of incoming edges are 0 which is 0.00% of the total possible edges, 35
+The number of outgoing edges are 11 which is 31.43% of the total possible edges, 35
+The number of total edges are 11 which is 15.71% of the total possible edges, 70

@@ -1,0 +1,5 @@
+This is a fix TY run between 1998-09-30 and 2021-12-29
+The number of Level edges are 91 which is 10.53% of the total possible edges, 864
+The number of Slope edges are 95 which is 11.00% of the total possible edges, 864
+The number of Curvature edges are 72 which is 8.33% of the total possible edges, 864
+The number of total edges are 258 which is 29.86% of the total possible edges, 864

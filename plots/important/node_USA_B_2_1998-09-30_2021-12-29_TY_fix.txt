@@ -1,0 +1,4 @@
+This is a fix TY run between 1998-09-30 and 2021-12-29
+The number of incoming edges are 9 which is 25.71% of the total possible edges, 35
+The number of outgoing edges are 20 which is 57.14% of the total possible edges, 35
+The number of total edges are 29 which is 41.43% of the total possible edges, 70
